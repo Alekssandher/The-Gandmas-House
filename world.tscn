@@ -1,93 +1,94 @@
-[gd_scene load_steps=473 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=479 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_pu053"]
 [ext_resource type="Script" path="res://scripts/player/interactArea.gd" id="2_qt74m"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="3_irpvl"]
-[ext_resource type="Texture2D" uid="uid://b0767f2w2fypv" path="res://assets/6twelve/textures/Metal_03.jpg" id="4_ovber"]
-[ext_resource type="Texture2D" uid="uid://pbbq5axk031f" path="res://assets/6twelve/textures/Leather_01.jpg" id="5_1qylj"]
-[ext_resource type="Texture2D" uid="uid://4nw7axjur4qr" path="res://assets/6twelve/textures/Plastic_04.jpg" id="6_de1fu"]
-[ext_resource type="Texture2D" uid="uid://dy86i6a0u7n5j" path="res://assets/6twelve/textures/Plastic_05.png" id="7_s2r3g"]
-[ext_resource type="Texture2D" uid="uid://du5rdseo5vyjk" path="res://assets/6twelve/textures/Broom.png" id="8_tl8km"]
-[ext_resource type="Texture2D" uid="uid://c348tpadvyith" path="res://assets/6twelve/textures/Broom_01.png" id="9_gj1vv"]
-[ext_resource type="Texture2D" uid="uid://djx73k4d761wb" path="res://assets/6twelve/textures/Metal.jpg" id="10_mrsq2"]
-[ext_resource type="Texture2D" uid="uid://j4xye01m7yhg" path="res://assets/6twelve/textures/Metal_04.jpg" id="11_limwj"]
-[ext_resource type="Texture2D" uid="uid://c8vlkijvuapjh" path="res://assets/6twelve/textures/Metal_05.jpg" id="12_fr3ni"]
-[ext_resource type="Texture2D" uid="uid://o3jnvqpf8k86" path="res://assets/6twelve/textures/Bricks.jpg" id="13_u0x80"]
-[ext_resource type="Texture2D" uid="uid://bv160s0ya3te1" path="res://assets/6twelve/textures/Plaste.jpg" id="14_gbpml"]
-[ext_resource type="Texture2D" uid="uid://xhdohgdcmdg6" path="res://assets/6twelve/textures/Concrete_01.jpg" id="15_jmp0v"]
-[ext_resource type="Texture2D" uid="uid://2pvrrrplyoku" path="res://assets/6twelve/textures/Concrete.jpg" id="16_ggpm5"]
-[ext_resource type="Texture2D" uid="uid://drwl11si50kve" path="res://assets/6twelve/textures/Roof_tiles.jpg" id="17_onk0r"]
-[ext_resource type="Texture2D" uid="uid://c760ido3udksu" path="res://assets/6twelve/textures/Office.jpg" id="18_jb3qw"]
-[ext_resource type="Texture2D" uid="uid://dvur522dhxl2m" path="res://assets/6twelve/textures/Refrigerators.jpg" id="19_y0ig7"]
-[ext_resource type="Texture2D" uid="uid://ckk5asdvukvn2" path="res://assets/6twelve/textures/Refrigerators_01.jpg" id="20_hkjig"]
-[ext_resource type="Texture2D" uid="uid://f2ji34i3thop" path="res://assets/6twelve/textures/Door_02.jpg" id="21_1bthu"]
-[ext_resource type="Texture2D" uid="uid://c1xbc7q75lywb" path="res://assets/6twelve/textures/Metal_02.jpg" id="22_6tjpa"]
-[ext_resource type="Texture2D" uid="uid://do67duhiq4xgq" path="res://assets/6twelve/textures/Sign.jpg" id="23_yytlm"]
-[ext_resource type="Texture2D" uid="uid://beg4mbrjwk67t" path="res://assets/6twelve/textures/6twelve.jpg" id="24_ci8mc"]
-[ext_resource type="Texture2D" uid="uid://co7veplfgusre" path="res://assets/6twelve/textures/Mostrador.jpg" id="25_usmwb"]
-[ext_resource type="Texture2D" uid="uid://d1311vvh6vpps" path="res://assets/6twelve/textures/Plastic_07.png" id="26_nd83v"]
-[ext_resource type="Texture2D" uid="uid://cya6l5srg6jn1" path="res://assets/6twelve/textures/Candys.png" id="27_f2st4"]
-[ext_resource type="Texture2D" uid="uid://b2c400qmtr2pe" path="res://assets/6twelve/textures/Toothbrushes.jpg" id="28_yu4qf"]
-[ext_resource type="Texture2D" uid="uid://bqrtqc5smpp2j" path="res://assets/6twelve/textures/Metal_06.jpg" id="29_8dwy7"]
-[ext_resource type="Texture2D" uid="uid://fvtujy7m1hc1" path="res://assets/6twelve/textures/Prices.jpg" id="30_8epeb"]
-[ext_resource type="Texture2D" uid="uid://cljak2u5fshcg" path="res://assets/6twelve/textures/GrassDead.jpg" id="31_gg67j"]
-[ext_resource type="Texture2D" uid="uid://botoh4woyjn5l" path="res://assets/6twelve/textures/Grass_02.jpg" id="32_jtiud"]
-[ext_resource type="Texture2D" uid="uid://frtgtjhtjxqx" path="res://assets/6twelve/textures/Tree.png" id="33_yjgo0"]
-[ext_resource type="Texture2D" uid="uid://dgjgo6cvk20e8" path="res://assets/6twelve/textures/Tree_01.png" id="34_r7r1u"]
-[ext_resource type="Texture2D" uid="uid://fske5r3ihlq5" path="res://assets/6twelve/textures/Food_shelf_03.jpg" id="35_xahkl"]
-[ext_resource type="Texture2D" uid="uid://uci0h1xemrev" path="res://assets/6twelve/textures/Plastic_03.jpg" id="36_6oq3w"]
-[ext_resource type="Texture2D" uid="uid://c7atg5l65w1hi" path="res://assets/6twelve/textures/Cigars.png" id="37_b20ey"]
-[ext_resource type="Texture2D" uid="uid://cs22ri22klvgy" path="res://assets/6twelve/textures/Alcohol.jpg" id="38_qnxfd"]
-[ext_resource type="Texture2D" uid="uid://b1b6riiebwjpk" path="res://assets/6twelve/textures/Control.jpg" id="39_7tyye"]
-[ext_resource type="Texture2D" uid="uid://bexvagngbnted" path="res://assets/6twelve/textures/Store_fridge.png" id="40_406kn"]
-[ext_resource type="Texture2D" uid="uid://cnjfpq8leoj7b" path="res://assets/6twelve/textures/Lottery.png" id="41_46guy"]
-[ext_resource type="Texture2D" uid="uid://g7sodo6v1gue" path="res://assets/6twelve/textures/Plastic_08.jpg" id="42_4d8ii"]
-[ext_resource type="Texture2D" uid="uid://dh3uhjhqsvhat" path="res://assets/6twelve/textures/Lights.jpg" id="43_skdfe"]
-[ext_resource type="Texture2D" uid="uid://ddsnudxf1uhjn" path="res://assets/6twelve/textures/Lights_Emissor.jpg" id="44_ttvrk"]
-[ext_resource type="Texture2D" uid="uid://c43155bxph5y0" path="res://assets/6twelve/textures/Metal_07.jpg" id="45_qo7t7"]
-[ext_resource type="Texture2D" uid="uid://b00h8nffljrns" path="res://assets/6twelve/textures/Metal_08.jpg" id="46_xje6k"]
-[ext_resource type="Texture2D" uid="uid://b5ynh8e48yjnh" path="res://assets/6twelve/textures/Respirator.png" id="47_txsx0"]
-[ext_resource type="Texture2D" uid="uid://cid3kjxkee0kb" path="res://assets/6twelve/textures/outdoor electronics.jpg" id="48_yfrvn"]
-[ext_resource type="Texture2D" uid="uid://24akv2pd6t63" path="res://assets/6twelve/textures/CardboardPlain.jpg" id="49_vax0x"]
-[ext_resource type="Texture2D" uid="uid://pvmnb113h28n" path="res://assets/6twelve/textures/Door_03.jpg" id="50_gscg8"]
-[ext_resource type="Texture2D" uid="uid://3pergu4leca7" path="res://assets/6twelve/textures/Wheel.jpg" id="51_urdn4"]
-[ext_resource type="Texture2D" uid="uid://3etu7dhr58ve" path="res://assets/6twelve/textures/Sign_01.png" id="52_yyxl7"]
-[ext_resource type="Texture2D" uid="uid://bmng2im3ww3rc" path="res://assets/6twelve/textures/Metal_01.jpg" id="53_2dkm3"]
-[ext_resource type="Texture2D" uid="uid://lpdmcnqvcrbm" path="res://assets/6twelve/textures/Metal_09.jpg" id="54_88lgt"]
-[ext_resource type="Texture2D" uid="uid://dk2oj822ryihe" path="res://assets/6twelve/textures/Trash_01.jpg" id="55_nq4oo"]
-[ext_resource type="Texture2D" uid="uid://bdpfupfbaqfd7" path="res://assets/6twelve/textures/Wood_18.jpg" id="56_rgyr0"]
-[ext_resource type="Texture2D" uid="uid://by1y7sxw3vnrf" path="res://assets/6twelve/textures/Branches.png" id="57_742rw"]
-[ext_resource type="Texture2D" uid="uid://dn0pkpvkmmu0u" path="res://assets/6twelve/textures/extinguisher.jpg" id="58_cq8tv"]
-[ext_resource type="Texture2D" uid="uid://dlo83mtla827f" path="res://assets/6twelve/textures/Plastic_02.png" id="59_ub5kg"]
-[ext_resource type="Texture2D" uid="uid://dkukwksytvf72" path="res://assets/6twelve/textures/Garbage_bag.png" id="60_1cl4n"]
-[ext_resource type="Texture2D" uid="uid://birdpdrvwlplk" path="res://assets/6twelve/textures/Metal_10.jpg" id="61_2h01j"]
-[ext_resource type="Texture2D" uid="uid://bnb5br44vrmx2" path="res://assets/6twelve/textures/Lights_01.jpg" id="62_s134t"]
-[ext_resource type="Texture2D" uid="uid://chg2kpd5yjubw" path="res://assets/6twelve/textures/Lights_01_Emissor.png" id="63_ewnmx"]
-[ext_resource type="Texture2D" uid="uid://m4onxvkx11o6" path="res://assets/6twelve/textures/Plastic_01.jpg" id="64_8m8qe"]
-[ext_resource type="Texture2D" uid="uid://dnsvac5ixlqb5" path="res://assets/6twelve/textures/SoilSand.jpg" id="65_l5ekp"]
-[ext_resource type="Texture2D" uid="uid://cl07m4f7j5bf0" path="res://assets/6twelve/textures/Door_01.jpg" id="66_1ggu1"]
-[ext_resource type="Texture2D" uid="uid://cfrhws6yb3gsd" path="res://assets/6twelve/textures/Door.jpg" id="67_ob73t"]
-[ext_resource type="Texture2D" uid="uid://wdxu04ii4wka" path="res://assets/6twelve/textures/Hygiene.jpg" id="68_h2k1b"]
-[ext_resource type="Texture2D" uid="uid://cwhwfeydmib8j" path="res://assets/6twelve/textures/Mop.png" id="69_rop24"]
-[ext_resource type="Texture2D" uid="uid://cxuqnk724peiq" path="res://assets/6twelve/textures/Trees_Background.png" id="70_3dfdt"]
-[ext_resource type="Texture2D" uid="uid://daxags2m1fw8w" path="res://assets/6twelve/textures/Food_shelf.jpg" id="71_bc2mc"]
-[ext_resource type="Texture2D" uid="uid://dmelw8qk8tsws" path="res://assets/6twelve/textures/Food_shelf_01.jpg" id="72_bv13k"]
-[ext_resource type="Texture2D" uid="uid://c02gftd7kxghm" path="res://assets/6twelve/textures/Food_shelf_02.jpg" id="73_c1si0"]
-[ext_resource type="Texture2D" uid="uid://w2yw7fdsla43" path="res://assets/6twelve/textures/Food_shelf_05.jpg" id="74_55q83"]
-[ext_resource type="Texture2D" uid="uid://vp5obbnbrt8f" path="res://assets/6twelve/textures/Grass.png" id="75_08q1y"]
-[ext_resource type="Texture2D" uid="uid://bssexhxxbyaay" path="res://assets/6twelve/textures/Scattered.png" id="76_d87hl"]
-[ext_resource type="Texture2D" uid="uid://bstqhe357ytpa" path="res://assets/6twelve/textures/RoadMarkings.png" id="77_5iict"]
-[ext_resource type="Texture2D" uid="uid://cuiwlft0y8mrn" path="res://assets/6twelve/textures/RoadRail.jpg" id="78_gfpqg"]
-[ext_resource type="Texture2D" uid="uid://bquqcdbo4q8ou" path="res://assets/6twelve/textures/Plants_02.png" id="79_2qqb6"]
-[ext_resource type="Texture2D" uid="uid://dkfdx0kcaaver" path="res://assets/6twelve/textures/Plants_01.png" id="80_etkbv"]
-[ext_resource type="Texture2D" uid="uid://boev3vl4xe8qf" path="res://assets/6twelve/textures/Fabric.jpg" id="81_83w68"]
-[ext_resource type="Texture2D" uid="uid://b8fw266quecar" path="res://assets/6twelve/textures/Fabric_01.jpg" id="82_dyo72"]
-[ext_resource type="Texture2D" uid="uid://u33bcwvpn15m" path="res://assets/6twelve/textures/Wood_02.jpg" id="83_wtmas"]
-[ext_resource type="Texture2D" uid="uid://evxowq7txpio" path="res://assets/6twelve/textures/Plastic.jpg" id="84_1th6r"]
-[ext_resource type="Texture2D" uid="uid://l2nafvp7heub" path="res://assets/6twelve/textures/Plastic_06.jpg" id="85_le522"]
-[ext_resource type="Texture2D" uid="uid://ckw2m2lb8j0vo" path="res://assets/6twelve/textures/Asphalt_01.jpg" id="86_w6yu8"]
-[ext_resource type="Texture2D" uid="uid://okwks84881ar" path="res://assets/6twelve/textures/Tiles.jpg" id="87_1es48"]
-[ext_resource type="Texture2D" uid="uid://cnkqld8snv4cw" path="res://assets/6twelve/textures/Asphalt.jpg" id="88_w36da"]
+[ext_resource type="Texture2D" uid="uid://b0767f2w2fypv" path="res://assets/6twelve/Textures/Metal_03.jpg" id="4_ovber"]
+[ext_resource type="Texture2D" uid="uid://pbbq5axk031f" path="res://assets/6twelve/Textures/Leather_01.jpg" id="5_1qylj"]
+[ext_resource type="Texture2D" uid="uid://4nw7axjur4qr" path="res://assets/6twelve/Textures/Plastic_04.jpg" id="6_de1fu"]
+[ext_resource type="Texture2D" uid="uid://dy86i6a0u7n5j" path="res://assets/6twelve/Textures/Plastic_05.png" id="7_s2r3g"]
+[ext_resource type="Texture2D" uid="uid://du5rdseo5vyjk" path="res://assets/6twelve/Textures/Broom.png" id="8_tl8km"]
+[ext_resource type="Texture2D" uid="uid://c348tpadvyith" path="res://assets/6twelve/Textures/Broom_01.png" id="9_gj1vv"]
+[ext_resource type="Texture2D" uid="uid://djx73k4d761wb" path="res://assets/6twelve/Textures/Metal.jpg" id="10_mrsq2"]
+[ext_resource type="Texture2D" uid="uid://j4xye01m7yhg" path="res://assets/6twelve/Textures/Metal_04.jpg" id="11_limwj"]
+[ext_resource type="Texture2D" uid="uid://c8vlkijvuapjh" path="res://assets/6twelve/Textures/Metal_05.jpg" id="12_fr3ni"]
+[ext_resource type="Texture2D" uid="uid://o3jnvqpf8k86" path="res://assets/6twelve/Textures/Bricks.jpg" id="13_u0x80"]
+[ext_resource type="Texture2D" uid="uid://bv160s0ya3te1" path="res://assets/6twelve/Textures/Plaste.jpg" id="14_gbpml"]
+[ext_resource type="Texture2D" uid="uid://xhdohgdcmdg6" path="res://assets/6twelve/Textures/Concrete_01.jpg" id="15_jmp0v"]
+[ext_resource type="Texture2D" uid="uid://2pvrrrplyoku" path="res://assets/6twelve/Textures/Concrete.jpg" id="16_ggpm5"]
+[ext_resource type="Texture2D" uid="uid://drwl11si50kve" path="res://assets/6twelve/Textures/Roof_tiles.jpg" id="17_onk0r"]
+[ext_resource type="Texture2D" uid="uid://c760ido3udksu" path="res://assets/6twelve/Textures/Office.jpg" id="18_jb3qw"]
+[ext_resource type="Texture2D" uid="uid://dvur522dhxl2m" path="res://assets/6twelve/Textures/Refrigerators.jpg" id="19_y0ig7"]
+[ext_resource type="Texture2D" uid="uid://ckk5asdvukvn2" path="res://assets/6twelve/Textures/Refrigerators_01.jpg" id="20_hkjig"]
+[ext_resource type="Texture2D" uid="uid://f2ji34i3thop" path="res://assets/6twelve/Textures/Door_02.jpg" id="21_1bthu"]
+[ext_resource type="Texture2D" uid="uid://c1xbc7q75lywb" path="res://assets/6twelve/Textures/Metal_02.jpg" id="22_6tjpa"]
+[ext_resource type="Texture2D" uid="uid://do67duhiq4xgq" path="res://assets/6twelve/Textures/Sign.jpg" id="23_yytlm"]
+[ext_resource type="Texture2D" uid="uid://beg4mbrjwk67t" path="res://assets/6twelve/Textures/6twelve.jpg" id="24_ci8mc"]
+[ext_resource type="Texture2D" uid="uid://co7veplfgusre" path="res://assets/6twelve/Textures/Mostrador.jpg" id="25_usmwb"]
+[ext_resource type="Texture2D" uid="uid://d1311vvh6vpps" path="res://assets/6twelve/Textures/Plastic_07.png" id="26_nd83v"]
+[ext_resource type="Texture2D" uid="uid://cya6l5srg6jn1" path="res://assets/6twelve/Textures/Candys.png" id="27_f2st4"]
+[ext_resource type="Texture2D" uid="uid://b2c400qmtr2pe" path="res://assets/6twelve/Textures/Toothbrushes.jpg" id="28_yu4qf"]
+[ext_resource type="Texture2D" uid="uid://bqrtqc5smpp2j" path="res://assets/6twelve/Textures/Metal_06.jpg" id="29_8dwy7"]
+[ext_resource type="Texture2D" uid="uid://fvtujy7m1hc1" path="res://assets/6twelve/Textures/Prices.jpg" id="30_8epeb"]
+[ext_resource type="Texture2D" uid="uid://cljak2u5fshcg" path="res://assets/6twelve/Textures/GrassDead.jpg" id="31_gg67j"]
+[ext_resource type="Texture2D" uid="uid://botoh4woyjn5l" path="res://assets/6twelve/Textures/Grass_02.jpg" id="32_jtiud"]
+[ext_resource type="Texture2D" uid="uid://frtgtjhtjxqx" path="res://assets/6twelve/Textures/Tree.png" id="33_yjgo0"]
+[ext_resource type="Texture2D" uid="uid://dgjgo6cvk20e8" path="res://assets/6twelve/Textures/Tree_01.png" id="34_r7r1u"]
+[ext_resource type="Texture2D" uid="uid://fske5r3ihlq5" path="res://assets/6twelve/Textures/Food_shelf_03.jpg" id="35_xahkl"]
+[ext_resource type="Texture2D" uid="uid://uci0h1xemrev" path="res://assets/6twelve/Textures/Plastic_03.jpg" id="36_6oq3w"]
+[ext_resource type="Texture2D" uid="uid://c7atg5l65w1hi" path="res://assets/6twelve/Textures/Cigars.png" id="37_b20ey"]
+[ext_resource type="Texture2D" uid="uid://cs22ri22klvgy" path="res://assets/6twelve/Textures/Alcohol.jpg" id="38_qnxfd"]
+[ext_resource type="Texture2D" uid="uid://b1b6riiebwjpk" path="res://assets/6twelve/Textures/Control.jpg" id="39_7tyye"]
+[ext_resource type="Texture2D" uid="uid://bexvagngbnted" path="res://assets/6twelve/Textures/Store_fridge.png" id="40_406kn"]
+[ext_resource type="Texture2D" uid="uid://cnjfpq8leoj7b" path="res://assets/6twelve/Textures/Lottery.png" id="41_46guy"]
+[ext_resource type="Texture2D" uid="uid://g7sodo6v1gue" path="res://assets/6twelve/Textures/Plastic_08.jpg" id="42_4d8ii"]
+[ext_resource type="Texture2D" uid="uid://dh3uhjhqsvhat" path="res://assets/6twelve/Textures/Lights.jpg" id="43_skdfe"]
+[ext_resource type="Texture2D" uid="uid://ddsnudxf1uhjn" path="res://assets/6twelve/Textures/Lights_Emissor.jpg" id="44_ttvrk"]
+[ext_resource type="Texture2D" uid="uid://c43155bxph5y0" path="res://assets/6twelve/Textures/Metal_07.jpg" id="45_qo7t7"]
+[ext_resource type="Texture2D" uid="uid://b00h8nffljrns" path="res://assets/6twelve/Textures/Metal_08.jpg" id="46_xje6k"]
+[ext_resource type="Texture2D" uid="uid://b5ynh8e48yjnh" path="res://assets/6twelve/Textures/Respirator.png" id="47_txsx0"]
+[ext_resource type="Texture2D" uid="uid://cid3kjxkee0kb" path="res://assets/6twelve/Textures/outdoor electronics.jpg" id="48_yfrvn"]
+[ext_resource type="Texture2D" uid="uid://24akv2pd6t63" path="res://assets/6twelve/Textures/CardboardPlain.jpg" id="49_vax0x"]
+[ext_resource type="Texture2D" uid="uid://pvmnb113h28n" path="res://assets/6twelve/Textures/Door_03.jpg" id="50_gscg8"]
+[ext_resource type="Texture2D" uid="uid://3pergu4leca7" path="res://assets/6twelve/Textures/Wheel.jpg" id="51_urdn4"]
+[ext_resource type="Texture2D" uid="uid://3etu7dhr58ve" path="res://assets/6twelve/Textures/Sign_01.png" id="52_yyxl7"]
+[ext_resource type="Texture2D" uid="uid://bmng2im3ww3rc" path="res://assets/6twelve/Textures/Metal_01.jpg" id="53_2dkm3"]
+[ext_resource type="Texture2D" uid="uid://lpdmcnqvcrbm" path="res://assets/6twelve/Textures/Metal_09.jpg" id="54_88lgt"]
+[ext_resource type="Texture2D" uid="uid://dk2oj822ryihe" path="res://assets/6twelve/Textures/Trash_01.jpg" id="55_nq4oo"]
+[ext_resource type="Texture2D" uid="uid://bdpfupfbaqfd7" path="res://assets/6twelve/Textures/Wood_18.jpg" id="56_rgyr0"]
+[ext_resource type="Texture2D" uid="uid://by1y7sxw3vnrf" path="res://assets/6twelve/Textures/Branches.png" id="57_742rw"]
+[ext_resource type="Texture2D" uid="uid://dn0pkpvkmmu0u" path="res://assets/6twelve/Textures/extinguisher.jpg" id="58_cq8tv"]
+[ext_resource type="Texture2D" uid="uid://dlo83mtla827f" path="res://assets/6twelve/Textures/Plastic_02.png" id="59_ub5kg"]
+[ext_resource type="Texture2D" uid="uid://dkukwksytvf72" path="res://assets/6twelve/Textures/Garbage_bag.png" id="60_1cl4n"]
+[ext_resource type="Texture2D" uid="uid://birdpdrvwlplk" path="res://assets/6twelve/Textures/Metal_10.jpg" id="61_2h01j"]
+[ext_resource type="Texture2D" uid="uid://bnb5br44vrmx2" path="res://assets/6twelve/Textures/Lights_01.jpg" id="62_s134t"]
+[ext_resource type="Texture2D" uid="uid://chg2kpd5yjubw" path="res://assets/6twelve/Textures/Lights_01_Emissor.png" id="63_ewnmx"]
+[ext_resource type="Texture2D" uid="uid://m4onxvkx11o6" path="res://assets/6twelve/Textures/Plastic_01.jpg" id="64_8m8qe"]
+[ext_resource type="Texture2D" uid="uid://dnsvac5ixlqb5" path="res://assets/6twelve/Textures/SoilSand.jpg" id="65_l5ekp"]
+[ext_resource type="Texture2D" uid="uid://cl07m4f7j5bf0" path="res://assets/6twelve/Textures/Door_01.jpg" id="66_1ggu1"]
+[ext_resource type="Texture2D" uid="uid://cfrhws6yb3gsd" path="res://assets/6twelve/Textures/Door.jpg" id="67_ob73t"]
+[ext_resource type="Texture2D" uid="uid://wdxu04ii4wka" path="res://assets/6twelve/Textures/Hygiene.jpg" id="68_h2k1b"]
+[ext_resource type="Texture2D" uid="uid://cwhwfeydmib8j" path="res://assets/6twelve/Textures/Mop.png" id="69_rop24"]
+[ext_resource type="Texture2D" uid="uid://cxuqnk724peiq" path="res://assets/6twelve/Textures/Trees_Background.png" id="70_3dfdt"]
+[ext_resource type="Texture2D" uid="uid://daxags2m1fw8w" path="res://assets/6twelve/Textures/Food_shelf.jpg" id="71_bc2mc"]
+[ext_resource type="Texture2D" uid="uid://dmelw8qk8tsws" path="res://assets/6twelve/Textures/Food_shelf_01.jpg" id="72_bv13k"]
+[ext_resource type="Texture2D" uid="uid://c02gftd7kxghm" path="res://assets/6twelve/Textures/Food_shelf_02.jpg" id="73_c1si0"]
+[ext_resource type="Texture2D" uid="uid://w2yw7fdsla43" path="res://assets/6twelve/Textures/Food_shelf_05.jpg" id="74_55q83"]
+[ext_resource type="Texture2D" uid="uid://vp5obbnbrt8f" path="res://assets/6twelve/Textures/Grass.png" id="75_08q1y"]
+[ext_resource type="Texture2D" uid="uid://bssexhxxbyaay" path="res://assets/6twelve/Textures/Scattered.png" id="76_d87hl"]
+[ext_resource type="Texture2D" uid="uid://bstqhe357ytpa" path="res://assets/6twelve/Textures/RoadMarkings.png" id="77_5iict"]
+[ext_resource type="Texture2D" uid="uid://cuiwlft0y8mrn" path="res://assets/6twelve/Textures/RoadRail.jpg" id="78_gfpqg"]
+[ext_resource type="Texture2D" uid="uid://bquqcdbo4q8ou" path="res://assets/6twelve/Textures/Plants_02.png" id="79_2qqb6"]
+[ext_resource type="Texture2D" uid="uid://dkfdx0kcaaver" path="res://assets/6twelve/Textures/Plants_01.png" id="80_etkbv"]
+[ext_resource type="Texture2D" uid="uid://boev3vl4xe8qf" path="res://assets/6twelve/Textures/Fabric.jpg" id="81_83w68"]
+[ext_resource type="Texture2D" uid="uid://b8fw266quecar" path="res://assets/6twelve/Textures/Fabric_01.jpg" id="82_dyo72"]
+[ext_resource type="Texture2D" uid="uid://u33bcwvpn15m" path="res://assets/6twelve/Textures/Wood_02.jpg" id="83_wtmas"]
+[ext_resource type="Texture2D" uid="uid://evxowq7txpio" path="res://assets/6twelve/Textures/Plastic.jpg" id="84_1th6r"]
+[ext_resource type="Texture2D" uid="uid://l2nafvp7heub" path="res://assets/6twelve/Textures/Plastic_06.jpg" id="85_le522"]
+[ext_resource type="Texture2D" uid="uid://ckw2m2lb8j0vo" path="res://assets/6twelve/Textures/Asphalt_01.jpg" id="86_w6yu8"]
+[ext_resource type="Texture2D" uid="uid://okwks84881ar" path="res://assets/6twelve/Textures/Tiles.jpg" id="87_1es48"]
+[ext_resource type="Texture2D" uid="uid://cnkqld8snv4cw" path="res://assets/6twelve/Textures/Asphalt.jpg" id="88_w36da"]
+[ext_resource type="Script" path="res://systems/doors/entrance_doors.gd" id="89_2ogn3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_by317"]
 
@@ -134,14 +135,12 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g464b"]
 resource_name = "Metal_03"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("4_ovber")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhx1c"]
 resource_name = "Leather_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("5_1qylj")
 emission_enabled = true
 
@@ -204,7 +203,6 @@ shadow_mesh = SubResource("ArrayMesh_jv1h2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mogrr"]
 resource_name = "Plastic_04"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("6_de1fu")
 emission_enabled = true
 
@@ -212,7 +210,6 @@ emission_enabled = true
 resource_name = "Plastic_05"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("7_s2r3g")
 emission_enabled = true
 
@@ -275,7 +272,6 @@ shadow_mesh = SubResource("ArrayMesh_gr6ls")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6ws0"]
 resource_name = "Broom"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("8_tl8km")
 emission_enabled = true
 
@@ -314,7 +310,6 @@ shadow_mesh = SubResource("ArrayMesh_01rrd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifuco"]
 resource_name = "Broom_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("9_gj1vv")
 emission_enabled = true
 
@@ -353,7 +348,6 @@ shadow_mesh = SubResource("ArrayMesh_6ymtm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuixm"]
 resource_name = "Metal"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("10_mrsq2")
 emission_enabled = true
 
@@ -434,84 +428,72 @@ data = PackedVector3Array(-0.0121, -0.0003, 0.0108, -0.0121, -0.0003, -0.0154, -
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wibut"]
 resource_name = "Metal_04"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("11_limwj")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjn7a"]
 resource_name = "Bricks"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("13_u0x80")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ieqe"]
 resource_name = "Plaste"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("14_gbpml")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4c45"]
 resource_name = "Concrete_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("15_jmp0v")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yanr6"]
 resource_name = "Concrete"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("16_ggpm5")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxid0"]
 resource_name = "Roof_tiles"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("17_onk0r")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx17c"]
 resource_name = "Office"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("18_jb3qw")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syjgk"]
 resource_name = "Refrigerators"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("19_y0ig7")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wk33r"]
 resource_name = "Refrigerators_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("20_hkjig")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u15a"]
 resource_name = "Door_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("21_1bthu")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atqpq"]
 resource_name = "Metal_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("22_6tjpa")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opouk"]
 resource_name = "Sign"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("23_yytlm")
 emission_enabled = true
 emission_texture = ExtResource("23_yytlm")
@@ -519,7 +501,6 @@ emission_texture = ExtResource("23_yytlm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hd03"]
 resource_name = "6twelve"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("24_ci8mc")
 emission_enabled = true
 emission_texture = ExtResource("24_ci8mc")
@@ -825,7 +806,6 @@ shadow_mesh = SubResource("ArrayMesh_tffxg")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qssve"]
 resource_name = "Mostrator"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("25_usmwb")
 emission_enabled = true
 
@@ -864,21 +844,18 @@ shadow_mesh = SubResource("ArrayMesh_vsk3e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkww4"]
 resource_name = "Plastic_07"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("26_nd83v")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8xau"]
 resource_name = "Candys"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("27_f2st4")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4foj4"]
 resource_name = "Toothbrushes"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("28_yu4qf")
 emission_enabled = true
 
@@ -961,14 +938,12 @@ shadow_mesh = SubResource("ArrayMesh_po5r0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdbnh"]
 resource_name = "Metal_06"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("29_8dwy7")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ow41"]
 resource_name = "Prices"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("30_8epeb")
 emission_enabled = true
 
@@ -1029,14 +1004,12 @@ shadow_mesh = SubResource("ArrayMesh_npghu")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4r5c2"]
 resource_name = "GrassDead"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("31_gg67j")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vowxs"]
 resource_name = "Grass_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("32_jtiud")
 emission_enabled = true
 
@@ -1498,7 +1471,6 @@ shadow_mesh = SubResource("ArrayMesh_c15bw")
 resource_name = "Tree"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("33_yjgo0")
 emission_enabled = true
 
@@ -1506,7 +1478,6 @@ emission_enabled = true
 resource_name = "Tree_01"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("34_r7r1u")
 emission_enabled = true
 
@@ -1571,7 +1542,6 @@ shadow_mesh = SubResource("ArrayMesh_2hy8w")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgsp2"]
 resource_name = "Food_shelf_03"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("35_xahkl")
 emission_enabled = true
 
@@ -1642,7 +1612,6 @@ shadow_mesh = SubResource("ArrayMesh_faa5k")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76as8"]
 resource_name = "Plastic_03"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("36_6oq3w")
 emission_enabled = true
 
@@ -1704,21 +1673,18 @@ shadow_mesh = SubResource("ArrayMesh_0ojv8")
 resource_name = "Cigars"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("37_b20ey")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocsuq"]
 resource_name = "Alcohol"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("38_qnxfd")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j21h7"]
 resource_name = "Control"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("39_7tyye")
 emission_enabled = true
 
@@ -1855,7 +1821,6 @@ shadow_mesh = SubResource("ArrayMesh_wpqgl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp3ue"]
 resource_name = "Food_shelf_04"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_utneh"]
@@ -2054,7 +2019,6 @@ shadow_mesh = SubResource("ArrayMesh_4psw8")
 resource_name = "Store_fridge"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("40_406kn")
 emission_enabled = true
 
@@ -2094,7 +2058,6 @@ shadow_mesh = SubResource("ArrayMesh_la44v")
 resource_name = "Lottery"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("41_46guy")
 emission_enabled = true
 
@@ -2133,14 +2096,12 @@ shadow_mesh = SubResource("ArrayMesh_8jgo0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tumme"]
 resource_name = "Plastic_08"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("42_4d8ii")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2u0w"]
 resource_name = "icecream_popsicles"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0q363"]
@@ -2362,7 +2323,6 @@ shadow_mesh = SubResource("ArrayMesh_yg3sf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cjbp"]
 resource_name = "Lights"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("43_skdfe")
 emission_enabled = true
 emission_texture = ExtResource("44_ttvrk")
@@ -3098,7 +3058,6 @@ shadow_mesh = SubResource("ArrayMesh_ndv35")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hneli"]
 resource_name = "Metal_07"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("45_qo7t7")
 emission_enabled = true
 
@@ -3137,7 +3096,6 @@ shadow_mesh = SubResource("ArrayMesh_x85va")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyuoj"]
 resource_name = "Metal_08"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("46_xje6k")
 emission_enabled = true
 
@@ -3522,7 +3480,6 @@ shadow_mesh = SubResource("ArrayMesh_1raxd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hchg4"]
 resource_name = "Respirator"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("47_txsx0")
 emission_enabled = true
 
@@ -3561,7 +3518,6 @@ shadow_mesh = SubResource("ArrayMesh_jmmp1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opsxm"]
 resource_name = "outdoor electronics"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("48_yfrvn")
 emission_enabled = true
 
@@ -3760,7 +3716,6 @@ shadow_mesh = SubResource("ArrayMesh_dye4y")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ios0f"]
 resource_name = "CardboardPlain"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("49_vax0x")
 emission_enabled = true
 
@@ -4023,7 +3978,6 @@ shadow_mesh = SubResource("ArrayMesh_oto04")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgh3i"]
 resource_name = "Door_03"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("50_gscg8")
 emission_enabled = true
 
@@ -4096,14 +4050,12 @@ shadow_mesh = SubResource("ArrayMesh_gu0hd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhw36"]
 resource_name = "Metal_05"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("12_fr3ni")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txh5u"]
 resource_name = "Wheel"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("51_urdn4")
 emission_enabled = true
 
@@ -4222,7 +4174,6 @@ shadow_mesh = SubResource("ArrayMesh_1j8fi")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5exqa"]
 resource_name = "Sign_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("52_yyxl7")
 emission_enabled = true
 
@@ -4293,7 +4244,6 @@ shadow_mesh = SubResource("ArrayMesh_qqkj6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys3n5"]
 resource_name = "Metal_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("53_2dkm3")
 emission_enabled = true
 
@@ -4472,14 +4422,12 @@ shadow_mesh = SubResource("ArrayMesh_xnnh8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cohrv"]
 resource_name = "Metal_09"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("54_88lgt")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81hpw"]
 resource_name = "Trash_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("55_nq4oo")
 emission_enabled = true
 
@@ -4604,7 +4552,6 @@ shadow_mesh = SubResource("ArrayMesh_ybnqg")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkxca"]
 resource_name = "Wood_18"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("56_rgyr0")
 emission_enabled = true
 
@@ -4612,7 +4559,6 @@ emission_enabled = true
 resource_name = "Branches"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("57_742rw")
 emission_enabled = true
 
@@ -4905,7 +4851,6 @@ shadow_mesh = SubResource("ArrayMesh_wn1h3")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yauq"]
 resource_name = "extinguisher"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("58_cq8tv")
 emission_enabled = true
 
@@ -4946,7 +4891,6 @@ shadow_mesh = SubResource("ArrayMesh_smh6k")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnmu"]
 resource_name = "Plastic_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("59_ub5kg")
 emission_enabled = true
 
@@ -5018,7 +4962,6 @@ shadow_mesh = SubResource("ArrayMesh_mv28k")
 resource_name = "Garbage_bag"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("60_1cl4n")
 emission_enabled = true
 
@@ -5127,14 +5070,12 @@ shadow_mesh = SubResource("ArrayMesh_x3mo4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pns6o"]
 resource_name = "Metal_10"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("61_2h01j")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cridi"]
 resource_name = "Lights_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("62_s134t")
 emission_enabled = true
 emission_texture = ExtResource("63_ewnmx")
@@ -5448,14 +5389,12 @@ shadow_mesh = SubResource("ArrayMesh_4a0un")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1inbr"]
 resource_name = "Plastic_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("64_8m8qe")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwybt"]
 resource_name = "SoilSand"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("65_l5ekp")
 emission_enabled = true
 
@@ -5666,7 +5605,6 @@ shadow_mesh = SubResource("ArrayMesh_wbesf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wjdb"]
 resource_name = "Door_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("66_1ggu1")
 emission_enabled = true
 
@@ -5727,7 +5665,6 @@ shadow_mesh = SubResource("ArrayMesh_i0idc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4kh6"]
 resource_name = "Door"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("67_ob73t")
 emission_enabled = true
 
@@ -5766,7 +5703,6 @@ shadow_mesh = SubResource("ArrayMesh_1t2rd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tarvd"]
 resource_name = "Hygiene"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("68_h2k1b")
 emission_enabled = true
 
@@ -5807,7 +5743,6 @@ shadow_mesh = SubResource("ArrayMesh_i4fku")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8hxd"]
 resource_name = "Mop"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("69_rop24")
 emission_enabled = true
 
@@ -5849,7 +5784,6 @@ shadow_mesh = SubResource("ArrayMesh_l7t5u")
 resource_name = "Trees_Background"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("70_3dfdt")
 emission_enabled = true
 
@@ -5888,7 +5822,6 @@ shadow_mesh = SubResource("ArrayMesh_67y35")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mybp6"]
 resource_name = "Food_shelf"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("71_bc2mc")
 emission_enabled = true
 
@@ -5927,7 +5860,6 @@ shadow_mesh = SubResource("ArrayMesh_xyg1r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fom4q"]
 resource_name = "Food_shelf_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("72_bv13k")
 emission_enabled = true
 
@@ -5966,7 +5898,6 @@ shadow_mesh = SubResource("ArrayMesh_gvu1h")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbro0"]
 resource_name = "Food_shelf_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("73_c1si0")
 emission_enabled = true
 
@@ -6069,7 +6000,6 @@ shadow_mesh = SubResource("ArrayMesh_a621f")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfnvi"]
 resource_name = "Food_shelf_05"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("74_55q83")
 emission_enabled = true
 
@@ -6109,7 +6039,6 @@ shadow_mesh = SubResource("ArrayMesh_o3fp7")
 resource_name = "Grass"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("75_08q1y")
 emission_enabled = true
 
@@ -6219,7 +6148,6 @@ shadow_mesh = SubResource("ArrayMesh_vqsc6")
 resource_name = "Scattered"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("76_d87hl")
 emission_enabled = true
 
@@ -6355,7 +6283,6 @@ shadow_mesh = SubResource("ArrayMesh_ixt6b")
 resource_name = "RoadMarkings"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("77_5iict")
 emission_enabled = true
 
@@ -6394,7 +6321,6 @@ shadow_mesh = SubResource("ArrayMesh_xd450")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_looar"]
 resource_name = "RoadRail"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("78_gfpqg")
 emission_enabled = true
 
@@ -6468,7 +6394,6 @@ shadow_mesh = SubResource("ArrayMesh_ru5eh")
 resource_name = "Plants_02"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("79_2qqb6")
 emission_enabled = true
 
@@ -6476,7 +6401,6 @@ emission_enabled = true
 resource_name = "Plants_01"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("80_etkbv")
 emission_enabled = true
 
@@ -6541,14 +6465,12 @@ shadow_mesh = SubResource("ArrayMesh_a242i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lixiy"]
 resource_name = "Fabric"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("81_83w68")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhkgp"]
 resource_name = "Fabric_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("82_dyo72")
 emission_enabled = true
 
@@ -6717,7 +6639,6 @@ shadow_mesh = SubResource("ArrayMesh_j8ohd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wx5kb"]
 resource_name = "Wood_02"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("83_wtmas")
 emission_enabled = true
 
@@ -6810,14 +6731,12 @@ shadow_mesh = SubResource("ArrayMesh_qpy3l")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ubbf"]
 resource_name = "Plastic"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("84_1th6r")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2pl4"]
 resource_name = "Plastic_06"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("85_le522")
 emission_enabled = true
 
@@ -7016,7 +6935,6 @@ shadow_mesh = SubResource("ArrayMesh_7m22t")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7aka"]
 resource_name = "Asphalt_01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("86_w6yu8")
 emission_enabled = true
 
@@ -7055,7 +6973,6 @@ shadow_mesh = SubResource("ArrayMesh_d8y2e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir2or"]
 resource_name = "Tiles"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("87_1es48")
 emission_enabled = true
 
@@ -7094,7 +7011,6 @@ shadow_mesh = SubResource("ArrayMesh_l2vjb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmaih"]
 resource_name = "Asphalt"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("88_w36da")
 emission_enabled = true
 
@@ -7133,7 +7049,6 @@ shadow_mesh = SubResource("ArrayMesh_stoxq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2lub"]
 resource_name = "Parking_lot"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b2onb"]
@@ -7325,6 +7240,99 @@ shadow_mesh = SubResource("ArrayMesh_asplm")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_adl7f"]
 data = PackedVector3Array(0, 0.0005, -0.0134, 0.0011, 0.0005, -0.0127, 0.0011, 0.0005, 0.0127, 0.0011, 0.0005, 0.0127, 0, 0.0005, 0.0134, 0, 0.0005, -0.0134, 0, -0.0005, -0.0134, 0, -0.0005, 0.0134, 0.0011, -0.0005, 0.0127, 0.0011, -0.0005, 0.0127, 0.0011, -0.0005, -0.0127, 0, -0.0005, -0.0134, 0.0109, -0.0005, -0.0134, 0, -0.0005, -0.0134, 0.0011, -0.0005, -0.0127, 0.0011, -0.0005, -0.0127, 0.0098, -0.0005, -0.0127, 0.0109, -0.0005, -0.0134, 0, -0.0005, 0.0134, 0.0109, -0.0005, 0.0134, 0.0098, -0.0005, 0.0127, 0.0098, -0.0005, 0.0127, 0.0011, -0.0005, 0.0127, 0, -0.0005, 0.0134, 0.0109, -0.0005, 0.0134, 0.0109, -0.0005, -0.0134, 0.0098, -0.0005, -0.0127, 0.0098, -0.0005, -0.0127, 0.0098, -0.0005, 0.0127, 0.0109, -0.0005, 0.0134, 0.0109, 0.0005, -0.0134, 0.0098, 0.0005, -0.0127, 0.0011, 0.0005, -0.0127, 0.0011, 0.0005, -0.0127, 0, 0.0005, -0.0134, 0.0109, 0.0005, -0.0134, 0, 0.0005, 0.0134, 0.0011, 0.0005, 0.0127, 0.0098, 0.0005, 0.0127, 0.0098, 0.0005, 0.0127, 0.0109, 0.0005, 0.0134, 0, 0.0005, 0.0134, 0.0109, 0.0005, 0.0134, 0.0098, 0.0005, 0.0127, 0.0098, 0.0005, -0.0127, 0.0098, 0.0005, -0.0127, 0.0109, 0.0005, -0.0134, 0.0109, 0.0005, 0.0134, 0, 0.0005, 0.0134, 0, -0.0005, 0.0134, 0, -0.0005, -0.0134, 0, -0.0005, -0.0134, 0, 0.0005, -0.0134, 0, 0.0005, 0.0134, 0.0011, 0.0005, 0.0127, 0.0011, -0.0005, 0.0127, 0.0098, -0.0005, 0.0127, 0.0098, -0.0005, 0.0127, 0.0098, 0.0005, 0.0127, 0.0011, 0.0005, 0.0127, 0.0011, 0.0005, -0.0127, 0.0011, -0.0005, -0.0127, 0.0011, -0.0005, 0.0127, 0.0011, -0.0005, 0.0127, 0.0011, 0.0005, 0.0127, 0.0011, 0.0005, -0.0127, 0.0109, 0.0005, -0.0134, 0.0109, -0.0005, -0.0134, 0.0109, -0.0005, 0.0134, 0.0109, -0.0005, 0.0134, 0.0109, 0.0005, 0.0134, 0.0109, 0.0005, -0.0134, 0, 0.0005, -0.0134, 0, -0.0005, -0.0134, 0.0109, -0.0005, -0.0134, 0.0109, -0.0005, -0.0134, 0.0109, 0.0005, -0.0134, 0, 0.0005, -0.0134, 0.0098, 0.0005, 0.0127, 0.0098, -0.0005, 0.0127, 0.0098, -0.0005, -0.0127, 0.0098, -0.0005, -0.0127, 0.0098, 0.0005, -0.0127, 0.0098, 0.0005, 0.0127, 0.0098, 0.0005, -0.0127, 0.0098, -0.0005, -0.0127, 0.0011, -0.0005, -0.0127, 0.0011, -0.0005, -0.0127, 0.0011, 0.0005, -0.0127, 0.0098, 0.0005, -0.0127, 0.0109, 0.0005, 0.0134, 0.0109, -0.0005, 0.0134, 0, -0.0005, 0.0134, 0, -0.0005, 0.0134, 0, 0.0005, 0.0134, 0.0109, 0.0005, 0.0134, 0.0002, -0.0004, -0.0006, 0.0002, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0004, -0.0006, 0.0002, -0.0004, -0.0006, 0.0107, -0.0013, 0.0008, 0.0104, -0.0013, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0009, 0.0008, 0.0107, -0.0009, 0.0008, 0.0107, -0.0013, 0.0008, 0.0002, -0.0009, 0.0008, 0.0002, -0.0013, 0.0008, 0.0002, -0.0013, -0.0006, 0.0002, -0.0013, -0.0006, 0.0002, -0.0009, -0.0006, 0.0002, -0.0009, 0.0008, 0.0107, -0.0013, 0.0008, 0.0107, -0.0009, 0.0008, 0.0107, -0.0009, -0.0006, 0.0107, -0.0009, -0.0006, 0.0107, -0.0013, -0.0006, 0.0107, -0.0013, 0.0008, 0.0002, -0.0009, 0.0008, 0.0005, -0.0009, 0.0008, 0.0005, -0.0013, 0.0008, 0.0005, -0.0013, 0.0008, 0.0002, -0.0013, 0.0008, 0.0002, -0.0009, 0.0008, 0.0002, -0.0013, -0.0006, 0.0005, -0.0013, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0002, -0.0009, -0.0006, 0.0002, -0.0013, -0.0006, 0.0107, -0.0013, -0.0006, 0.0104, -0.0013, -0.0006, 0.0104, -0.0013, 0.0008, 0.0104, -0.0013, 0.0008, 0.0107, -0.0013, 0.0008, 0.0107, -0.0013, -0.0006, 0.0107, -0.0009, -0.0006, 0.0104, -0.0009, -0.0006, 0.0104, -0.0013, -0.0006, 0.0104, -0.0013, -0.0006, 0.0107, -0.0013, -0.0006, 0.0107, -0.0009, -0.0006, 0.0104, -0.0004, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0009, -0.0006, 0.0104, -0.0009, -0.0006, 0.0104, -0.0004, -0.0006, 0.0104, -0.0004, 0.0008, 0.0002, -0.0013, 0.0008, 0.0005, -0.0013, 0.0008, 0.0005, -0.0013, -0.0006, 0.0005, -0.0013, -0.0006, 0.0002, -0.0013, -0.0006, 0.0002, -0.0013, 0.0008, 0.0002, -0.0004, 0.0008, 0.0002, -0.0009, 0.0008, 0.0002, -0.0009, -0.0006, 0.0002, -0.0009, -0.0006, 0.0002, -0.0004, -0.0006, 0.0002, -0.0004, 0.0008, 0.0104, -0.0004, -0.0006, 0.0104, -0.0009, -0.0006, 0.0107, -0.0009, -0.0006, 0.0107, -0.0009, -0.0006, 0.0107, -0.0004, -0.0006, 0.0104, -0.0004, -0.0006, 0.0107, -0.0004, -0.0006, 0.0107, -0.0009, -0.0006, 0.0107, -0.0009, 0.0008, 0.0107, -0.0009, 0.0008, 0.0107, -0.0004, 0.0008, 0.0107, -0.0004, -0.0006, 0.0005, -0.0004, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0009, 0.0008, 0.0005, -0.0009, 0.0008, 0.0005, -0.0004, 0.0008, 0.0005, -0.0004, -0.0006, 0.0005, -0.0004, 0.0008, 0.0005, -0.0009, 0.0008, 0.0002, -0.0009, 0.0008, 0.0002, -0.0009, 0.0008, 0.0002, -0.0004, 0.0008, 0.0005, -0.0004, 0.0008, 0.0107, -0.0004, 0.0008, 0.0107, -0.0009, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0004, 0.0008, 0.0107, -0.0004, 0.0008, 0.0002, 0.0004, -0.0006, 0.0005, 0.0004, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0002, 0.0009, -0.0006, 0.0002, 0.0004, -0.0006, 0.0107, 0.0013, 0.0008, 0.0107, 0.0009, 0.0008, 0.0104, 0.0009, 0.0008, 0.0104, 0.0009, 0.0008, 0.0104, 0.0013, 0.0008, 0.0107, 0.0013, 0.0008, 0.0002, 0.0009, 0.0008, 0.0002, 0.0009, -0.0006, 0.0002, 0.0013, -0.0006, 0.0002, 0.0013, -0.0006, 0.0002, 0.0013, 0.0008, 0.0002, 0.0009, 0.0008, 0.0107, 0.0013, 0.0008, 0.0107, 0.0013, -0.0006, 0.0107, 0.0009, -0.0006, 0.0107, 0.0009, -0.0006, 0.0107, 0.0009, 0.0008, 0.0107, 0.0013, 0.0008, 0.0002, 0.0009, 0.0008, 0.0002, 0.0013, 0.0008, 0.0005, 0.0013, 0.0008, 0.0005, 0.0013, 0.0008, 0.0005, 0.0009, 0.0008, 0.0002, 0.0009, 0.0008, 0.0002, 0.0013, -0.0006, 0.0002, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0013, -0.0006, 0.0002, 0.0013, -0.0006, 0.0107, 0.0013, -0.0006, 0.0107, 0.0013, 0.0008, 0.0104, 0.0013, 0.0008, 0.0104, 0.0013, 0.0008, 0.0104, 0.0013, -0.0006, 0.0107, 0.0013, -0.0006, 0.0107, 0.0009, -0.0006, 0.0107, 0.0013, -0.0006, 0.0104, 0.0013, -0.0006, 0.0104, 0.0013, -0.0006, 0.0104, 0.0009, -0.0006, 0.0107, 0.0009, -0.0006, 0.0104, 0.0004, 0.0008, 0.0104, 0.0004, -0.0006, 0.0104, 0.0009, -0.0006, 0.0104, 0.0009, -0.0006, 0.0104, 0.0009, 0.0008, 0.0104, 0.0004, 0.0008, 0.0002, 0.0013, 0.0008, 0.0002, 0.0013, -0.0006, 0.0005, 0.0013, -0.0006, 0.0005, 0.0013, -0.0006, 0.0005, 0.0013, 0.0008, 0.0002, 0.0013, 0.0008, 0.0002, 0.0004, 0.0008, 0.0002, 0.0004, -0.0006, 0.0002, 0.0009, -0.0006, 0.0002, 0.0009, -0.0006, 0.0002, 0.0009, 0.0008, 0.0002, 0.0004, 0.0008, 0.0104, 0.0004, -0.0006, 0.0107, 0.0004, -0.0006, 0.0107, 0.0009, -0.0006, 0.0107, 0.0009, -0.0006, 0.0104, 0.0009, -0.0006, 0.0104, 0.0004, -0.0006, 0.0107, 0.0004, -0.0006, 0.0107, 0.0004, 0.0008, 0.0107, 0.0009, 0.0008, 0.0107, 0.0009, 0.0008, 0.0107, 0.0009, -0.0006, 0.0107, 0.0004, -0.0006, 0.0005, 0.0004, -0.0006, 0.0005, 0.0004, 0.0008, 0.0005, 0.0009, 0.0008, 0.0005, 0.0009, 0.0008, 0.0005, 0.0009, -0.0006, 0.0005, 0.0004, -0.0006, 0.0005, 0.0004, 0.0008, 0.0002, 0.0004, 0.0008, 0.0002, 0.0009, 0.0008, 0.0002, 0.0009, 0.0008, 0.0005, 0.0009, 0.0008, 0.0005, 0.0004, 0.0008, 0.0107, 0.0004, 0.0008, 0.0104, 0.0004, 0.0008, 0.0104, 0.0009, 0.0008, 0.0104, 0.0009, 0.0008, 0.0107, 0.0009, 0.0008, 0.0107, 0.0004, 0.0008, 0.0098, -0.0001, -0.0127, 0.0011, -0.0001, -0.0127, 0.0011, -0.0001, 0.0127, 0.0011, -0.0001, 0.0127, 0.0098, -0.0001, 0.0127, 0.0098, -0.0001, -0.0127, 0.0098, 0.0002, -0.0127, 0.0098, 0.0002, 0.0127, 0.0011, 0.0002, 0.0127, 0.0011, 0.0002, 0.0127, 0.0011, 0.0002, -0.0127, 0.0098, 0.0002, -0.0127, 0.0104, -0.0009, 0.0008, 0.0005, -0.0009, 0.0008, 0.0005, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0104, -0.0009, -0.0006, 0.0104, -0.0009, 0.0008, 0.0005, -0.0013, 0.0008, 0.0104, -0.0013, 0.0008, 0.0104, -0.0013, -0.0006, 0.0104, -0.0013, -0.0006, 0.0005, -0.0013, -0.0006, 0.0005, -0.0013, 0.0008, 0.0104, -0.0013, -0.0006, 0.0104, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0009, -0.0006, 0.0005, -0.0013, -0.0006, 0.0104, -0.0013, -0.0006, 0.0005, -0.0013, 0.0008, 0.0005, -0.0009, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0009, 0.0008, 0.0104, -0.0013, 0.0008, 0.0005, -0.0013, 0.0008, 0.0104, 0.0009, 0.0008, 0.0104, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0009, 0.0008, 0.0104, 0.0009, 0.0008, 0.0005, 0.0013, 0.0008, 0.0005, 0.0013, -0.0006, 0.0104, 0.0013, -0.0006, 0.0104, 0.0013, -0.0006, 0.0104, 0.0013, 0.0008, 0.0005, 0.0013, 0.0008, 0.0104, 0.0013, -0.0006, 0.0005, 0.0013, -0.0006, 0.0005, 0.0009, -0.0006, 0.0005, 0.0009, -0.0006, 0.0104, 0.0009, -0.0006, 0.0104, 0.0013, -0.0006, 0.0005, 0.0013, 0.0008, 0.0104, 0.0013, 0.0008, 0.0104, 0.0009, 0.0008, 0.0104, 0.0009, 0.0008, 0.0005, 0.0009, 0.0008, 0.0005, 0.0013, 0.0008)
+
+[sub_resource type="Animation" id="Animation_tmoec"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_65hus"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.5708, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, -1.5708, 0), Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ko6gy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_av46f"]
+_data = {
+"RESET": SubResource("Animation_ko6gy"),
+"close": SubResource("Animation_65hus"),
+"open": SubResource("Animation_tmoec")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oq7rj"]
+size = Vector3(2.2, 2.5, 0.1)
 
 [sub_resource type="Shader" id="Shader_wxk4g"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
@@ -8236,27 +8244,41 @@ transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 
 mesh = SubResource("ArrayMesh_r3amn")
 skeleton = NodePath("")
 
-[node name="entranceDoors" type="Node3D" parent="objects/6twelve"]
+[node name="entranceDoors" type="Node3D" parent="objects" node_paths=PackedStringArray("animationPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.486688, 0)
+script = ExtResource("89_2ogn3")
+animationPlayer = NodePath("AnimationPlayer")
 
-[node name="Door" type="MeshInstance3D" parent="objects/6twelve/entranceDoors"]
-transform = Transform3D(-101.854, 0, 0, 0, 1.21419e-05, 101.854, 0, -101.854, 1.21419e-05, -4.69634, 1.45001, -8.27481)
+[node name="Door" type="MeshInstance3D" parent="objects/entranceDoors"]
+transform = Transform3D(-101.854, 0, 0, 0, 4.45218e-06, 101.854, 0, -101.854, 4.45218e-06, -4.69634, 1.45001, -8.27481)
 mesh = SubResource("ArrayMesh_2sj2r")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="objects/6twelve/entranceDoors/Door"]
+[node name="StaticBody3D" type="StaticBody3D" parent="objects/entranceDoors/Door"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="objects/6twelve/entranceDoors/Door/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="objects/entranceDoors/Door/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bh4r2")
 
-[node name="Door_01" type="MeshInstance3D" parent="objects/6twelve/entranceDoors"]
-transform = Transform3D(101.854, 0, 0, 0, -1.21419e-05, 101.854, 0, -101.854, -1.21419e-05, -6.87957, 1.45001, -8.27481)
+[node name="Door_01" type="MeshInstance3D" parent="objects/entranceDoors"]
+transform = Transform3D(101.854, 0, 0, 0, -4.45218e-06, 101.854, 0, -101.854, -4.45218e-06, -6.87957, 1.45001, -8.27481)
 mesh = SubResource("ArrayMesh_oo7y3")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="objects/6twelve/entranceDoors/Door_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="objects/entranceDoors/Door_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="objects/6twelve/entranceDoors/Door_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="objects/entranceDoors/Door_01/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_adl7f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="objects/entranceDoors"]
+libraries = {
+"": SubResource("AnimationLibrary_av46f")
+}
+
+[node name="Area3D" type="Area3D" parent="objects/entranceDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76696, 1.45001, -8.27481)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="objects/entranceDoors/Area3D"]
+shape = SubResource("BoxShape3D_oq7rj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.0817, -5.66127, 13.3819)
@@ -8267,3 +8289,5 @@ mesh = SubResource("BoxMesh_qtuar")
 [connection signal="timeout" from="CharacterBody3D/Timer" to="CharacterBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="CharacterBody3D/Control/stamminaTimer" to="CharacterBody3D/Control" method="_on_stammina_timer_timeout"]
 [connection signal="timeout" from="CharacterBody3D/Control/recoveryTimer" to="CharacterBody3D/Control" method="_on_recovery_timer_timeout"]
+[connection signal="area_entered" from="objects/entranceDoors/Area3D" to="objects/entranceDoors" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="objects/entranceDoors/Area3D" to="objects/entranceDoors" method="_on_area_3d_area_exited"]
