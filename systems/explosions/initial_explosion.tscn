@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://blwtg0yrpdgxl"]
+
+[ext_resource type="Script" path="res://initialExplosion.gd" id="1_8mcks"]
+[ext_resource type="AudioStream" uid="uid://byeomjsv6mocr" path="res://audios/explosions/initial.mp3" id="2_qtjrm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xh3l3"]
+size = Vector3(5.67432, 1.69421, 3.37598)
+
+[sub_resource type="Animation" id="Animation_b2xux"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_5l6i7"]
+resource_name = "explosion"
+length = 4.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 1.0783,
+"start_offset": 0.3735,
+"stream": ExtResource("2_qtjrm")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tm5bc"]
+_data = {
+"RESET": SubResource("Animation_b2xux"),
+"explosion": SubResource("Animation_5l6i7")
+}
+
+[node name="initialExplosion" type="Area3D" node_paths=PackedStringArray("anim") groups=["initialExplosionArea"]]
+script = ExtResource("1_8mcks")
+anim = NodePath("AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261963, 0.347107, 1.18799)
+shape = SubResource("BoxShape3D_xh3l3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tm5bc")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34891, 0)
+text = "Get Closer to explode"
+font_size = 130
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
