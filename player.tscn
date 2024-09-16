@@ -13,6 +13,7 @@ metallic = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uhf2c"]
 material = SubResource("StandardMaterial3D_uusp1")
+radius = 0.346
 height = 1.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
@@ -28,8 +29,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0.247059)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0syqp"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer") groups=["player"]]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("stepCast", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer") groups=["player"]]
 script = ExtResource("1_oucsa")
+stepCast = NodePath("")
 camera = NodePath("head/vertical/Camera3D")
 shakeFixTimer = NodePath("Timer")
 progressBarControl = NodePath("Control")
@@ -40,6 +42,7 @@ recoveryTimer = NodePath("Control/recoveryTimer")
 shape = SubResource("CapsuleShape3D_1vfes")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_uhf2c")
 
 [node name="head" type="Node3D" parent="."]
@@ -65,9 +68,6 @@ shape = SubResource("CapsuleShape3D_ik1aw")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Control" type="ProgressBar" parent="."]
 visible = false

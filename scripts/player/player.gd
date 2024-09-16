@@ -3,8 +3,9 @@ extends CharacterBody3D
 
 @export_category("Settings Player")
 
-@export var speed = 5
+@export var speed = 4
 @export var  jumpForce = 4.5
+@export var stepCast: ShapeCast3D
 
 @export_category("Settings Camera")
 @export var mouseSensitivity := 0.2
@@ -18,6 +19,8 @@ extends CharacterBody3D
 @export var stamminaTimer: Timer
 @export var recoveryTimer: Timer
 
+
+var grounded = false
 var moving
 var running
 var canRegenStammina
@@ -94,7 +97,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-
 func cameraShake():
 	if ExplosionManager.activeShake == true:
 		x = randf_range(-1.5, 1.7)
@@ -121,7 +123,7 @@ func run():
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
 		if !canRun: return
-		speed = 10
+		speed = 7
 		recoveryTimer.stop()
 		if !running:
 			stamminaTimer.start()
