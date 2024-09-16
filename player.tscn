@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=10 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_oucsa"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="2_me5s2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
+radius = 0.345909
+height = 1.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uusp1"]
 albedo_color = Color(0.282353, 1, 1, 1)
@@ -11,6 +13,10 @@ metallic = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uhf2c"]
 material = SubResource("StandardMaterial3D_uusp1")
+height = 1.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
+size = Vector3(0.2, 0.2, 1.06682)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ik1aw"]
 radius = 0.86841
@@ -34,14 +40,21 @@ recoveryTimer = NodePath("Control/recoveryTimer")
 shape = SubResource("CapsuleShape3D_1vfes")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_uhf2c")
 
 [node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.876241, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559429, 0)
 
 [node name="vertical" type="Node3D" parent="head"]
 
 [node name="Camera3D" type="Camera3D" parent="head/vertical"]
+
+[node name="Area3D" type="Area3D" parent="head/vertical/Camera3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="head/vertical/Camera3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.94936)
+shape = SubResource("BoxShape3D_vj8qa")
 
 [node name="Area3D" type="Area3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)
@@ -86,6 +99,7 @@ wait_time = 0.1
 [node name="recoveryTimer" type="Timer" parent="Control"]
 wait_time = 0.1
 
+[connection signal="body_entered" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/stamminaTimer" to="Control" method="_on_stammina_timer_timeout"]
