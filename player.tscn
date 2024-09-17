@@ -17,7 +17,7 @@ radius = 0.346
 height = 1.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
-size = Vector3(0.2, 0.2, 1.06682)
+size = Vector3(0.2, 0.2, 1.21749)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ik1aw"]
 radius = 0.86841
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833464, 0)
 [node name="Area3D" type="Area3D" parent="head/vertical/Camera3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/vertical/Camera3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.94936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0247)
 shape = SubResource("BoxShape3D_vj8qa")
 
 [node name="Area3D" type="Area3D" parent="." groups=["player"]]
