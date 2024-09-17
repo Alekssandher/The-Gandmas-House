@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
-height = 1.8
+height = 1.68202
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uusp1"]
 albedo_color = Color(0.282353, 1, 1, 1)
@@ -29,9 +29,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0.247059)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0syqp"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("stepCast", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer") groups=["player"]]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer") groups=["player"]]
 script = ExtResource("1_oucsa")
-stepCast = NodePath("")
 camera = NodePath("head/vertical/Camera3D")
 shakeFixTimer = NodePath("Timer")
 progressBarControl = NodePath("Control")

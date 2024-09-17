@@ -6,7 +6,7 @@ var areaIn = false
 
 func _process(delta: float) -> void:
 	if !areaIn: return
-	
+	print("Opa")
 	if Input.is_action_just_pressed("leftClick") and !animationPlayer.is_playing():
 		if !doorOpened:
 			animationPlayer.play("open")
