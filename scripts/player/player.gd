@@ -30,6 +30,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var camVertical := 0
 var initialRotation: Vector3
 
+var mouseVisibility
+
 #Obiovisily?
 var input_dir
 var direction
@@ -55,8 +57,13 @@ func _input(event: InputEvent) -> void:
 		
 		$head/vertical.rotation_degrees.x = camVertical
 		
-	if Input.is_action_just_pressed("esc"):
+	if Input.is_action_just_pressed("esc") and !mouseVisibility:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		mouseVisibility = true
+		
+	elif Input.is_action_just_pressed("esc") and mouseVisibility:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		mouseVisibility = false
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
