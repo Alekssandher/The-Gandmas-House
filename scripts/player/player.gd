@@ -5,7 +5,7 @@ extends CharacterBody3D
 
 @export var speed = 4
 @export var  jumpForce = 4.5
-@export var stepCast: ShapeCast3D
+
 
 @export_category("Settings Camera")
 @export var mouseSensitivity := 0.2
@@ -19,7 +19,7 @@ extends CharacterBody3D
 @export var stamminaTimer: Timer
 @export var recoveryTimer: Timer
 
-
+@export var animationPlayer: AnimationPlayer
 var grounded = false
 var moving
 var running
@@ -96,6 +96,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		animationPlayer.play("walking")
 		moving = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)

@@ -18,10 +18,7 @@ func _process(delta: float) -> void:
 		else:
 			animationPlayer.play("close")
 			doorOpened = false
-	#if playerInsideHouse && !doorOpened:
-		#worldEnviroment.environment.fog_enabled = false
-	#else: 
-		#worldEnviroment.environment.fog_enabled = true
+	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	interactableAreaIn = true
 
@@ -38,6 +35,9 @@ func _on_area_3d_2_body_exited(body: Node3D) -> void:
 func fogOff():
 	if playerInsideHouse && !doorOpened:
 		worldEnviroment.environment.fog_enabled = false
+		worldEnviroment.environment.volumetric_fog_enabled = false
+		
 func fogOn():
-	
 	worldEnviroment.environment.fog_enabled = true
+	worldEnviroment.environment.volumetric_fog_enabled = true
+	
