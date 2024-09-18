@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var animationPlayer: AnimationPlayer
-@export var worldEnviroment: WorldEnvironment
+@onready var worldEnviroment = $/root/world/WorldEnvironment
 
 var doorOpened = false
 var interactableAreaIn = false
