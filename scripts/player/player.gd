@@ -19,7 +19,12 @@ extends CharacterBody3D
 @export var stamminaTimer: Timer
 @export var recoveryTimer: Timer
 
+@export_category("Settings Footsteps")
 @export var animationPlayer: AnimationPlayer
+@export var footstepAudio: AudioStreamPlayer3D
+@export var footstepsTimer: Timer
+@export var footstepsTimerRunning: Timer
+
 var grounded = false
 var moving
 var running
@@ -79,24 +84,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpForce
 		
-		
-	# Get the input direction and handle the movement/deceleration.
-	
-	#explosion test
-	#if Input.is_action_just_pressed("leftClick"):
-		#ExplosionManager.activeShake = true
-		#shakeFixTimer.start()
-		#
 	#Func to run
 	run()
+	
 	checkStammina()
 	cameraShake()
+	
 	input_dir = Input.get_vector("left", "right", "up", "down")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 		animationPlayer.play("walking")
+		footsteps()
 		moving = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
@@ -157,8 +157,19 @@ func checkStammina():
 		canRegenStammina = true
 		canRun = true
 		
-
-
+func footsteps():
+	if running and canRun:
+		if !is_on_floor(): return
+		if footstepsTimer.time_left <= 0:
+			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
+			footstepAudio.play()
+			footstepsTimer.start(0.3)
+	else:
+		if !is_on_floor(): return
+		if footstepsTimer.time_left <= 0:
+			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
+			footstepAudio.play()
+			footstepsTimer.start(0.6)
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("player"):
 		print("Body entered")

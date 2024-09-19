@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://blwtg0yrpdgxl"]
 
-[ext_resource type="Script" path="res://initialExplosion.gd" id="1_8mcks"]
+[ext_resource type="Script" path="res://systems/initialExplosion.gd" id="1_8mcks"]
 [ext_resource type="AudioStream" uid="uid://byeomjsv6mocr" path="res://audios/explosions/initial.mp3" id="2_qtjrm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xh3l3"]

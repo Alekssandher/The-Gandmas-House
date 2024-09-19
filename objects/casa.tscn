@@ -1,4 +1,4 @@
-[gd_scene load_steps=221 format=4 uid="uid://dfmnga7f5breo"]
+[gd_scene load_steps=222 format=4 uid="uid://dfmnga7f5breo"]
 
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="1_t2xsv"]
 [ext_resource type="Texture2D" uid="uid://u1mnnwixovb4" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Pared.jpg" id="2_wrsri"]
@@ -2896,6 +2896,9 @@ size = Vector3(13.8976, 0.289673, 2.40921)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyxq8"]
 size = Vector3(0.288269, 1.70053, 0.289063)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dntch"]
+size = Vector3(7.65767, 6.752, 0.195)
+
 [node name="Casa" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.856, 3.07552, -126.222)
 mesh = SubResource("ArrayMesh_7u6v1")
@@ -3373,6 +3376,13 @@ shape = SubResource("BoxShape3D_nyxq8")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="walls/front/pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2507, -0.304947, -0.000976563)
 shape = SubResource("BoxShape3D_nyxq8")
+
+[node name="backSideWall" type="StaticBody3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0509, 0.695435, -6.41963)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/backSideWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59781, -0.708553, 1.44977)
+shape = SubResource("BoxShape3D_dntch")
 
 [connection signal="area_entered" from="entranceDoor/Area3D" to="entranceDoor/Puerta" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="entranceDoor/Area3D" to="entranceDoor/Puerta" method="_on_area_3d_area_exited"]
