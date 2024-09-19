@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export_category("Settings Player")
 
-@export var speed = 4
+@export var speed = 3
 @export var  jumpForce = 4.5
 
 
@@ -20,10 +20,10 @@ extends CharacterBody3D
 @export var recoveryTimer: Timer
 
 @export_category("Settings Footsteps")
-@export var animationPlayer: AnimationPlayer
 @export var footstepAudio: AudioStreamPlayer3D
 @export var footstepsTimer: Timer
 @export var footstepsTimerRunning: Timer
+var cameraTween: Tween
 
 var grounded = false
 var moving
@@ -47,6 +47,7 @@ var z
 
 
 func _ready():
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#GameManager.gameOver = false
 	
@@ -95,12 +96,13 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
-		animationPlayer.play("walking")
 		footsteps()
 		moving = true
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		camera.position = Vector3(0, 0, 0)
 		moving = false
 
 	move_and_slide()
@@ -131,14 +133,14 @@ func run():
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
 		if !canRun: return
-		speed = 7
+		speed = 5
 		recoveryTimer.stop()
 		if !running:
 			stamminaTimer.start()
 		running = true
 		
 	else:
-		speed = 5
+		speed = 3
 		
 	if Input.is_action_just_released("shift"):
 		stamminaTimer.stop()
@@ -164,12 +166,18 @@ func footsteps():
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
 			footstepsTimer.start(0.3)
+			animateCameraTween(1)
+			
 	else:
 		if !is_on_floor(): return
 		if footstepsTimer.time_left <= 0:
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
 			footstepsTimer.start(0.6)
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if not body.is_in_group("player"):
-		print("Body entered")
+			animateCameraTween(2)
+func animateCameraTween(check):
+	cameraTween = get_tree().create_tween()
+	if check == 1:
+		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.3), 0), 0.1)
+	elif check == 2:
+		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.3), 0), 0.3)
