@@ -19199,8 +19199,10 @@ shadow_mesh = SubResource("ArrayMesh_6asjm")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnc0p"]
 size = Vector3(6.11164, 0.1, 1.56335)
 
-[node name="world" type="Node3D"]
+[node name="world" type="Node3D" node_paths=PackedStringArray("worldEnvironment", "directionalLight")]
 script = ExtResource("1_jb8xp")
+worldEnvironment = NodePath("WorldEnvironment")
+directionalLight = NodePath("DirectionalLight3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qepwa")
@@ -19217,7 +19219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, -0.02550
 shape = SubResource("BoxShape3D_cgvys")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.457098, 0.889417, 0, -0.889417, 0.457098, 0, 45.3064, 0)
+transform = Transform3D(1, 0, 0, 0, 0.582478, 0.812847, 0, -0.812847, 0.582478, 0, 45.3064, 0)
 light_energy = 0.2
 light_bake_mode = 1
 shadow_enabled = true
