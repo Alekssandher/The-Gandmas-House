@@ -183,6 +183,6 @@ func footsteps():
 func animateCameraTween(check):
 	cameraTween = get_tree().create_tween()
 	if check == 1:
-		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.3), 0), 0.1)
+		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.1)
 	elif check == 2:
 		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.4)
