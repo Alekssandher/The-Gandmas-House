@@ -25,6 +25,7 @@ extends CharacterBody3D
 @export var footstepsTimerRunning: Timer
 var cameraTween: Tween
 
+var collision
 var grounded = false
 var moving
 var running
@@ -44,7 +45,7 @@ var direction
 var x
 var y
 var z
-
+var i
 
 func _ready():
 	
@@ -84,10 +85,11 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpForce
-		
+	
+	
 	#Func to run
 	run()
-	
+	checkCollision()
 	checkStammina()
 	cameraShake()
 	
@@ -106,7 +108,10 @@ func _physics_process(delta):
 		moving = false
 
 	move_and_slide()
-	
+
+func checkCollision():
+	pass
+
 func cameraShake():
 	if ExplosionManager.activeShake == true:
 		x = randf_range(-1.5, 1.7)
@@ -173,11 +178,11 @@ func footsteps():
 		if footstepsTimer.time_left <= 0:
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
-			footstepsTimer.start(0.6)
-			animateCameraTween(2)
+			footstepsTimer.start(0.65)
+			
 func animateCameraTween(check):
 	cameraTween = get_tree().create_tween()
 	if check == 1:
 		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.3), 0), 0.1)
 	elif check == 2:
-		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.3), 0), 0.3)
+		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.4)

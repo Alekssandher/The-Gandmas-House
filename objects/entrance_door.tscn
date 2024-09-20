@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=14 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_lkl6u"]
 [ext_resource type="Script" path="res://systems/doors/entrance_doors.gd" id="2_f0qb0"]
+[ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="3_jyxiq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05suq"]
 resource_name = "Puerta"
@@ -84,6 +85,21 @@ tracks/1/keys = {
 "method": &"fogOff"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.3837,
+"start_offset": 2.4563,
+"stream": ExtResource("3_jyxiq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5yads"]
 resource_name = "open"
@@ -113,6 +129,21 @@ tracks/1/keys = {
 "method": &"fogOn"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 2.64,
+"start_offset": 0.2,
+"stream": ExtResource("3_jyxiq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qb1ua"]
 _data = {
@@ -132,12 +163,13 @@ size = Vector3(2.00757, 1, 3.90473)
 
 [node name="entranceDoor" type="Node3D"]
 
-[node name="Puerta" type="MeshInstance3D" parent="." node_paths=PackedStringArray("animationPlayer")]
+[node name="Puerta" type="MeshInstance3D" parent="." node_paths=PackedStringArray("animationPlayer", "audio")]
 transform = Transform3D(-1.09373, 0, 0, 0, 1, -2.53518e-06, 0, 2.53518e-06, 1, 6.88587, -2.32892, 8.25746)
 mesh = SubResource("ArrayMesh_vl2h1")
 skeleton = NodePath("")
 script = ExtResource("2_f0qb0")
 animationPlayer = NodePath("AnimationPlayer")
+audio = NodePath("../AudioStreamPlayer3D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Puerta"]
 libraries = {
@@ -163,6 +195,9 @@ transform = Transform3D(-1.09373, 8.74228e-08, 8.74228e-08, 9.56169e-08, 1, 0, 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(1, -6.10897e-22, 0, -7.30775e-22, 1, 0, 0, -8.21622e-20, 1, -0.031858, 0, -0.540373)
 shape = SubResource("BoxShape3D_21ai7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 
 [connection signal="area_entered" from="Area3D" to="Puerta" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="Puerta" method="_on_area_3d_area_exited"]

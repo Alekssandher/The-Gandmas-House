@@ -3,6 +3,7 @@ extends Node3D
 @export var animationPlayer: AnimationPlayer
 @onready var worldEnviroment = $/root/world/WorldEnvironment
 
+@export var audio: AudioStreamPlayer3D
 var doorOpened = false
 var interactableAreaIn = false
 var playerInsideHouse = false
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("leftClick") and !animationPlayer.is_playing():
 		if !doorOpened:
 			animationPlayer.play("open")
+			
 			doorOpened = true
 		
 		else:
