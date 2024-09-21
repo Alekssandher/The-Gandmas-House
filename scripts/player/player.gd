@@ -3,8 +3,8 @@ extends CharacterBody3D
 
 @export_category("Settings Player")
 
-@export var speed = 3
-@export var  jumpForce = 4.5
+@export var speed: Int = 3
+@export var  jumpForce: Float = 4.5
 
 
 @export_category("Settings Camera")
@@ -26,17 +26,18 @@ extends CharacterBody3D
 var cameraTween: Tween
 
 var collision
-var grounded = false
-var moving
-var running
-var canRegenStammina
-var canRun = true
+var grounded: Bool = false
+var moving: Bool
+var running: Bool
+var canRegenStammina: Bool
+var canRun: Bool = true
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity := ProjectSettings.get_setting("physics/3d/default_gravity")
 var camVertical := 0
 var initialRotation: Vector3
 
-var mouseVisibility
+var mouseVisibility: Bool
 
 #Obiovisily?
 var input_dir
