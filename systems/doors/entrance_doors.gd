@@ -4,11 +4,11 @@ extends Node3D
 @onready var worldEnviroment = $/root/world/WorldEnvironment
 
 @export var audio: AudioStreamPlayer3D
-var doorOpened = false
-var interactableAreaIn = false
-var playerInsideHouse = false
+var doorOpened := false
+var interactableAreaIn := false
+var playerInsideHouse := false
 
-func _process(delta: float) -> void:
+func _process() -> void:
 	if !interactableAreaIn: return
 	print("Opa")
 	if Input.is_action_just_pressed("leftClick") and !animationPlayer.is_playing():
@@ -34,12 +34,12 @@ func _on_area_3d_2_body_entered(body: Node3D) -> void:
 func _on_area_3d_2_body_exited(body: Node3D) -> void:
 	playerInsideHouse = false
 
-func fogOff():
+func fogOff() -> void:
 	if playerInsideHouse && !doorOpened:
 		worldEnviroment.environment.fog_enabled = false
 		worldEnviroment.environment.volumetric_fog_enabled = false
 		
-func fogOn():
+func fogOn() -> void:
 	worldEnviroment.environment.fog_enabled = true
 	worldEnviroment.environment.volumetric_fog_enabled = true
 	
