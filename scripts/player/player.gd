@@ -55,7 +55,7 @@ func _ready():
 	
 	initialRotation = camera.rotation_degrees
 	
-#Rotação da camera 
+#Camera move and mouse Input 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouseSensitivity))
