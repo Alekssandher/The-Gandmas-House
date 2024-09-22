@@ -1,7 +1,7 @@
 extends SpotLight3D
 
 
-func _input(event: InputEvent) -> void:
+func _input() -> void:
 	if Input.is_action_just_pressed("interact"):
 		
 		if visible: visible = false
