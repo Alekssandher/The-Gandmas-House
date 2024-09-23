@@ -171,7 +171,7 @@ func footsteps() -> void:
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
 			footstepsTimer.start(0.3)
-			animateCameraTween(1)
+			animateCameraTween()
 			
 	else:
 		if !is_on_floor(): return
@@ -180,9 +180,9 @@ func footsteps() -> void:
 			footstepAudio.play()
 			footstepsTimer.start(0.65)
 			
-func animateCameraTween(check: int) -> void:
+func animateCameraTween() -> void:
 	cameraTween = get_tree().create_tween()
-	if check == 1:
-		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.1)
-	elif check == 2:
-		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.4)
+	
+	cameraTween.tween_property(camera, "position", Vector3(0, 0.1, 0), 0.1)
+	cameraTween.tween_property(camera, "position", Vector3(0, 0, 0), 0.1)
+	
