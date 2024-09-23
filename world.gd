@@ -4,5 +4,5 @@ extends Node3D
 @export var worldEnvironment: WorldEnvironment
 @export var directionalLight: DirectionalLight3D
 
-func ready():
+func ready() -> void:
 	pass

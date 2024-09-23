@@ -1,4 +1,4 @@
 extends Node
 
-var activeShake = false
-var initialExplosion = false
+var activeShake := false
+var initialExplosion := false

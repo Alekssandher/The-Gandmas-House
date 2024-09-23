@@ -3,8 +3,8 @@ extends CharacterBody3D
 
 @export_category("Settings Player")
 
-@export var speed: Int = 3
-@export var  jumpForce: Float = 4.5
+@export var speed: int = 3
+@export var  jumpForce: float = 4.5
 
 
 @export_category("Settings Camera")
@@ -25,30 +25,31 @@ extends CharacterBody3D
 @export var footstepsTimerRunning: Timer
 var cameraTween: Tween
 
-var collision
-var grounded: Bool = false
-var moving: Bool
-var running: Bool
-var canRegenStammina: Bool
-var canRun: Bool = true
+var collision: bool
+var grounded: bool = false
+var moving: bool
+var running: bool
+var canRegenStammina: bool
+var canRun: bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity := ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var camVertical := 0
 var initialRotation: Vector3
 
-var mouseVisibility: Bool
+var mouseVisibility: bool
 
 #Obiovisily?
-var input_dir
-var direction
-#Positions for shake
-var x
-var y
-var z
-var i
+var input_dir := Vector2(0, 0)
+var direction := Vector3(0, 0, 0)
 
-func _ready():
+#Positions for shake
+var x: float = 0.0
+var y: float = 0.0
+var z: float = 0.0
+
+
+func _ready() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#GameManager.gameOver = false
@@ -65,24 +66,22 @@ func _input(event: InputEvent) -> void:
 		
 		$head/vertical.rotation_degrees.x = camVertical
 		
-	if Input.is_action_just_pressed("esc") and !mouseVisibility:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		mouseVisibility = true
-		
-	elif Input.is_action_just_pressed("esc") and mouseVisibility:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		mouseVisibility = false
+	if Input.is_action_just_pressed("esc"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if !mouseVisibility else Input.MOUSE_MODE_CAPTURED)
+		mouseVisibility = !mouseVisibility
+
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 		
 	
+
+func _physics_process(delta: float) -> void:
 	
-func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpForce
@@ -110,10 +109,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func checkCollision():
+func checkCollision() -> void:
 	pass
 
-func cameraShake():
+func cameraShake() -> void:
 	if ExplosionManager.activeShake == true:
 		x = randf_range(-1.5, 1.7)
 		y = randf_range(-1.5, 1.7)
@@ -135,7 +134,7 @@ func cameraShake():
 #func _on_area_3d_area_entered(area):
 	#if area.is_in_group("initialExplosionArea"):
 		#shakeFixTimer.start()
-func run():
+func run() -> void:
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
 		if !canRun: return
@@ -156,7 +155,7 @@ func run():
 			recoveryTimer.start()
 		
 		running = false
-func checkStammina():
+func checkStammina() -> void:
 	if progressBarControl.value == 0:
 		canRun = false
 		
@@ -165,7 +164,7 @@ func checkStammina():
 		canRegenStammina = true
 		canRun = true
 		
-func footsteps():
+func footsteps() -> void:
 	if running and canRun:
 		if !is_on_floor(): return
 		if footstepsTimer.time_left <= 0:
@@ -181,7 +180,7 @@ func footsteps():
 			footstepAudio.play()
 			footstepsTimer.start(0.65)
 			
-func animateCameraTween(check):
+func animateCameraTween(check: int) -> void:
 	cameraTween = get_tree().create_tween()
 	if check == 1:
 		cameraTween.tween_property(camera, "position", Vector3(0, randf_range(0, 0.2), 0), 0.1)
