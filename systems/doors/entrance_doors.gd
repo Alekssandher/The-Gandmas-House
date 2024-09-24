@@ -2,6 +2,7 @@ extends Node3D
 
 @export var animationPlayer: AnimationPlayer
 @onready var worldEnviroment: WorldEnvironment = $/root/world/WorldEnvironment
+@onready var type: CanvasLayer = $/root/world/CanvasLayer
 
 @export var audio: AudioStreamPlayer3D
 var doorOpened := false
@@ -17,7 +18,8 @@ func _process(delta: float) -> void:
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	interactableAreaIn = true
-
+	World.typingEffect("Hello world")
+	
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	interactableAreaIn = false
 

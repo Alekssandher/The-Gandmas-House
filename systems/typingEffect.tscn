@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://q760kvha4dqx"]
+
+[ext_resource type="Script" path="res://systems/typingEffect.gd" id="1_ewmhf"]
+[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_lfky0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fx2h"]
+font = ExtResource("2_lfky0")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ewmhf")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -91.0
+offset_right = 31.5
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "asd asd "
+label_settings = SubResource("LabelSettings_0fx2h")

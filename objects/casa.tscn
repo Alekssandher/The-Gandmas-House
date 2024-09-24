@@ -2986,13 +2986,13 @@ size = Vector3(16.9536, 0.334575, 5.01512)
 size = Vector3(1.60071, 0.195, 5.16238)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jt27a"]
-size = Vector3(1.56403, 0.195, 2.03181)
+size = Vector3(0.95047, 0.195, 2.03181)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqa3d"]
 size = Vector3(1.69867, 0.298506, 5.07375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mioqx"]
-size = Vector3(1.88358, 0.687988, 3.34473)
+size = Vector3(2.40241, 0.687988, 3.34473)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jkb6"]
 size = Vector3(0.105849, 5.87469, 1.48191)
@@ -4010,7 +4010,7 @@ shape = SubResource("BoxShape3D_tiq65")
 transform = Transform3D(1, 0, 0, 0, 0.845756, -0.53357, 0, 0.53357, 0.845756, -14.8118, 1.51055, 2.03835)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wallsCollisions/insideWalls/upstairs/attic/roof/StaticBody3D7"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, -0.0289612, 0.248299, -1.48365)
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0.277817, 0.248299, -1.48365)
 shape = SubResource("BoxShape3D_jt27a")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="wallsCollisions/insideWalls/upstairs/attic/roof"]
@@ -4024,7 +4024,7 @@ shape = SubResource("BoxShape3D_kqa3d")
 transform = Transform3D(1, 0, 0, 0, 0.887839, -0.460153, 0, 0.460153, 0.887839, -16.1984, 3.06005, 0.813469)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wallsCollisions/insideWalls/upstairs/attic/roof/StaticBody3D9"]
-transform = Transform3D(0.822093, 0.566631, 0.0556107, -0.568748, 0.812784, 0.126131, 0.0262701, -0.13532, 0.990454, -0.215855, 0.250706, -0.73494)
+transform = Transform3D(0.862872, 0.498312, 0.0844829, -0.505381, 0.852834, 0.131399, -0.00657199, -0.156077, 0.987723, -0.000801086, 0.0323792, -0.69146)
 shape = SubResource("BoxShape3D_mioqx")
 
 [node name="entranceDoor2" parent="." instance=ExtResource("29_katat")]

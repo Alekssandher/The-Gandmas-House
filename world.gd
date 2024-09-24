@@ -4,5 +4,31 @@ extends Node3D
 @export var worldEnvironment: WorldEnvironment
 @export var directionalLight: DirectionalLight3D
 
-func ready() -> void:
+var label: Label
+var chars := []
+var textList := []
+var isTyping := false
+func _ready() -> void:
 	pass
+	
+
+func typingEffect(text: String) -> void:
+	
+	if isTyping: return
+	isTyping = true
+	chars = text.split("")  
+	
+	for i: String in chars:
+		textList.append(i)
+		text = "".join(textList)
+		label.text = text
+		await get_tree().create_timer(0.1).timeout
+		
+	await get_tree().create_timer(1.5).timeout
+	resetVars()
+	
+func resetVars() -> void:
+	isTyping = false
+	label.text = ""
+	chars = []
+	textList = []
