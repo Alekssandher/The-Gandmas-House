@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 	
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	interactableAreaIn = true
-	World.typingEffect("Hello world")
+	print(interactableAreaIn)
+	await World.typingEffect("Hello world")
+	await World.typingEffect("Yeah, it works")
 	
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	interactableAreaIn = false
