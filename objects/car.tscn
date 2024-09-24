@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bm8a848nb6fwq"]
+
+[ext_resource type="Texture2D" uid="uid://dcfgw0o5kejdh" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/car_snow.png" id="1_ki1xj"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="2_bg1lv"]
+[ext_resource type="ArrayMesh" uid="uid://cvj6jcxh6meep" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/Car.obj" id="2_pv2e0"]
+[ext_resource type="Script" path="res://systems/interactableObj.gd" id="3_qkwwu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m52rn"]
+albedo_texture = ExtResource("1_ki1xj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucpf0"]
+size = Vector3(3.8252, 2.14673, 6.45532)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6l8o"]
+size = Vector3(2.08209, 1.35938, 5.72839)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aw208"]
+size = Vector3(2.02777, 0.614807, 3.24405)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crj5x"]
+size = Vector3(1.99911, 1.14258, 0.195801)
+
+[node name="Car" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.997926, -0.0643756, 0, 0.0643756, 0.997926, -39.9685, -0.0359078, -3.06626)
+material_override = SubResource("StandardMaterial3D_m52rn")
+mesh = ExtResource("2_pv2e0")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172119, 1.03967, 0.10611)
+shape = SubResource("BoxShape3D_ucpf0")
+
+[node name="Interactable" type="Node" parent="." node_paths=PackedStringArray("mesh")]
+script = ExtResource("3_qkwwu")
+counterMaterial = ExtResource("2_bg1lv")
+mesh = NodePath("..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1.00001, -0.0365295, 0.807657, 0.00112128)
+shape = SubResource("BoxShape3D_e6l8o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677185, 1.7314, -0.699785)
+shape = SubResource("BoxShape3D_aw208")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.868157, 0.496293, 0, -0.496293, 0.868157, -0.0111809, 1.5564, 1.06416)
+shape = SubResource("BoxShape3D_crj5x")
+
+[connection signal="area_entered" from="Area3D" to="Interactable" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="Interactable" method="_on_area_3d_area_exited"]

@@ -12,8 +12,10 @@ func _ready() -> void:
 	pass
 	
 
-func typingEffect(text: String) -> void:
-	
+func typingEffect(text: String, charTime: float, awaitTime: float) -> void:
+	#Default values
+	#charTime = 0.1 && awaitTime = 1.5
+
 	if isTyping: return
 	isTyping = true
 	chars = text.split("")  
@@ -22,9 +24,10 @@ func typingEffect(text: String) -> void:
 		textList.append(i)
 		text = "".join(textList)
 		label.text = text
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(charTime).timeout
 		
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(awaitTime).timeout
+	
 	resetVars()
 	
 func resetVars() -> void:

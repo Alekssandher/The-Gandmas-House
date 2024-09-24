@@ -32,6 +32,11 @@ window/vsync/vsync_mode=0
 
 import/blender/enabled=false
 
+[global_group]
+
+interactable="Nodes that the player can interact"
+playerAim=""
+
 [input]
 
 right={

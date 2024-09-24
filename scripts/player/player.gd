@@ -184,3 +184,11 @@ func animateCameraTween() -> void:
 	cameraTween.tween_property(camera, "position", Vector3(0, 0.1, 0), 0.1)
 	cameraTween.tween_property(camera, "position", Vector3(0, 0, 0), 0.1)
 	
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area.is_in_group("interactable"):
+		print("interactable")
+
+
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	pass # Replace with function body.

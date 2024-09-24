@@ -1,13 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=15 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_lkl6u"]
 [ext_resource type="Script" path="res://systems/doors/entrance_doors.gd" id="2_f0qb0"]
 [ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="3_jyxiq"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="5_q2281"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05suq"]
 resource_name = "Puerta"
+next_pass = ExtResource("5_q2281")
 cull_mode = 2
+diffuse_mode = 3
 albedo_texture = ExtResource("1_lkl6u")
+metallic_specular = 0.0
+roughness = 0.0
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xdfqr"]
@@ -182,24 +187,24 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442932, 0.103882, 0.00311279)
 shape = SubResource("BoxShape3D_rvp8k")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="door" type="Area3D" parent="." groups=["interactable"]]
 transform = Transform3D(1, -1.50996e-07, -1.50996e-07, -1.50996e-07, -1, 1.14631e-19, -1.50996e-07, 2.27996e-14, -1, 7.35713, -2.22462, 8.22201)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="door"]
 transform = Transform3D(1, 7.99311e-08, 7.99307e-08, -9.56169e-08, 1, -2.53518e-06, -9.56169e-08, 2.53518e-06, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_xkdnx")
 
-[node name="Area3D2" type="Area3D" parent="."]
+[node name="box" type="Area3D" parent="."]
 transform = Transform3D(1, -1.50996e-07, -1.50996e-07, -1.50996e-07, -1, 2.82335e-21, -1.50996e-07, 2.27997e-14, -1, 7.34528, -2.32893, 4.95074)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box"]
 transform = Transform3D(1, -6.10897e-22, 0, -7.30775e-22, 1, 0, 0, -8.21622e-20, 1, -0.031858, 0, -0.540373)
 shape = SubResource("BoxShape3D_21ai7")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 
-[connection signal="area_entered" from="Area3D" to="Puerta" method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="Puerta" method="_on_area_3d_area_exited"]
-[connection signal="body_entered" from="Area3D2" to="Puerta" method="_on_area_3d_2_body_entered"]
-[connection signal="body_exited" from="Area3D2" to="Puerta" method="_on_area_3d_2_body_exited"]
+[connection signal="area_entered" from="door" to="Puerta" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="door" to="Puerta" method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="box" to="Puerta" method="_on_area_3d_2_body_entered"]
+[connection signal="body_exited" from="box" to="Puerta" method="_on_area_3d_2_body_exited"]

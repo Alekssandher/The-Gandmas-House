@@ -19,7 +19,7 @@ radius = 0.346
 height = 1.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
-size = Vector3(0.0458984, 0.0703125, 1.2286)
+size = Vector3(0.0458984, 0.0703125, 1.34184)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ik1aw"]
 radius = 0.86841
@@ -43,7 +43,7 @@ _data = {
 "walking": SubResource("Animation_pysxj")
 }
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer") groups=["player"]]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer")]
 script = ExtResource("1_oucsa")
 camera = NodePath("head/vertical/Camera3D")
 shakeFixTimer = NodePath("Timer")
@@ -67,10 +67,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833464, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head/vertical"]
 
-[node name="Area3D" type="Area3D" parent="head/vertical/Camera3D"]
+[node name="Area3D" type="Area3D" parent="head/vertical/Camera3D" groups=["playerAim"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/vertical/Camera3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.765291)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.821911)
 shape = SubResource("BoxShape3D_vj8qa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head/vertical/Camera3D"]
@@ -78,7 +78,7 @@ spot_range = 6.844
 spot_angle = 43.0
 script = ExtResource("2_8mmd1")
 
-[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+[node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)
 visible = false
 
@@ -132,6 +132,8 @@ one_shot = true
 stream = ExtResource("3_s6vu5")
 volume_db = 20.0
 
+[connection signal="area_entered" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="body_entered" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/stamminaTimer" to="Control" method="_on_stammina_timer_timeout"]
