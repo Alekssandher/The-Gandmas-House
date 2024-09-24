@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export_category("Settings Player")
 
 @export var speed: int = 3
-@export var  jumpForce: float = 4.5
+@export var  jumpForce: float = 3.5
 
 
 @export_category("Settings Camera")
