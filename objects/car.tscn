@@ -50,5 +50,42 @@ shape = SubResource("BoxShape3D_aw208")
 transform = Transform3D(1, 0, 0, 0, 0.868157, 0.496293, 0, -0.496293, 0.868157, -0.0111809, 1.5564, 1.06416)
 shape = SubResource("BoxShape3D_crj5x")
 
+[node name="lights" type="Node3D" parent="."]
+visible = false
+
+[node name="headlight" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 5.77316e-15, -8.74228e-08, 5.77316e-15, 1, 0, 8.74228e-08, 0, -1, -0.956604, 1.24264, -3.06164)
+light_color = Color(0.751817, 0, 0.0770394, 1)
+light_energy = 5.848
+light_volumetric_fog_energy = 1.97
+shadow_transmittance_bias = -0.05
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_length = 15.0
+omni_range = 0.657
+
+[node name="headlight2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 5.77316e-15, -8.74228e-08, 5.77316e-15, 1, 0, 8.74228e-08, 0, -1, 0.972977, 1.22264, -2.97746)
+light_color = Color(0.751817, 0, 0.0770394, 1)
+light_energy = 5.848
+light_volumetric_fog_energy = 1.97
+shadow_transmittance_bias = -0.05
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_length = 15.0
+omni_range = 0.657
+
+[node name="SpotLight3D" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 4.88498e-15, -8.74228e-08, 4.88498e-15, 1, 0, 8.74228e-08, 0, -1, -0.838795, 0.816506, 2.99754)
+shadow_enabled = true
+omni_range = 0.544
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 4.44089e-15, -8.74228e-08, 4.44089e-15, 1, 0, 8.74228e-08, 0, -1, 0.825554, 0.859732, 2.99476)
+shadow_enabled = true
+omni_range = 0.544
+
 [connection signal="area_entered" from="Area3D" to="Interactable" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="Interactable" method="_on_area_3d_area_exited"]

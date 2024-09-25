@@ -49,7 +49,8 @@ var x: float = 0.0
 var y: float = 0.0
 var z: float = 0.0
 
-
+var lookedAtCar := false
+var lookBlocked := false
 func _ready() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -200,8 +201,19 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 
 
 func _on_long_view_area_entered(area: Area3D) -> void:
-	var i := false
-	if i: return
+	
+	if lookedAtCar or lookBlocked: return
+	
 	if area.is_in_group("car"):
 		await World.typingEffect("Is that my grandma's car?", 0.1, 2)
-		i = true
+		lookedAtCar = true
+
+
+func _on_long_view_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"): return
+	lookBlocked = true
+	
+
+
+func _on_long_view_body_exited(body: Node3D) -> void:
+	lookBlocked = false
