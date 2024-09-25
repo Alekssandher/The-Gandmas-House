@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqnwi6gbk1ewl"
+path="res://.godot/imported/7- Eilen.mp3-180e8710abf23952db21a7149447d0c7.mp3str"
+
+[deps]
+
+source_file="res://audios/Mind's Eye Pack/Pack/7- Eilen.mp3"
+dest_files=["res://.godot/imported/7- Eilen.mp3-180e8710abf23952db21a7149447d0c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

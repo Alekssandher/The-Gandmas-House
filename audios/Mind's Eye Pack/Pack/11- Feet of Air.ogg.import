@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc3h5i0btdx8b"
+path="res://.godot/imported/11- Feet of Air.ogg-9bcabd38c5ec351ae2cb646c8036ba3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audios/Mind's Eye Pack/Pack/11- Feet of Air.ogg"
+dest_files=["res://.godot/imported/11- Feet of Air.ogg-9bcabd38c5ec351ae2cb646c8036ba3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

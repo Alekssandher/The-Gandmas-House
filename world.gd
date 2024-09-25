@@ -11,7 +11,6 @@ var isTyping := false
 func _ready() -> void:
 	pass
 	
-
 func typingEffect(text: String, charTime: float, awaitTime: float) -> void:
 	#Default values
 	#charTime = 0.1 && awaitTime = 1.5

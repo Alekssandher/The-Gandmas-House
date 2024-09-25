@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwcjtub2tgc2t"
+path="res://.godot/imported/1- Midnight Dreams.ogg-339fa4d0d584b660ea56d6cb349c6bce.oggvorbisstr"
+
+[deps]
+
+source_file="res://audios/Mind's Eye Pack/Pack/1- Midnight Dreams.ogg"
+dest_files=["res://.godot/imported/1- Midnight Dreams.ogg-339fa4d0d584b660ea56d6cb349c6bce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

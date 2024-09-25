@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6xhxmv3kbhod"
+path="res://.godot/imported/8- Quiet.ogg-f952e16e216635263dae2f3574456226.oggvorbisstr"
+
+[deps]
+
+source_file="res://audios/Mind's Eye Pack/Pack/8- Quiet.ogg"
+dest_files=["res://.godot/imported/8- Quiet.ogg-f952e16e216635263dae2f3574456226.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

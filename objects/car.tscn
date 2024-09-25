@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 0.997926, -0.0643756, 0, 0.0643756, 0.997926
 material_override = SubResource("StandardMaterial3D_m52rn")
 mesh = ExtResource("2_pv2e0")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["car", "interactable"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172119, 1.03967, 0.10611)
@@ -39,7 +39,7 @@ mesh = NodePath("..")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1.00001, -0.0365295, 0.807657, 0.00112128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365295, 0.807657, 0.00112128)
 shape = SubResource("BoxShape3D_e6l8o")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]

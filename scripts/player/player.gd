@@ -38,6 +38,7 @@ var camVertical := 0
 var initialRotation: Vector3
 
 var mouseVisibility: bool
+var screenMode: bool
 
 #Obiovisily?
 var input_dir := Vector2(0, 0)
@@ -69,8 +70,12 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("esc"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if !mouseVisibility else Input.MOUSE_MODE_CAPTURED)
 		mouseVisibility = !mouseVisibility
-
 	
+	if Input.is_action_just_pressed("f11"):
+		if DisplayServer.window_get_mode() == DisplayServer.WindowMode.WINDOW_MODE_WINDOWED:
+			DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 		
@@ -192,3 +197,11 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	pass # Replace with function body.
+
+
+func _on_long_view_area_entered(area: Area3D) -> void:
+	var i := false
+	if i: return
+	if area.is_in_group("car"):
+		await World.typingEffect("Is that my grandma's car?", 0.1, 2)
+		i = true

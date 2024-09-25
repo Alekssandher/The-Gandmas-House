@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://donomjipgr3eb"
+path="res://.godot/imported/8- Quiet.mp3-4d9cc17cc0cbc9d82c6a51616c8cf215.mp3str"
+
+[deps]
+
+source_file="res://audios/Mind's Eye Pack/Pack/8- Quiet.mp3"
+dest_files=["res://.godot/imported/8- Quiet.mp3-4d9cc17cc0cbc9d82c6a51616c8cf215.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

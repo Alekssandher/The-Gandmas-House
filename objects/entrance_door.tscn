@@ -1,13 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=14 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_lkl6u"]
 [ext_resource type="Script" path="res://systems/doors/entrance_doors.gd" id="2_f0qb0"]
 [ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="3_jyxiq"]
-[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="5_q2281"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05suq"]
 resource_name = "Puerta"
-next_pass = ExtResource("5_q2281")
 cull_mode = 2
 diffuse_mode = 3
 albedo_texture = ExtResource("1_lkl6u")
