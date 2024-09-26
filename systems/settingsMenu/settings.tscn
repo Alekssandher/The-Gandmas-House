@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0pqbhkmo18rv"]
+[gd_scene load_steps=10 format=3 uid="uid://d0pqbhkmo18rv"]
 
 [ext_resource type="Script" path="res://systems/settingsMenu/settings.gd" id="1_p0sln"]
 [ext_resource type="PackedScene" uid="uid://cbnia04cf8rfu" path="res://systems/settingsMenu/volume.tscn" id="2_8orvv"]
 [ext_resource type="AudioStream" uid="uid://c2wrnjt7c4drb" path="res://audios/Mind's Eye Pack/Pack/1- Midnight Dreams.mp3" id="2_aowup"]
 [ext_resource type="FontFile" uid="uid://g7m7ptjgj537" path="res://assets/fonts/times new roman.ttf" id="2_bicf8"]
+[ext_resource type="Script" path="res://systems/settingsMenu/shadow_configs.gd" id="3_21h1g"]
+[ext_resource type="Script" path="res://systems/settingsMenu/shadowButton.gd" id="4_ilyap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_688ei"]
 font = ExtResource("2_bicf8")
@@ -24,6 +26,7 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 8
 
 [node name="settings" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +34,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p0sln")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.244776, 0.244776, 0.244776, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -46,12 +58,62 @@ offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sounds" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="graphics" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
-alignment = 1
 
-[node name="Sounds" type="Label" parent="MarginContainer/sounds"]
+[node name="graphics" type="Label" parent="MarginContainer/HBoxContainer/graphics"]
+layout_mode = 2
+text = "Graphic settings"
+label_settings = SubResource("LabelSettings_688ei")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="shadows" type="Label" parent="MarginContainer/HBoxContainer/graphics"]
+layout_mode = 2
+text = "Shadow Quality"
+label_settings = SubResource("LabelSettings_688ei")
+horizontal_alignment = 1
+
+[node name="shadowConfigs" type="OptionButton" parent="MarginContainer/HBoxContainer/graphics"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bicf8")
+item_count = 3
+popup/item_0/text = "Low"
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+script = ExtResource("3_21h1g")
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/graphics"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bicf8")
+theme_override_font_sizes/font_size = 26
+button_pressed = true
+text = "Shadows"
+flat = true
+script = ExtResource("4_ilyap")
+
+[node name="sounds" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Sounds" type="Label" parent="MarginContainer/HBoxContainer/sounds"]
 layout_mode = 2
 text = "Sounds Settings
 "
@@ -59,37 +121,40 @@ label_settings = SubResource("LabelSettings_688ei")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="master" type="Label" parent="MarginContainer/sounds"]
+[node name="master" type="Label" parent="MarginContainer/HBoxContainer/sounds"]
 layout_mode = 2
 text = "Master"
 label_settings = SubResource("LabelSettings_688ei")
 horizontal_alignment = 1
 
-[node name="HSlider" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+[node name="HSlider" parent="MarginContainer/HBoxContainer/sounds" instance=ExtResource("2_8orvv")]
 layout_mode = 2
 
-[node name="music" type="Label" parent="MarginContainer/sounds"]
+[node name="music" type="Label" parent="MarginContainer/HBoxContainer/sounds"]
 layout_mode = 2
 text = "Music
 "
 label_settings = SubResource("LabelSettings_1coph")
 horizontal_alignment = 1
 
-[node name="HSlider2" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+[node name="HSlider2" parent="MarginContainer/HBoxContainer/sounds" instance=ExtResource("2_8orvv")]
 layout_mode = 2
 busName = "music"
 
-[node name="effects" type="Label" parent="MarginContainer/sounds"]
+[node name="effects" type="Label" parent="MarginContainer/HBoxContainer/sounds"]
 layout_mode = 2
 text = "Effects
 "
 label_settings = SubResource("LabelSettings_3xnty")
 horizontal_alignment = 1
 
-[node name="HSlider3" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+[node name="HSlider3" parent="MarginContainer/HBoxContainer/sounds" instance=ExtResource("2_8orvv")]
 layout_mode = 2
 busName = "sfx"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_aowup")
 bus = &"music"
+
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/graphics/shadowConfigs" to="MarginContainer/HBoxContainer/graphics/shadowConfigs" method="_on_item_selected"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/graphics/CheckButton" to="MarginContainer/HBoxContainer/graphics/CheckButton" method="_on_toggled"]

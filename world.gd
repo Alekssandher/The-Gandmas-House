@@ -1,8 +1,9 @@
 extends Node3D
 
-@export_category("Graphics Settings")
-@export var worldEnvironment: WorldEnvironment
-@export var directionalLight: DirectionalLight3D
+#Settings
+var shadowQuality: int
+var shadow: bool
+var fogConfig: int
 
 var label: Label
 var chars := []
