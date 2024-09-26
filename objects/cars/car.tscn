@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://bm8a848nb6fwq"]
+
+[ext_resource type="Texture2D" uid="uid://dcfgw0o5kejdh" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/car_snow.png" id="1_ki1xj"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="2_bg1lv"]
+[ext_resource type="ArrayMesh" uid="uid://cvj6jcxh6meep" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/Car.obj" id="2_pv2e0"]
+[ext_resource type="Script" path="res://systems/grandma's car/grandma'sCar.gd" id="3_i1mgl"]
+[ext_resource type="Script" path="res://systems/interactableObjects/interactableObj.gd" id="3_qkwwu"]
+[ext_resource type="Script" path="res://systems/interactableObjects/car.gd" id="5_jkw7k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m52rn"]
+albedo_texture = ExtResource("1_ki1xj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucpf0"]
+size = Vector3(3.8252, 2.14673, 6.45532)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6l8o"]
+size = Vector3(2.08209, 1.35938, 5.72839)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aw208"]
+size = Vector3(2.02777, 0.614807, 3.24405)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crj5x"]
+size = Vector3(1.99911, 1.14258, 0.195801)
+
+[node name="grandmaCar" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.997926, -0.0643756, 0, 0.0643756, 0.997926, -39.9685, -0.0359078, -3.06626)
+material_override = SubResource("StandardMaterial3D_m52rn")
+mesh = ExtResource("2_pv2e0")
+script = ExtResource("3_i1mgl")
+
+[node name="Area3D" type="Area3D" parent="." groups=["car", "interactable"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172119, 1.03967, 0.10611)
+shape = SubResource("BoxShape3D_ucpf0")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_qkwwu")
+
+[node name="Car" type="Node" parent="Interactable" node_paths=PackedStringArray("mesh")]
+script = ExtResource("5_jkw7k")
+counterMaterial = ExtResource("2_bg1lv")
+mesh = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365295, 0.807657, 0.00112128)
+shape = SubResource("BoxShape3D_e6l8o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677185, 1.7314, -0.699785)
+shape = SubResource("BoxShape3D_aw208")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.868157, 0.496293, 0, -0.496293, 0.868157, -0.0111809, 1.5564, 1.06416)
+shape = SubResource("BoxShape3D_crj5x")
+
+[node name="lights" type="Node3D" parent="."]
+visible = false
+
+[node name="headlight" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 5.77316e-15, -8.74228e-08, 5.77316e-15, 1, 0, 8.74228e-08, 0, -1, -0.956604, 1.24264, -3.06164)
+light_color = Color(0.751817, 0, 0.0770394, 1)
+light_energy = 5.848
+light_volumetric_fog_energy = 1.97
+shadow_transmittance_bias = -0.05
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_length = 15.0
+omni_range = 0.657
+
+[node name="headlight2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 5.77316e-15, -8.74228e-08, 5.77316e-15, 1, 0, 8.74228e-08, 0, -1, 0.972977, 1.22264, -2.97746)
+light_color = Color(0.751817, 0, 0.0770394, 1)
+light_energy = 5.848
+light_volumetric_fog_energy = 1.97
+shadow_transmittance_bias = -0.05
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_length = 15.0
+omni_range = 0.657
+
+[node name="SpotLight3D" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 4.88498e-15, -8.74228e-08, 4.88498e-15, 1, 0, 8.74228e-08, 0, -1, -0.838795, 0.816506, 2.99754)
+shadow_enabled = true
+omni_range = 0.544
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(-1, 4.44089e-15, -8.74228e-08, 4.44089e-15, 1, 0, 8.74228e-08, 0, -1, 0.825554, 0.859732, 2.99476)
+shadow_enabled = true
+omni_range = 0.544
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_exited"]

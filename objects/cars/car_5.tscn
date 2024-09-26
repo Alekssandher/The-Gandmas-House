@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://qtoppot01j0a"]
+
+[ext_resource type="Texture2D" uid="uid://bltsypm5dwr3c" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 05/car5.png" id="1_630no"]
+[ext_resource type="ArrayMesh" uid="uid://d2o2486ofpu8j" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 05/Car5.obj" id="2_4u4io"]
+[ext_resource type="Script" path="res://systems/interactableObjects/interactableObj.gd" id="3_egd5u"]
+[ext_resource type="Script" path="res://systems/interactableObjects/car.gd" id="4_o8vng"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="5_cogly"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk43k"]
+albedo_texture = ExtResource("1_630no")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tj7h"]
+size = Vector3(3.8252, 2.14673, 6.45532)
+
+[node name="Car5" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5395, -0.778581, 6.51917)
+material_override = SubResource("StandardMaterial3D_xk43k")
+mesh = ExtResource("2_4u4io")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29178, 0)
+shape = SubResource("BoxShape3D_0tj7h")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_egd5u")
+
+[node name="Car" type="Node" parent="Interactable" node_paths=PackedStringArray("mesh")]
+script = ExtResource("4_o8vng")
+counterMaterial = ExtResource("5_cogly")
+mesh = NodePath("../..")
+
+[connection signal="area_entered" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_exited"]

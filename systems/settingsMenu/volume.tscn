@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbnia04cf8rfu"]
+
+[ext_resource type="Script" path="res://systems/settingsMenu/h_slider.gd" id="1_0uo2g"]
+
+[node name="HSlider" type="HSlider"]
+min_value = -1.0
+max_value = 5.0
+step = 0.001
+value = 2.0
+script = ExtResource("1_0uo2g")
+busName = "Master"

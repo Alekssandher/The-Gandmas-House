@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0pqbhkmo18rv"]
+
+[ext_resource type="Script" path="res://systems/settingsMenu/settings.gd" id="1_p0sln"]
+[ext_resource type="PackedScene" uid="uid://cbnia04cf8rfu" path="res://systems/settingsMenu/volume.tscn" id="2_8orvv"]
+[ext_resource type="AudioStream" uid="uid://c2wrnjt7c4drb" path="res://audios/Mind's Eye Pack/Pack/1- Midnight Dreams.mp3" id="2_aowup"]
+[ext_resource type="FontFile" uid="uid://g7m7ptjgj537" path="res://assets/fonts/times new roman.ttf" id="2_bicf8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_688ei"]
+font = ExtResource("2_bicf8")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_1coph"]
+font = ExtResource("2_bicf8")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xnty"]
+font = ExtResource("2_bicf8")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0sln")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -142.0
+offset_right = 125.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sounds" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Sounds" type="Label" parent="MarginContainer/sounds"]
+layout_mode = 2
+text = "Sounds Settings
+"
+label_settings = SubResource("LabelSettings_688ei")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="master" type="Label" parent="MarginContainer/sounds"]
+layout_mode = 2
+text = "Master"
+label_settings = SubResource("LabelSettings_688ei")
+horizontal_alignment = 1
+
+[node name="HSlider" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+layout_mode = 2
+
+[node name="music" type="Label" parent="MarginContainer/sounds"]
+layout_mode = 2
+text = "Music
+"
+label_settings = SubResource("LabelSettings_1coph")
+horizontal_alignment = 1
+
+[node name="HSlider2" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+layout_mode = 2
+busName = "music"
+
+[node name="effects" type="Label" parent="MarginContainer/sounds"]
+layout_mode = 2
+text = "Effects
+"
+label_settings = SubResource("LabelSettings_3xnty")
+horizontal_alignment = 1
+
+[node name="HSlider3" parent="MarginContainer/sounds" instance=ExtResource("2_8orvv")]
+layout_mode = 2
+busName = "sfx"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_aowup")
+bus = &"music"

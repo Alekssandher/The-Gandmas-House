@@ -3,9 +3,10 @@ extends CharacterBody3D
 
 @export_category("Settings Player")
 
-@export var speed: int = 3
+@export var defaultSpeed: float = 2
 @export var  jumpForce: float = 3.5
-
+@export var runningSpeed: float = 5
+var speed: float = defaultSpeed
 
 @export_category("Settings Camera")
 @export var mouseSensitivity := 0.2
@@ -22,7 +23,10 @@ extends CharacterBody3D
 @export_category("Settings Footsteps")
 @export var footstepAudio: AudioStreamPlayer3D
 @export var footstepsTimer: Timer
-@export var footstepsTimerRunning: Timer
+@export var talkTimer: Timer
+
+@export var animationPlayer: AnimationPlayer
+
 var cameraTween: Tween
 
 var collision: bool
@@ -52,6 +56,8 @@ var z: float = 0.0
 var lookedAtCar := false
 var lookBlocked := false
 func _ready() -> void:
+	
+	animationPlayer.play("transitionIn")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#GameManager.gameOver = false
@@ -142,14 +148,14 @@ func run() -> void:
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
 		if !canRun: return
-		speed = 5
+		speed = runningSpeed
 		recoveryTimer.stop()
 		if !running:
 			stamminaTimer.start()
 		running = true
 		
 	else:
-		speed = 3
+		speed = defaultSpeed
 		
 	if Input.is_action_just_released("shift"):
 		stamminaTimer.stop()
@@ -182,7 +188,7 @@ func footsteps() -> void:
 		if footstepsTimer.time_left <= 0:
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
-			footstepsTimer.start(0.65)
+			footstepsTimer.start(0.75)
 			
 func animateCameraTween() -> void:
 	cameraTween = get_tree().create_tween()
@@ -217,3 +223,7 @@ func _on_long_view_body_entered(body: Node3D) -> void:
 
 func _on_long_view_body_exited(body: Node3D) -> void:
 	lookBlocked = false
+
+
+func _on_timer_timeout() -> void:
+	await World.typingEffect("Here I am", 0.1, 1.5)
