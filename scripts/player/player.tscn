@@ -1,11 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=17 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_oucsa"]
 [ext_resource type="Script" path="res://systems/flashLight/spot_light_3d.gd" id="2_8mmd1"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="2_me5s2"]
-[ext_resource type="Script" path="res://systems/tелефон/nokia.gd" id="3_g8cp1"]
 [ext_resource type="AudioStream" uid="uid://dnjqixia8kr6g" path="res://audios/kenney_impact-sounds/Audio/footstep_concrete_004.ogg" id="3_s6vu5"]
-[ext_resource type="PackedScene" uid="uid://cv2mvql8g1q7m" path="res://systems/tелефон/tелефон.tscn" id="5_yh5oy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
@@ -50,96 +48,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("head/vertical/Camera3D/nokia/tелефон:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("head/vertical/Camera3D/nokia/tелефон:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("head/vertical/Camera3D/nokia:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_i64kh"]
 resource_name = "nokiaMenu"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head/vertical/Camera3D/nokia/tелефон:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, -1.04028, -0.170084), Vector3(0, 0, 0.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("head/vertical/Camera3D/nokia/tелефон:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.46995, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("head/vertical/Camera3D/nokia:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("head/vertical/Camera3D/nokia/tелефон")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [1],
-"method": &"setMeshVisible"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_ybxel"]
 resource_name = "transitionIn"
@@ -221,14 +133,6 @@ shape = SubResource("BoxShape3D_vj8qa")
 spot_range = 6.844
 spot_angle = 43.0
 script = ExtResource("2_8mmd1")
-
-[node name="nokia" type="Node3D" parent="head/vertical/Camera3D" node_paths=PackedStringArray("animationPlayer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.454637, -0.108, -1.00939)
-script = ExtResource("3_g8cp1")
-animationPlayer = NodePath("../../../../AnimationPlayer")
-
-[node name="tелефон" parent="head/vertical/Camera3D/nokia" instance=ExtResource("5_yh5oy")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="playerArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)

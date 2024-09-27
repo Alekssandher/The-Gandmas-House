@@ -1,11 +1,12 @@
-[gd_scene load_steps=22 format=4 uid="uid://cv2mvql8g1q7m"]
+[gd_scene load_steps=23 format=4 uid="uid://cv2mvql8g1q7m"]
 
-[ext_resource type="Script" path="res://systems/tелефон/tелефон.gd" id="1_tq4dd"]
-[ext_resource type="Texture2D" uid="uid://dinalarj4i8w4" path="res://assets/nokia-3310-lowpoly/nokia_3310.png" id="3_rbpbd"]
-[ext_resource type="AudioStream" uid="uid://cqx8gh11aykgo" path="res://systems/tелефон/10b2-fe27-4c43-a5bf-98af50fd8ee2.mp3" id="4_fca07"]
-[ext_resource type="Texture2D" uid="uid://colapa3xokc4m" path="res://systems/tелефон/3310sec.png" id="4_njl6a"]
-[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_puqyu"]
-[ext_resource type="Script" path="res://systems/tелефон/on.gd" id="4_qowll"]
+[ext_resource type="Script" path="res://systems/tелефон/tелефон.gd" id="1_3mcxk"]
+[ext_resource type="Texture2D" uid="uid://dinalarj4i8w4" path="res://assets/nokia-3310-lowpoly/nokia_3310.png" id="2_i5rya"]
+[ext_resource type="Texture2D" uid="uid://colapa3xokc4m" path="res://systems/tелефон/3310sec.png" id="3_msrd8"]
+[ext_resource type="Script" path="res://systems/tелефон/on.gd" id="4_jle5m"]
+[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="5_ev0vd"]
+[ext_resource type="Script" path="res://systems/tелефон/control.gd" id="5_x2gtl"]
+[ext_resource type="AudioStream" uid="uid://cqx8gh11aykgo" path="res://systems/tелефон/10b2-fe27-4c43-a5bf-98af50fd8ee2.mp3" id="6_1p7n4"]
 
 [sub_resource type="Animation" id="Animation_da8u6"]
 resource_name = "turnOn"
@@ -51,7 +52,7 @@ _data = {
 resource_name = "Material.001"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("3_rbpbd")
+albedo_texture = ExtResource("2_i5rya")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ylenf"]
@@ -129,7 +130,7 @@ shadow_mesh = SubResource("ArrayMesh_hhg20")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vftq2"]
 next_pass = SubResource("ShaderMaterial_ux3fs")
-albedo_texture = ExtResource("4_njl6a")
+albedo_texture = ExtResource("3_msrd8")
 emission = Color(0.4, 0.647059, 0.494118, 1)
 emission_energy_multiplier = 0.01
 
@@ -175,14 +176,14 @@ _surfaces = [{
 shadow_mesh = SubResource("ArrayMesh_hhg20")
 
 [sub_resource type="LabelSettings" id="LabelSettings_m542x"]
-font = ExtResource("4_puqyu")
+font = ExtResource("5_ev0vd")
 font_color = Color(0.262745, 0.321569, 0.239216, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_76ehn"]
 viewport_path = NodePath("nokia/on/SubViewport")
 
-[node name="tелефон" type="Node3D" node_paths=PackedStringArray("animationPlayer", "audio", "off", "turningOn", "on")]
-script = ExtResource("1_tq4dd")
+[node name="telefon" type="Node3D" node_paths=PackedStringArray("animationPlayer", "audio", "off", "turningOn", "on")]
+script = ExtResource("1_3mcxk")
 animationPlayer = NodePath("AnimationPlayer")
 audio = NodePath("AudioStreamPlayer")
 off = NodePath("nokia/off")
@@ -221,12 +222,14 @@ light_color = Color(0.4, 0.647059, 0.494118, 1)
 light_energy = 0.3
 omni_range = 1.02
 
-[node name="on" type="MeshInstance3D" parent="nokia"]
+[node name="on" type="MeshInstance3D" parent="nokia" node_paths=PackedStringArray("checkButton", "optionButton")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.921114, -1.4071, 0.106344)
 material_override = SubResource("StandardMaterial3D_g8ikv")
 mesh = SubResource("ArrayMesh_pjhsb")
 skeleton = NodePath("")
-script = ExtResource("4_qowll")
+script = ExtResource("4_jle5m")
+checkButton = NodePath("SubViewport/Control/CheckBox")
+optionButton = NodePath("SubViewport/Control/OptionButton")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="nokia/on"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100527, 1.70926, 0.664813)
@@ -240,39 +243,49 @@ omni_range = 1.689
 transparent_bg = true
 size = Vector2i(1920, 1080)
 
-[node name="settings" type="Label" parent="nokia/on/SubViewport"]
+[node name="Control" type="Control" parent="nokia/on/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_x2gtl")
+
+[node name="settings" type="Label" parent="nokia/on/SubViewport/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -20.0
-offset_right = 184.0
-offset_bottom = -4.0
+offset_left = 980.0
+offset_top = 500.0
+offset_right = 1124.0
+offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "Settings "
 label_settings = SubResource("LabelSettings_m542x")
 
-[node name="shadowQ" type="Label" parent="nokia/on/SubViewport"]
+[node name="shadowQ" type="Label" parent="nokia/on/SubViewport/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = 10.0
-offset_right = 180.0
-offset_bottom = 26.0
+offset_left = 880.0
+offset_top = 530.0
+offset_right = 1120.0
+offset_bottom = 546.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "Shadow "
 label_settings = SubResource("LabelSettings_m542x")
 
-[node name="OptionButton" type="OptionButton" parent="nokia/on/SubViewport"]
+[node name="OptionButton" type="OptionButton" parent="nokia/on/SubViewport/Control"]
+layout_mode = 0
 offset_left = 900.0
 offset_top = 580.0
 offset_right = 996.0
@@ -284,6 +297,14 @@ popup/item_1/id = 1
 popup/item_2/text = "High"
 popup/item_2/id = 2
 
+[node name="CheckBox" type="CheckButton" parent="nokia/on/SubViewport/Control"]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 580.0
+offset_right = 1144.0
+offset_bottom = 604.0
+button_pressed = true
+
 [node name="Sprite3D" type="Sprite3D" parent="nokia/on"]
 transform = Transform3D(0.995168, 0, -0.0981908, 0, 1, 0, 0.0981908, 0, 0.995168, -0.366622, 1.91906, 0.330655)
 pixel_size = 0.003
@@ -291,8 +312,10 @@ texture_filter = 0
 texture = SubResource("ViewportTexture_76ehn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_fca07")
+stream = ExtResource("6_1p7n4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100835, 0, 0.00965631)
-visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.966869, 0.413136, 1.7267)

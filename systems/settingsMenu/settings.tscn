@@ -3,26 +3,26 @@
 [ext_resource type="Script" path="res://systems/settingsMenu/settings.gd" id="1_p0sln"]
 [ext_resource type="PackedScene" uid="uid://cbnia04cf8rfu" path="res://systems/settingsMenu/volume.tscn" id="2_8orvv"]
 [ext_resource type="AudioStream" uid="uid://c2wrnjt7c4drb" path="res://audios/Mind's Eye Pack/Pack/1- Midnight Dreams.mp3" id="2_aowup"]
-[ext_resource type="FontFile" uid="uid://g7m7ptjgj537" path="res://assets/fonts/times new roman.ttf" id="2_bicf8"]
+[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_1w0u8"]
 [ext_resource type="Script" path="res://systems/settingsMenu/shadow_configs.gd" id="3_21h1g"]
 [ext_resource type="Script" path="res://systems/settingsMenu/shadowButton.gd" id="4_ilyap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_688ei"]
-font = ExtResource("2_bicf8")
-font_size = 26
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("3_1w0u8")
+font_size = 22
+font_color = Color(0.262745, 0.321569, 0.239216, 1)
 outline_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_1coph"]
-font = ExtResource("2_bicf8")
-font_size = 26
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("3_1w0u8")
+font_size = 22
+font_color = Color(0.262745, 0.321569, 0.239216, 1)
 outline_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xnty"]
-font = ExtResource("2_bicf8")
-font_size = 26
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("3_1w0u8")
+font_size = 22
+font_color = Color(0.262745, 0.321569, 0.239216, 1)
 outline_size = 8
 
 [node name="settings" type="Control"]
@@ -42,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.244776, 0.244776, 0.244776, 1)
+color = Color(0, 0, 0, 0.219608)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -64,7 +64,7 @@ theme_override_constants/separation = 60
 
 [node name="graphics" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 13
 
 [node name="graphics" type="Label" parent="MarginContainer/HBoxContainer/graphics"]
 layout_mode = 2
@@ -81,10 +81,10 @@ horizontal_alignment = 1
 
 [node name="shadowConfigs" type="OptionButton" parent="MarginContainer/HBoxContainer/graphics"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_bicf8")
+theme_override_fonts/font = ExtResource("3_1w0u8")
 item_count = 3
 popup/item_0/text = "Low"
 popup/item_1/text = "Medium"
@@ -95,14 +95,14 @@ script = ExtResource("3_21h1g")
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/graphics"]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_bicf8")
+theme_override_fonts/font = ExtResource("3_1w0u8")
 theme_override_font_sizes/font_size = 26
 button_pressed = true
 text = "Shadows"
@@ -111,7 +111,7 @@ script = ExtResource("4_ilyap")
 
 [node name="sounds" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 13
 
 [node name="Sounds" type="Label" parent="MarginContainer/HBoxContainer/sounds"]
 layout_mode = 2
