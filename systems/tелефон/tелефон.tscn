@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=4 uid="uid://cv2mvql8g1q7m"]
+[gd_scene load_steps=22 format=4 uid="uid://cv2mvql8g1q7m"]
 
 [ext_resource type="Script" path="res://systems/tелефон/tелефон.gd" id="1_tq4dd"]
 [ext_resource type="Texture2D" uid="uid://dinalarj4i8w4" path="res://assets/nokia-3310-lowpoly/nokia_3310.png" id="3_rbpbd"]
 [ext_resource type="AudioStream" uid="uid://cqx8gh11aykgo" path="res://systems/tелефон/10b2-fe27-4c43-a5bf-98af50fd8ee2.mp3" id="4_fca07"]
 [ext_resource type="Texture2D" uid="uid://colapa3xokc4m" path="res://systems/tелефон/3310sec.png" id="4_njl6a"]
+[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_puqyu"]
+[ext_resource type="Script" path="res://systems/tелефон/on.gd" id="4_qowll"]
 
 [sub_resource type="Animation" id="Animation_da8u6"]
 resource_name = "turnOn"
@@ -149,10 +151,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hhg20")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r050y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8ikv"]
+resource_local_to_scene = true
+shading_mode = 0
 albedo_color = Color(0.4, 0.647059, 0.494118, 1)
+albedo_texture_force_srgb = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0ukhb"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pjhsb"]
 resource_name = "nokia_Cube_003"
 _surfaces = [{
 "aabb": AABB(-0.585287, 1.21549, 0.301923, 1.1502, 0.84066, 0.049501),
@@ -167,8 +172,14 @@ _surfaces = [{
 "vertex_count": 15,
 "vertex_data": PackedByteArray("Q4LsnP//g4CRAeyc+w5Yg8r/7JzsFFuDQ4L//+v7jYBDggAA//9/gCYNLQ7aI1CDFwS5IvESUIPI/waP8BRUg633mAUgI1KDfQWX++QIYIOYITT/Az1ggwAAyvEAAGCDJO6d+dEoZ4NV+6/vhhFng///ntnsC2SDbJglgHWD8e0+hAEWS6fohjl+BXMRf9ruFH8j732AXBNvgBMSd4eR636HzOtphx3r1YcjGtaH7xnih1IY")
 }]
-blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hhg20")
+
+[sub_resource type="LabelSettings" id="LabelSettings_m542x"]
+font = ExtResource("4_puqyu")
+font_color = Color(0.262745, 0.321569, 0.239216, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_76ehn"]
+viewport_path = NodePath("nokia/on/SubViewport")
 
 [node name="tелефон" type="Node3D" node_paths=PackedStringArray("animationPlayer", "audio", "off", "turningOn", "on")]
 script = ExtResource("1_tq4dd")
@@ -192,6 +203,7 @@ skeleton = NodePath("")
 
 [node name="off" type="MeshInstance3D" parent="nokia"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.921114, -1.4071, 0.106344)
+visible = false
 material_override = SubResource("StandardMaterial3D_3i6vc")
 mesh = SubResource("ArrayMesh_jm8xi")
 skeleton = NodePath("")
@@ -211,15 +223,76 @@ omni_range = 1.02
 
 [node name="on" type="MeshInstance3D" parent="nokia"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.921114, -1.4071, 0.106344)
-material_override = SubResource("StandardMaterial3D_r050y")
-mesh = SubResource("ArrayMesh_0ukhb")
+material_override = SubResource("StandardMaterial3D_g8ikv")
+mesh = SubResource("ArrayMesh_pjhsb")
 skeleton = NodePath("")
+script = ExtResource("4_qowll")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="nokia/on"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100527, 1.70926, 0.679359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100527, 1.70926, 0.664813)
+visible = false
 light_color = Color(0.4, 0.647059, 0.494118, 1)
-light_energy = 0.3
-omni_range = 1.02
+light_energy = 0.354
+light_size = 0.091
+omni_range = 1.689
+
+[node name="SubViewport" type="SubViewport" parent="nokia/on"]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="settings" type="Label" parent="nokia/on/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -20.0
+offset_right = 184.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Settings "
+label_settings = SubResource("LabelSettings_m542x")
+
+[node name="shadowQ" type="Label" parent="nokia/on/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Shadow "
+label_settings = SubResource("LabelSettings_m542x")
+
+[node name="OptionButton" type="OptionButton" parent="nokia/on/SubViewport"]
+offset_left = 900.0
+offset_top = 580.0
+offset_right = 996.0
+offset_bottom = 611.0
+item_count = 3
+popup/item_0/text = "Low"
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="nokia/on"]
+transform = Transform3D(0.995168, 0, -0.0981908, 0, 1, 0, 0.0981908, 0, 0.995168, -0.366622, 1.91906, 0.330655)
+pixel_size = 0.003
+texture_filter = 0
+texture = SubResource("ViewportTexture_76ehn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fca07")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100835, 0, 0.00965631)
+visible = false
