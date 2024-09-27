@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=19 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_oucsa"]
 [ext_resource type="Script" path="res://systems/flashLight/spot_light_3d.gd" id="2_8mmd1"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="2_me5s2"]
+[ext_resource type="Script" path="res://systems/tелефон/nokia.gd" id="3_g8cp1"]
 [ext_resource type="AudioStream" uid="uid://dnjqixia8kr6g" path="res://audios/kenney_impact-sounds/Audio/footstep_concrete_004.ogg" id="3_s6vu5"]
+[ext_resource type="PackedScene" uid="uid://cv2mvql8g1q7m" path="res://systems/tелефон/tелефон.tscn" id="5_yh5oy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
@@ -39,7 +41,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/path = NodePath("appeared/CanvasLayer/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,6 +50,42 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/vertical/Camera3D/nokia/tелефон:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head/vertical/Camera3D/nokia/tелефон:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head/vertical/Camera3D/nokia:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ybxel"]
 resource_name = "transitionIn"
@@ -55,7 +93,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/path = NodePath("appeared/CanvasLayer/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -67,7 +105,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Timer")
+tracks/1/path = NodePath("appeared/Timer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -79,9 +117,79 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_i64kh"]
+resource_name = "nokiaMenu"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/vertical/Camera3D/nokia/tелефон:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.04028, -0.170084), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/vertical/Camera3D/nokia/tелефон:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.46995, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pause"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head/vertical/Camera3D/nokia:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("head/vertical/Camera3D/nokia/tелефон")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1],
+"method": &"setMeshVisible"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2olra"]
 _data = {
 "RESET": SubResource("Animation_5s3ab"),
+"nokiaMenu": SubResource("Animation_i64kh"),
 "transitionIn": SubResource("Animation_ybxel")
 }
 
@@ -89,13 +197,13 @@ _data = {
 script = ExtResource("1_oucsa")
 runningSpeed = 3.0
 camera = NodePath("head/vertical/Camera3D")
-shakeFixTimer = NodePath("Timer")
+shakeFixTimer = NodePath("appeared/Timer")
 progressBarControl = NodePath("Control")
 stamminaTimer = NodePath("Control/stamminaTimer")
 recoveryTimer = NodePath("Control/recoveryTimer")
 footstepAudio = NodePath("footsteps/AudioStreamPlayer3D")
 footstepsTimer = NodePath("footsteps/footstepsTimer")
-talkTimer = NodePath("Timer")
+talkTimer = NodePath("appeared/Timer")
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -129,15 +237,20 @@ spot_range = 6.844
 spot_angle = 43.0
 script = ExtResource("2_8mmd1")
 
+[node name="nokia" type="Node3D" parent="head/vertical/Camera3D" node_paths=PackedStringArray("animationPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.454637, -0.108, -1.00939)
+script = ExtResource("3_g8cp1")
+animationPlayer = NodePath("../../../../AnimationPlayer")
+
+[node name="tелефон" parent="head/vertical/Camera3D/nokia" instance=ExtResource("5_yh5oy")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
 [node name="playerArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="playerArea"]
 shape = SubResource("CapsuleShape3D_ik1aw")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
 
 [node name="Control" type="ProgressBar" parent="."]
 visible = false
@@ -183,9 +296,14 @@ stream = ExtResource("3_s6vu5")
 volume_db = 20.0
 bus = &"sfx"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="appeared" type="Node3D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Timer" type="Timer" parent="appeared"]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="appeared"]
+
+[node name="ColorRect" type="ColorRect" parent="appeared/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -199,6 +317,6 @@ color = Color(0, 0, 0, 1)
 [connection signal="area_entered" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="body_entered" from="head/vertical/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/stamminaTimer" to="Control" method="_on_stammina_timer_timeout"]
 [connection signal="timeout" from="Control/recoveryTimer" to="Control" method="_on_recovery_timer_timeout"]
+[connection signal="timeout" from="appeared/Timer" to="." method="_on_timer_timeout"]
