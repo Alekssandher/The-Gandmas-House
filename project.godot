@@ -39,6 +39,7 @@ interactable="Nodes that the player can interact"
 playerAim=""
 car=""
 player=""
+longView=""
 
 [input]
 

@@ -14,6 +14,7 @@ var speedUp := true
 var canSkip := false
 func _ready() -> void:
 	label.hide()
+	richLabel.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	videoTurnOn.play()
 	
@@ -28,7 +29,7 @@ func _process(delta: float) -> void:
 		audio.play()
 	if Input.is_action_just_pressed("leftClick") and canSkip:
 		if speedUp: 
-			animationPlayer.speed_scale = 5
+			animationPlayer.speed_scale = 6
 		else: 
 			animationPlayer.speed_scale = 1
 			
@@ -49,6 +50,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_video_stream_player_finished() -> void:
 	animationPlayer.play("typing")
+	richLabel.show()
 	canSkip = true
 
 func _on_turn_off_finished() -> void:

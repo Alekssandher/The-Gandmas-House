@@ -226,5 +226,6 @@ func _on_long_view_body_exited(body: Node3D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	await World.typingEffect("Here I am, following what a unknown voice says.", 0.1, 1.5)
-	await World.typingEffect("Look at all those abandoned houses", 0.1, 1.5)
+	await World.typingEffect("Here I am, following what an unknown voice says.", 0.1, 1.5)
+	#await World.typingEffect("Let's see where it takes me.", 0.1, 1.5)
+	#await World.typingEffect("They said It was a huge, old house... somewhere around here", 0.1, 1.5)

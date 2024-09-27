@@ -117,7 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833464, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head/vertical"]
 
-[node name="longView" type="Area3D" parent="head/vertical/Camera3D"]
+[node name="longView" type="Area3D" parent="head/vertical/Camera3D" groups=["longView"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head/vertical/Camera3D/longView"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0776978, -8.14028)

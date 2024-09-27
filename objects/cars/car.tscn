@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm8a848nb6fwq"]
+[gd_scene load_steps=9 format=3 uid="uid://bm8a848nb6fwq"]
 
 [ext_resource type="Texture2D" uid="uid://dcfgw0o5kejdh" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/car_snow.png" id="1_ki1xj"]
-[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="2_bg1lv"]
 [ext_resource type="ArrayMesh" uid="uid://cvj6jcxh6meep" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/Car.obj" id="2_pv2e0"]
 [ext_resource type="Script" path="res://systems/grandma's car/grandma'sCar.gd" id="3_i1mgl"]
-[ext_resource type="Script" path="res://systems/interactableObjects/interactableObj.gd" id="3_qkwwu"]
-[ext_resource type="Script" path="res://systems/interactableObjects/car.gd" id="5_jkw7k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m52rn"]
 albedo_texture = ExtResource("1_ki1xj")
@@ -33,14 +30,6 @@ script = ExtResource("3_i1mgl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172119, 1.03967, 0.10611)
 shape = SubResource("BoxShape3D_ucpf0")
-
-[node name="Interactable" type="Node" parent="."]
-script = ExtResource("3_qkwwu")
-
-[node name="Car" type="Node" parent="Interactable" node_paths=PackedStringArray("mesh")]
-script = ExtResource("5_jkw7k")
-counterMaterial = ExtResource("2_bg1lv")
-mesh = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -94,5 +83,3 @@ shadow_enabled = true
 omni_range = 0.544
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="Interactable/Car" method="_on_area_3d_area_exited"]
