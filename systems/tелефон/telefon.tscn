@@ -175,12 +175,12 @@ _surfaces = [{
 }]
 shadow_mesh = SubResource("ArrayMesh_hhg20")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_76ehn"]
+viewport_path = NodePath("nokia/on/SubViewport")
+
 [sub_resource type="LabelSettings" id="LabelSettings_m542x"]
 font = ExtResource("5_ev0vd")
 font_color = Color(0.262745, 0.321569, 0.239216, 1)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_76ehn"]
-viewport_path = NodePath("nokia/on/SubViewport")
 
 [node name="telefon" type="Node3D" node_paths=PackedStringArray("animationPlayer", "audio", "off", "turningOn", "on")]
 script = ExtResource("1_3mcxk")
@@ -204,14 +204,12 @@ skeleton = NodePath("")
 
 [node name="off" type="MeshInstance3D" parent="nokia"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.921114, -1.4071, 0.106344)
-visible = false
 material_override = SubResource("StandardMaterial3D_3i6vc")
 mesh = SubResource("ArrayMesh_jm8xi")
 skeleton = NodePath("")
 
 [node name="turningOn" type="MeshInstance3D" parent="nokia"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.921114, -1.4071, 0.106344)
-visible = false
 material_override = SubResource("StandardMaterial3D_vftq2")
 mesh = SubResource("ArrayMesh_nodwt")
 skeleton = NodePath("")
@@ -228,68 +226,84 @@ material_override = SubResource("StandardMaterial3D_g8ikv")
 mesh = SubResource("ArrayMesh_pjhsb")
 skeleton = NodePath("")
 script = ExtResource("4_jle5m")
-checkButton = NodePath("SubViewport/Control/CheckBox")
-optionButton = NodePath("SubViewport/Control/OptionButton")
+checkButton = NodePath("../../Control/CheckBox")
+optionButton = NodePath("../../Control/OptionButton")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="nokia/on"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100527, 1.70926, 0.664813)
-visible = false
 light_color = Color(0.4, 0.647059, 0.494118, 1)
 light_energy = 0.354
 light_size = 0.091
 omni_range = 1.689
 
-[node name="SubViewport" type="SubViewport" parent="nokia/on"]
-transparent_bg = true
-size = Vector2i(1920, 1080)
+[node name="Sprite3D" type="Sprite3D" parent="nokia/on"]
+transform = Transform3D(0.995168, 0, -0.0981908, 0, 1, 0, 0.0981908, 0, 0.995168, -0.366622, 1.91906, 0.330655)
+pixel_size = 0.003
+texture_filter = 0
+texture = SubResource("ViewportTexture_76ehn")
 
-[node name="Control" type="Control" parent="nokia/on/SubViewport"]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("5_x2gtl")
 
-[node name="settings" type="Label" parent="nokia/on/SubViewport/Control"]
+[node name="settings" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 980.0
-offset_top = 500.0
-offset_right = 1124.0
-offset_bottom = 516.0
+offset_left = -72.0
+offset_top = -108.0
+offset_right = 72.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "Settings "
 label_settings = SubResource("LabelSettings_m542x")
 
-[node name="shadowQ" type="Label" parent="nokia/on/SubViewport/Control"]
+[node name="shadowQ" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 880.0
-offset_top = 530.0
-offset_right = 1120.0
-offset_bottom = 546.0
+offset_left = -178.0
+offset_top = -67.0
+offset_right = 62.0
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "Shadow "
 label_settings = SubResource("LabelSettings_m542x")
 
-[node name="OptionButton" type="OptionButton" parent="nokia/on/SubViewport/Control"]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 580.0
-offset_right = 996.0
-offset_bottom = 611.0
+[node name="OptionButton" type="OptionButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -34.5
+offset_right = -76.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
 item_count = 3
 popup/item_0/text = "Low"
 popup/item_1/text = "Medium"
@@ -297,19 +311,20 @@ popup/item_1/id = 1
 popup/item_2/text = "High"
 popup/item_2/id = 2
 
-[node name="CheckBox" type="CheckButton" parent="nokia/on/SubViewport/Control"]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 580.0
-offset_right = 1144.0
-offset_bottom = 604.0
+[node name="CheckBox" type="CheckButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -28.0
+offset_right = 92.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
 button_pressed = true
-
-[node name="Sprite3D" type="Sprite3D" parent="nokia/on"]
-transform = Transform3D(0.995168, 0, -0.0981908, 0, 1, 0, 0.0981908, 0, 0.995168, -0.366622, 1.91906, 0.330655)
-pixel_size = 0.003
-texture_filter = 0
-texture = SubResource("ViewportTexture_76ehn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1p7n4")
@@ -318,4 +333,4 @@ stream = ExtResource("6_1p7n4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100835, 0, 0.00965631)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.966869, 0.413136, 1.7267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950057, 0.452283, 2.36895)

@@ -9,6 +9,8 @@ extends Node3D
 @export var on: MeshInstance3D
 
 
+func _ready() -> void:
+	pass
 func setMeshVisible(num: int) -> void:
 	match num:
 		0: on.hide(); turningOn.hide();
