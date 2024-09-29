@@ -89,7 +89,6 @@ grow_vertical = 2
 color = Color(0, 0, 0.541176, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-visible = false
 offset_left = 123.0
 offset_top = 87.0
 offset_right = 1029.0
@@ -101,7 +100,7 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/normal_font = ExtResource("2_x5kyj")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[center]It's been 10 years since my grandma disappeared. She was so dear to all of us, and her sudden vanishing left a silence that never truly faded. But last night, I received a call... a voice, eerily familiar, whispered through the static. They claimed my grandma had left a house for me in Monguaguá, a nearby city.
+text = "[center] It's been 10 years since my grandma disappeared. She was so dear to all of us, and her sudden vanishing left a silence that never truly faded. But last night, I received a call... a voice, eerily familiar, whispered through the static. They claimed my grandma had left a house for me in Mongaguá, a nearby city.
 
 I don’t trust this. It doesn’t make sense. Why now? Why after all these years? Yet, there was something deeply unsettling about the voice... as if it knew more than it was saying. Against my better judgment, I have to find out what's going on.
 
@@ -109,8 +108,8 @@ They said it's a huge, old house on a street lined with other abandoned mansions
 fit_content = true
 scroll_active = false
 scroll_following = true
-visible_characters = 0
-visible_ratio = 0.0
+visible_characters = 65
+visible_ratio = 0.0882597
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
