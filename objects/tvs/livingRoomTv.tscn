@@ -313,7 +313,6 @@ offset_bottom = 368.0
 audio_track = 1
 stream = SubResource("VideoStreamTheora_7ive1")
 volume_db = -10.31
-autoplay = true
 expand = true
 loop = true
 

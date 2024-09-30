@@ -10,10 +10,13 @@ var canPlay := true
 var count :float = 0.0
 var canTurnOff := true
 var aimNear := false
+var audioPosition: float
 
+func _ready() -> void:
+	video.play()
+	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("leftClick") and aimNear:
-		if animationPlayer.is_playing(): return
+	if event.is_action_pressed("leftClick") and aimNear and !animationPlayer.is_playing():
 		match canTurnOff:
 			true: 
 				video2.stream.file = "res://systems/firstScene/turnOff.ogg"
@@ -29,8 +32,15 @@ func _process(delta: float) -> void:
 		
 		
 func pauseTv() -> void:
-	audio.stream_paused = !audio.stream_paused
+	if audio.playing:
+		audioPosition = audio.get_playback_position()
+		audio.stop() 
+	else:
+		audio.play()
+		audio.seek(audioPosition)  
+		
 	video.paused = !video.paused
+	
 	
 func _on_timer_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
