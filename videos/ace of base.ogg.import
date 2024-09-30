@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://koyc3o2qv3j4"
+path="res://.godot/imported/ace of base.ogg-ff75b425c3cfb15e0d0fbe9c1ac1880f.oggvorbisstr"
+
+[deps]
+
+source_file="res://videos/ace of base.ogg"
+dest_files=["res://.godot/imported/ace of base.ogg-ff75b425c3cfb15e0d0fbe9c1ac1880f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

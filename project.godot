@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 DialogueManager="*res://scriptsManager/dialogueManager.gd"
 ExplosionManager="*res://scriptsManager/explosionManager.gd"
 World="*res://world.gd"
+TvsEvents="*res://systems/eventsManager/tvsEvents.gd"
 
 [debug]
 
@@ -45,6 +46,7 @@ playerAim=""
 car=""
 player=""
 longView=""
+tv=""
 
 [input]
 

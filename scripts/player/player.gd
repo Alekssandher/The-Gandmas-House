@@ -207,25 +207,6 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 	pass # Replace with function body.
 
 
-func _on_long_view_area_entered(area: Area3D) -> void:
-	
-	if lookedAtCar or lookBlocked: return
-	
-	if area.is_in_group("car"):
-		await World.typingEffect("Is that my grandma's car?", 0.1, 2)
-		lookedAtCar = true
-
-
-func _on_long_view_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"): return
-	lookBlocked = true
-	
-
-
-func _on_long_view_body_exited(body: Node3D) -> void:
-	lookBlocked = false
-
-
 func _on_timer_timeout() -> void:
 	await World.typingEffect("Here I am, following what an unknown voice says.", 0.1, 1.5)
 	#await World.typingEffect("Let's see where it takes me.", 0.1, 1.5)

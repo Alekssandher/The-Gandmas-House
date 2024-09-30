@@ -1,7 +1,6 @@
 extends HSlider
 
-@export
-var busName: String
+@export var busName: String
 
 var busIndex: int
 

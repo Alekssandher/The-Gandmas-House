@@ -9,13 +9,15 @@ var label: Label
 var chars := []
 var textList := []
 var isTyping := false
+
+
 func _ready() -> void:
 	pass
 	
 func typingEffect(text: String, charTime: float, awaitTime: float) -> void:
 	#Default values
 	#charTime = 0.1 && awaitTime = 1.5
-
+	
 	if isTyping: return
 	isTyping = true
 	chars = text.split("")  
@@ -35,3 +37,4 @@ func resetVars() -> void:
 	label.text = ""
 	chars = []
 	textList = []
+	
