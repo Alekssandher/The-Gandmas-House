@@ -16,10 +16,8 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
-DialogueManager="*res://scriptsManager/dialogueManager.gd"
-ExplosionManager="*res://scriptsManager/explosionManager.gd"
 World="*res://world.gd"
-TvsEvents="*res://systems/eventsManager/tvsEvents.gd"
+EventsResources="*res://resources/eventsResources.gd"
 
 [debug]
 
@@ -27,8 +25,6 @@ gdscript/warnings/untyped_declaration=2
 
 [display]
 
-window/size/mode=3
-window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0

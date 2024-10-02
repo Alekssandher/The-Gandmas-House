@@ -100,12 +100,12 @@ func _physics_process(delta: float) -> void:
 	
 	#Func to run
 	run()
-	checkCollision()
 	checkStammina()
-	cameraShake()
+	
 	
 	input_dir = Input.get_vector("left", "right", "up", "down")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
@@ -120,16 +120,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func checkCollision() -> void:
-	pass
 
-func cameraShake() -> void:
-	if ExplosionManager.activeShake == true:
-		x = randf_range(-1.5, 1.7)
-		y = randf_range(-1.5, 1.7)
-		z = randf_range(-1.5, 1.7)
-		camera.rotation_degrees = Vector3(x, y, z)
-		shakeFixTimer.start()
+
 		
 #shake play by time configs
 	#elif ExplosionManager.activeShake == false:

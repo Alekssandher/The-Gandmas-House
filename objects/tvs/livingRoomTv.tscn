@@ -357,7 +357,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2dd52")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.539709, 0, 0, 0, 0.539709, 0, 0, 0, 0.539709, 0.286759, 0, -0.392174)
 stream = ExtResource("3_da2kf")
-volume_db = -15.0
+volume_db = -17.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

@@ -6,17 +6,21 @@ extends MeshInstance3D
 @export var audio: AudioStreamPlayer3D
 @export var animationPlayer: AnimationPlayer
 
-var canPlay := true
+var canPlay: bool = true
 var count :float = 0.0
-var canTurnOff := true
-var aimNear := false
+var canTurnOff: bool = true
+var aimNear: bool = false
 var audioPosition: float
+
+var inFirstTvArea: bool = false
 
 func _ready() -> void:
 	video.play()
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("leftClick") and aimNear and !animationPlayer.is_playing():
+	if !aimNear: return
+	
+	if event.is_action_pressed("leftClick") and !animationPlayer.is_playing():
 		match canTurnOff:
 			true: 
 				video2.stream.file = "res://systems/firstScene/turnOff.ogg"
@@ -25,9 +29,9 @@ func _input(event: InputEvent) -> void:
 				video2.stream.file = "res://systems/firstScene/turnOn.ogg"
 				animationPlayer.play("turnOn")
 				
-	
+			
 func _process(delta: float) -> void:
-	if TvsEvents.inFirstTvArea:
+	if inFirstTvArea:
 		count += delta
 		
 		
@@ -35,25 +39,28 @@ func pauseTv() -> void:
 	if audio.playing:
 		audioPosition = audio.get_playback_position()
 		audio.stop() 
+		EventsResources.addState("less", 1)
 	else:
 		audio.play()
 		audio.seek(audioPosition)  
+		EventsResources.addState("more", 1)
 		
 	video.paused = !video.paused
 	
 	
 func _on_timer_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		TvsEvents.inFirstTvArea = true
+		inFirstTvArea = true
 		if !canPlay: return
 		video.stream.file = "res://videos/cartoon.ogg"
+		EventsResources.addState("more", 1)
 		audio.play()
 		video.play()
 
 
 func _on_timer_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		TvsEvents.inFirstTvArea = false
+		inFirstTvArea = false
 		canPlay = false
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
