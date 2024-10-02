@@ -27,8 +27,6 @@ gdscript/warnings/untyped_declaration=2
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=240
 window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"

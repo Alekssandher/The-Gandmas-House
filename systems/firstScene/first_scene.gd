@@ -12,6 +12,7 @@ var visibleChars := 0
 var canAdvance := false
 var speedUp := true
 var canSkip := false
+
 func _ready() -> void:
 	label.hide()
 	richLabel.hide()

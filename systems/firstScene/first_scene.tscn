@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5jegf7xbt33j"]
+[gd_scene load_steps=13 format=3 uid="uid://b5jegf7xbt33j"]
 
 [ext_resource type="Script" path="res://systems/firstScene/first_scene.gd" id="1_mtpsk"]
 [ext_resource type="FontFile" uid="uid://g7m7ptjgj537" path="res://assets/fonts/times new roman.ttf" id="2_x5kyj"]
-[ext_resource type="Script" path="res://systems/firstScene/animation_player.gd" id="3_13xyw"]
 [ext_resource type="AudioStream" uid="uid://b2k0pdb3a0j2u" path="res://audios/kenney_impact-sounds/Audio/footstep_grass_002.ogg" id="4_ndiow"]
 [ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="5_ouvba"]
 
@@ -89,6 +88,7 @@ grow_vertical = 2
 color = Color(0, 0, 0.541176, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
 offset_left = 123.0
 offset_top = 87.0
 offset_right = 1029.0
@@ -137,7 +137,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_p3850")
 }
-script = ExtResource("3_13xyw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("4_ndiow")

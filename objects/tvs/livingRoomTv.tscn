@@ -185,6 +185,21 @@ size = Vector3(1.73877, 1.15576, 0.962402)
 [sub_resource type="BoxShape3D" id="BoxShape3D_aw4ps"]
 size = Vector3(7.14941, 1, 9.06665)
 
+[sub_resource type="Animation" id="Animation_3t3nl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("screen2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_uv68e"]
 resource_name = "turnOff"
 tracks/0/type = "method"
@@ -267,21 +282,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(3.36667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_3t3nl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("screen2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -372,7 +372,6 @@ transform = Transform3D(0.997215, 0, 0.0745784, 0, 1, 0, -0.0745784, 0, 0.997215
 shape = SubResource("BoxShape3D_aw4ps")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_inrdw")
