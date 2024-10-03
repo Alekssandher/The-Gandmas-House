@@ -87,9 +87,10 @@ _data = {
 "transitionIn": SubResource("Animation_ybxel")
 }
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer", "talkTimer", "animationPlayer") groups=["player"]]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("player", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer", "talkTimer", "animationPlayer") groups=["player"]]
 script = ExtResource("1_oucsa")
 runningSpeed = 3.0
+player = NodePath(".")
 camera = NodePath("head/vertical/Camera3D")
 shakeFixTimer = NodePath("appeared/Timer")
 progressBarControl = NodePath("Control")

@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var defaultSpeed: float = 2
 @export var  jumpForce: float = 3.5
 @export var runningSpeed: float = 5
+@export var player: CharacterBody3D
 var speed: float = defaultSpeed
 
 @export_category("Settings Camera")
@@ -28,7 +29,7 @@ var speed: float = defaultSpeed
 @export var animationPlayer: AnimationPlayer
 
 var cameraTween: Tween
-
+var crouchTween: Tween
 var collision: bool
 var grounded: bool = false
 var moving: bool
@@ -55,6 +56,7 @@ var z: float = 0.0
 
 var lookedAtCar := false
 var lookBlocked := false
+var crouching := false
 func _ready() -> void:
 	
 	animationPlayer.play("transitionIn")
@@ -101,7 +103,7 @@ func _physics_process(delta: float) -> void:
 	#Func to run
 	run()
 	checkStammina()
-	
+	crouch()
 	
 	input_dir = Input.get_vector("left", "right", "up", "down")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -137,6 +139,20 @@ func _physics_process(delta: float) -> void:
 #func _on_area_3d_area_entered(area):
 	#if area.is_in_group("initialExplosionArea"):
 		#shakeFixTimer.start()
+func crouch() -> void:
+	if Input.is_action_just_pressed("ctrl"):
+		crouching = !crouching
+		crouchTween = get_tree().create_tween()
+		
+		match crouching:
+			true:
+				crouchTween.tween_property(player, "scale", Vector3(0.6, 0.6, 0.6), 0.3)
+				defaultSpeed = 1.2
+			false:
+				crouchTween.tween_property(player, "scale", Vector3(1, 1, 1), 0.3)
+				defaultSpeed = 2
+		
+		
 func run() -> void:
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
