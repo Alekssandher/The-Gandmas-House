@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bltsypm5dwr3c" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 05/car5.png" id="1_630no"]
 [ext_resource type="ArrayMesh" uid="uid://d2o2486ofpu8j" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 05/Car5.obj" id="2_4u4io"]
 [ext_resource type="Script" path="res://systems/interactableObjects/interactableObj.gd" id="3_egd5u"]
-[ext_resource type="Script" path="res://systems/interactableObjects/car.gd" id="4_o8vng"]
+[ext_resource type="Script" path="res://systems/interactableObjects/outline.gd" id="4_o8vng"]
 [ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="5_cogly"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk43k"]
