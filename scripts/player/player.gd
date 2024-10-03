@@ -49,14 +49,8 @@ var screenMode: bool
 var input_dir := Vector2(0, 0)
 var direction := Vector3(0, 0, 0)
 
-#Positions for shake
-var x: float = 0.0
-var y: float = 0.0
-var z: float = 0.0
-
-var lookedAtCar := false
-var lookBlocked := false
 var crouching := false
+
 func _ready() -> void:
 	
 	animationPlayer.play("transitionIn")
@@ -96,9 +90,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	## Handle jump.
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = jumpForce
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jumpForce
 	
 	#Func to run
 	run()
