@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Outline
 
 @export var video: VideoStreamPlayer
 @export var video2: VideoStreamPlayer
@@ -18,8 +18,7 @@ func _ready() -> void:
 	video.play()
 	
 func _input(event: InputEvent) -> void:
-	if !aimNear: return
-	
+	if !looking() or distanceToPlayer > interactDistance: return
 	if event.is_action_pressed("leftClick") and !animationPlayer.is_playing():
 		match canTurnOff:
 			true: 
@@ -31,6 +30,8 @@ func _input(event: InputEvent) -> void:
 				
 			
 func _process(delta: float) -> void:
+	looking()
+	applyOutline()
 	if inFirstTvArea:
 		count += delta
 		
@@ -53,6 +54,7 @@ func _on_timer_area_body_entered(body: Node3D) -> void:
 		inFirstTvArea = true
 		if !canPlay: return
 		video.stream.file = "res://videos/cartoon.ogg"
+		
 		EventsResources.addState("more", 1)
 		audio.play()
 		video.play()
@@ -63,13 +65,13 @@ func _on_timer_area_body_exited(body: Node3D) -> void:
 		inFirstTvArea = false
 		canPlay = false
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	if area.is_in_group("playerAim"):
-		aimNear = true
-
-func _on_area_3d_area_exited(area: Area3D) -> void:
-	if area.is_in_group("playerAim"):
-		aimNear = false
+#func _on_area_3d_area_entered(area: Area3D) -> void:
+	#if area.is_in_group("playerAim"):
+		#aimNear = true
+#
+#func _on_area_3d_area_exited(area: Area3D) -> void:
+	#if area.is_in_group("playerAim"):
+		#aimNear = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

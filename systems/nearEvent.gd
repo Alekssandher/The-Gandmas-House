@@ -13,6 +13,7 @@ class_name ObjectInteract
 @export var interactDistance: float = 1.2
 @export var disToStopText: float
 @export var canShowText: bool = true
+@export var lookingLimitX: float = 0.8
 
 var playerDirection: Vector3
 var directionToObject: Vector3
@@ -21,16 +22,20 @@ var distanceToPlayer: float
 
 var i: int = 0
 
+signal lookingAt
+signal notLookingAt
 
 func _process(delta: float) -> void:
-	
 	if looking() and distanceToPlayer < interactDistance:
+		emit_signal("lookingAt")
 		if !canShowText: return
 		showText()
-
+		
+	else: emit_signal("notLookingAt")
 func showText() -> void:
 	canShowText = false
 	while i < texts.size():
+		#If the player be too far away it will not show the text anymore once it's showing
 		if distanceToPlayer > disToStopText: return;
 		await World.typingEffect(texts[i], 0.1, 1.5)
 		i += 1
@@ -45,4 +50,4 @@ func looking() -> bool:
 	dotProduct = playerDirection.dot(directionToObject)
 	
 	#Returns the result of the calcs with a error margin
-	return dotProduct > 0.8
+	return dotProduct > lookingLimitX

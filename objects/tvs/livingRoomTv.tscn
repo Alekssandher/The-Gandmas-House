@@ -1,10 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://15xf4lj7c2qf"]
+[gd_scene load_steps=25 format=4 uid="uid://15xf4lj7c2qf"]
 
 [ext_resource type="Texture2D" uid="uid://bfsd2uff6srhu" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele1.jpg" id="1_w12gt"]
 [ext_resource type="Script" path="res://objects/tvs/living_room_tv.gd" id="2_qmbta"]
 [ext_resource type="AudioStream" uid="uid://dyh3tbwu73ub4" path="res://videos/cartoon.ogg" id="3_da2kf"]
-[ext_resource type="Script" path="res://systems/interactableObjects/car.gd" id="4_apf7m"]
-[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="5_dtoq6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahj7o"]
 resource_name = "Tele1"
@@ -150,6 +148,7 @@ resource_local_to_scene = true
 file = "res://systems/firstScene/turnOff.ogg"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m404c"]
+resource_local_to_scene = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8rmqp"]
 material = SubResource("ShaderMaterial_m404c")
@@ -376,20 +375,12 @@ shape = SubResource("BoxShape3D_aw4ps")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_inrdw")
 
-[node name="Outline" type="Node" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("4_apf7m")
-counterMaterial = ExtResource("5_dtoq6")
-mesh = NodePath("..")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_r6gpw")
 }
 
 [connection signal="body_entered" from="timerArea" to="." method="_on_timer_area_body_entered"]
-[connection signal="body_exited" from="timerArea" to="." method="_on_timer_area_body_exited"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="Area3D" to="Outline" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
-[connection signal="area_exited" from="Area3D" to="Outline" method="_on_area_3d_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
