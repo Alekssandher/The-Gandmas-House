@@ -96,9 +96,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jumpForce
+	## Handle jump.
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = jumpForce
 	
 	#Func to run
 	run()
@@ -148,12 +148,14 @@ func crouch() -> void:
 			true:
 				crouchTween.tween_property(player, "scale", Vector3(0.6, 0.6, 0.6), 0.3)
 				defaultSpeed = 1.2
+				
 			false:
 				crouchTween.tween_property(player, "scale", Vector3(1, 1, 1), 0.3)
 				defaultSpeed = 2
 		
 		
 func run() -> void:
+	if crouching: return
 	if Input.is_action_pressed("shift") and canRun and moving:
 		progressBarControl.show()
 		if !canRun: return
