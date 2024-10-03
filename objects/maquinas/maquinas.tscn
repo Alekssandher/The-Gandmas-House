@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dlkt8wx5kd7px"]
+[gd_scene load_steps=7 format=4 uid="uid://dlkt8wx5kd7px"]
 
 [ext_resource type="Texture2D" uid="uid://mi7vqrnbs3ux" path="res://assets/miscelaneous/Maquinas/M (9).png" id="1_fdv8a"]
 [ext_resource type="Script" path="res://objects/maquinas/cube_011.gd" id="2_mkkwx"]
@@ -44,9 +44,6 @@ shadow_mesh = SubResource("ArrayMesh_1yoor")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5bskb"]
 points = PackedVector3Array(0.389325, 2.17412, 1.20242, -0.507837, 2.17412, 1.20242, 0.389325, -2.17413, 1.20242, 0.507833, 2.05537, 1.08378, 0.389325, 2.17412, -1.20241, -0.507837, 2.17412, -1.20241, -0.507837, -2.17413, 1.20242, 0.507833, -2.0558, 1.08378, 0.389325, -2.17413, -1.20241, 0.507833, 2.05537, -1.084, -0.507837, -2.17413, -1.20241, 0.507833, -2.0558, -1.084)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_df6jy"]
-size = Vector3(7.52951, 1.81104, 7.0199)
-
 [node name="Maquinas" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55408, 0.5, 18.6673)
 
@@ -75,16 +72,8 @@ omni_range = 4.3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_011/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_5bskb")
 
-[node name="Area3D" type="Area3D" parent="Cube_011"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_011/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1263, -0.405518, 0.0392456)
-shape = SubResource("BoxShape3D_df6jy")
-
 [node name="Label3D" type="Label3D" parent="Cube_011"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.516174, -0.234971, 0.0634232)
 text = "You were not supposed to be here. 
 Turn back and take your way."
 font_size = 24
-
-[connection signal="area_entered" from="Cube_011/Area3D" to="Cube_011" method="_on_area_3d_area_entered"]
