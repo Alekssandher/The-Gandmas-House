@@ -87,7 +87,7 @@ _data = {
 "transitionIn": SubResource("Animation_ybxel")
 }
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("player", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer", "talkTimer", "animationPlayer") groups=["player"]]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("player", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer", "talkTimer", "animationPlayer", "raycast") groups=["player"]]
 script = ExtResource("1_oucsa")
 runningSpeed = 3.0
 player = NodePath(".")
@@ -100,6 +100,7 @@ footstepAudio = NodePath("footsteps/AudioStreamPlayer3D")
 footstepsTimer = NodePath("footsteps/footstepsTimer")
 talkTimer = NodePath("appeared/Timer")
 animationPlayer = NodePath("AnimationPlayer")
+raycast = NodePath("head/vertical/Camera3D/RayCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1vfes")
@@ -126,6 +127,11 @@ shape = SubResource("BoxShape3D_vj8qa")
 spot_range = 6.844
 spot_angle = 43.0
 script = ExtResource("2_8mmd1")
+
+[node name="RayCast3D" type="RayCast3D" parent="head/vertical/Camera3D"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, -0.8, 0, 0.8, -3.49691e-08, 0, 0, -0.104589)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="playerArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)

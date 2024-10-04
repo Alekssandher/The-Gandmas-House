@@ -15,33 +15,36 @@ var audioPosition: float
 var inFirstTvArea: bool = false
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	player.connect("raycastout", raycastout)
 	video.play()
 	
-func _input(event: InputEvent) -> void:
-	if !looking() or distanceToPlayer > interactDistance: return
-	if event.is_action_pressed("leftClick") and !animationPlayer.is_playing():
-		match canTurnOff:
-			true: 
-				video2.stream.file = "res://videos/turnOff.ogv"
-				animationPlayer.play("turnOff")
-			false: 
-				video2.stream.file = "res://videos/turnOn.ogv"
-				animationPlayer.play("turnOn")
-				
+func interact() -> void:
+	
+	if animationPlayer.is_playing(): return
+	
+	match canTurnOff:
+		true: 
+			video2.stream.file = "res://videos/turnOff.ogv"
+			animationPlayer.play("turnOff")
+		false: 
+			video2.stream.file = "res://videos/turnOn.ogv"
+			animationPlayer.play("turnOn")
 			
+		
 func _process(delta: float) -> void:
-	looking()
-	applyOutline()
 	if inFirstTvArea:
 		count += delta
 		
 		
 func pauseTv() -> void:
 	if audio.playing:
+		print("stop")
 		audioPosition = audio.get_playback_position()
 		audio.stop() 
 		EventsResources.addState("less", 1)
 	else:
+		print("play")
 		audio.play()
 		audio.seek(audioPosition)  
 		EventsResources.addState("more", 1)
@@ -65,14 +68,6 @@ func _on_timer_area_body_exited(body: Node3D) -> void:
 		inFirstTvArea = false
 		canPlay = false
 
-#func _on_area_3d_area_entered(area: Area3D) -> void:
-	#if area.is_in_group("playerAim"):
-		#aimNear = true
-#
-#func _on_area_3d_area_exited(area: Area3D) -> void:
-	#if area.is_in_group("playerAim"):
-		#aimNear = false
-
-
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	canTurnOff = !canTurnOff
+	

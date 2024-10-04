@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=4 uid="uid://15xf4lj7c2qf"]
+[gd_scene load_steps=26 format=4 uid="uid://15xf4lj7c2qf"]
 
 [ext_resource type="Texture2D" uid="uid://bfsd2uff6srhu" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele1.jpg" id="1_w12gt"]
 [ext_resource type="Script" path="res://objects/tvs/living_room_tv.gd" id="2_qmbta"]
 [ext_resource type="AudioStream" uid="uid://dyh3tbwu73ub4" path="res://videos/cartoon.ogg" id="3_da2kf"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="4_p314x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahj7o"]
 resource_name = "Tele1"
@@ -213,31 +214,31 @@ tracks/0/keys = {
 "method": &"play"
 }]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("screen2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"pauseTv"
 }]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("screen2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_sh7i1"]
@@ -257,31 +258,31 @@ tracks/0/keys = {
 "method": &"play"
 }]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("screen2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(3.36667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(3.4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"pauseTv"
 }]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("screen2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(3.36667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r6gpw"]
@@ -291,15 +292,10 @@ _data = {
 "turnOn": SubResource("Animation_sh7i1")
 }
 
-[node name="Tele_001" type="MeshInstance3D" node_paths=PackedStringArray("video", "video2", "audio", "animationPlayer")]
+[node name="Tele_001" type="MeshInstance3D"]
 transform = Transform3D(1.82549, 0, -0.317244, 0, 1.85285, 0, 0.317244, 0, 1.82549, 2.46884, -28.8014, 13.9335)
 mesh = SubResource("ArrayMesh_uf870")
 skeleton = NodePath("")
-script = ExtResource("2_qmbta")
-video = NodePath("SubViewport/VideoStreamPlayer")
-video2 = NodePath("tvTurn/VideoStreamPlayer")
-audio = NodePath("AudioStreamPlayer3D")
-animationPlayer = NodePath("AnimationPlayer")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(640, 360)
@@ -368,7 +364,14 @@ shape = SubResource("BoxShape3D_inrdw")
 transform = Transform3D(0.997215, 0, 0.0745784, 0, 1, 0, -0.0745784, 0, 0.997215, 0.177896, 0, -4.01205)
 shape = SubResource("BoxShape3D_aw4ps")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("video", "video2", "audio", "animationPlayer", "mesh")]
+script = ExtResource("2_qmbta")
+video = NodePath("../SubViewport/VideoStreamPlayer")
+video2 = NodePath("../tvTurn/VideoStreamPlayer")
+audio = NodePath("../AudioStreamPlayer3D")
+animationPlayer = NodePath("../AnimationPlayer")
+mesh = NodePath("..")
+counter = ExtResource("4_p314x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_inrdw")
@@ -379,7 +382,10 @@ libraries = {
 }
 
 [connection signal="body_entered" from="timerArea" to="." method="_on_timer_area_body_entered"]
+[connection signal="body_entered" from="timerArea" to="Area3D" method="_on_timer_area_body_entered"]
 [connection signal="body_exited" from="timerArea" to="." method="_on_timer_area_body_exited"]
+[connection signal="body_exited" from="timerArea" to="Area3D" method="_on_timer_area_body_exited"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Area3D" method="_on_animation_player_animation_finished"]

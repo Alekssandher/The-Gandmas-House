@@ -1,30 +1,19 @@
-extends ObjectInteract
-
+extends Area3D
 class_name Outline
 
-@export var localMesh: MeshInstance3D
-@export var counterMaterial: Material
-@export var lookingLimitY: float
+@export var mesh: MeshInstance3D
+@export var counter: Material
 
-var playerDirectionY: Vector3
-var directionToObjectY: Vector3
-var dotProductY: float
-var distanceToPlayerY: float
+var player: CharacterBody3D
 
-func lookingY() -> bool:
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	player.connect("raycastout", raycastout)
 	
-	#Calcs if the player and object are in front of each other
-	playerDirectionY = -player.global_transform.basis.z.normalized()
-	directionToObjectY = (object.global_position - player.global_position).normalized()
-	dotProductY = playerDirection.dot(directionToObject)
+func outline() -> void:
+	mesh.material_overlay = counter
+
+func raycastout() -> void:
+	mesh.material_overlay = null
 	
-	#Returns the result of the calcs with a error margin
-	return dotProductY > lookingLimitY
-	
-func applyOutline() -> bool:
-	if distanceToPlayer < interactDistance and looking():
-		localMesh.material_overlay = counterMaterial
-		return true
-	else:
-		localMesh.material_overlay = null
-		return false
+	 

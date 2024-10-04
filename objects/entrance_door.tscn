@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=16 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_lkl6u"]
 [ext_resource type="Script" path="res://systems/doors/entrance_doors.gd" id="2_f0qb0"]
 [ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="3_jyxiq"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="4_541r2"]
 [ext_resource type="AudioStream" uid="uid://du0c51s4yvg17" path="res://audios/events/door/Forcibly_Opening cut (mp3cut.net).mp3" id="4_gqxnt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05suq"]
@@ -167,14 +168,10 @@ size = Vector3(2.00757, 1, 3.90473)
 
 [node name="entranceDoor" type="Node3D"]
 
-[node name="Puerta" type="MeshInstance3D" parent="." node_paths=PackedStringArray("animationPlayer", "audio", "lockedDoorSound")]
+[node name="Puerta" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.09373, 0, 0, 0, 1, -2.53518e-06, 0, 2.53518e-06, 1, 6.88587, -2.32892, 8.25746)
 mesh = SubResource("ArrayMesh_vl2h1")
 skeleton = NodePath("")
-script = ExtResource("2_f0qb0")
-animationPlayer = NodePath("AnimationPlayer")
-audio = NodePath("../doorSound")
-lockedDoorSound = NodePath("../lockedDoorSound")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Puerta"]
 libraries = {
@@ -187,8 +184,14 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442932, 0.103882, 0.00311279)
 shape = SubResource("BoxShape3D_rvp8k")
 
-[node name="door" type="Area3D" parent="." groups=["interactable"]]
+[node name="door" type="Area3D" parent="." node_paths=PackedStringArray("animationPlayer", "audio", "lockedDoorSound", "mesh") groups=["interactable"]]
 transform = Transform3D(1, -1.50996e-07, -1.50996e-07, -1.50996e-07, -1, 1.14631e-19, -1.50996e-07, 2.27996e-14, -1, 7.35713, -2.22462, 8.22201)
+script = ExtResource("2_f0qb0")
+animationPlayer = NodePath("../Puerta/AnimationPlayer")
+audio = NodePath("../doorSound")
+lockedDoorSound = NodePath("../lockedDoorSound")
+counter = ExtResource("4_541r2")
+mesh = NodePath("../Puerta")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="door"]
 transform = Transform3D(1, 7.99311e-08, 7.99307e-08, -9.56169e-08, 1, -2.53518e-06, -9.56169e-08, 2.53518e-06, 1, 0, 0, 0)
@@ -208,7 +211,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 stream = ExtResource("4_gqxnt")
 
-[connection signal="area_entered" from="door" to="Puerta" method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="door" to="Puerta" method="_on_area_3d_area_exited"]
-[connection signal="body_entered" from="box" to="Puerta" method="_on_area_3d_2_body_entered"]
-[connection signal="body_exited" from="box" to="Puerta" method="_on_area_3d_2_body_exited"]
+[connection signal="body_entered" from="box" to="door" method="_on_box_body_entered"]

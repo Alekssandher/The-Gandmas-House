@@ -27,6 +27,7 @@ var speed: float = defaultSpeed
 @export var talkTimer: Timer
 
 @export var animationPlayer: AnimationPlayer
+@export var raycast: RayCast3D
 
 var cameraTween: Tween
 var crouchTween: Tween
@@ -50,7 +51,7 @@ var input_dir := Vector2(0, 0)
 var direction := Vector3(0, 0, 0)
 
 var crouching := false
-
+signal raycastout
 func _ready() -> void:
 	
 	animationPlayer.play("transitionIn")
@@ -87,6 +88,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	interaction()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -206,3 +208,15 @@ func _on_timer_timeout() -> void:
 	await World.typingEffect("Here I am, following what an unknown voice says.", 0.1, 1.5)
 	#await World.typingEffect("Let's see where it takes me.", 0.1, 1.5)
 	#await World.typingEffect("They said It was a huge, old house... somewhere around here", 0.1, 1.5)
+func interaction() -> void:
+	var target := raycast.get_collider()
+	
+	if raycast.is_colliding() and target.has_method("outline"):
+		target.outline()
+	
+	if raycast.is_colliding() and target.has_method("interact") and Input.is_action_just_pressed("leftClick"):
+		target.interact()
+		
+	if !raycast.is_colliding():
+		emit_signal("raycastout")
+			
