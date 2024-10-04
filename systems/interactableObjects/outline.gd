@@ -21,8 +21,10 @@ func lookingY() -> bool:
 	#Returns the result of the calcs with a error margin
 	return dotProductY > lookingLimitY
 	
-func applyOutline() -> void:
+func applyOutline() -> bool:
 	if distanceToPlayer < interactDistance and looking():
 		localMesh.material_overlay = counterMaterial
+		return true
 	else:
 		localMesh.material_overlay = null
+		return false

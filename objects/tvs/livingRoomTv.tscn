@@ -43,7 +43,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wtk3f")
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_7ive1"]
-file = "res://videos/ace of base.ogg"
 
 [sub_resource type="Shader" id="Shader_201ws"]
 code = "/*
@@ -145,7 +144,6 @@ shader_parameter/white_noise_rate = 0.011
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_8behb"]
 resource_local_to_scene = true
-file = "res://systems/firstScene/turnOff.ogg"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m404c"]
 resource_local_to_scene = true

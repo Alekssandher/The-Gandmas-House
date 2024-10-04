@@ -22,10 +22,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("leftClick") and !animationPlayer.is_playing():
 		match canTurnOff:
 			true: 
-				video2.stream.file = "res://systems/firstScene/turnOff.ogg"
+				video2.stream.file = "res://videos/turnOff.ogv"
 				animationPlayer.play("turnOff")
 			false: 
-				video2.stream.file = "res://systems/firstScene/turnOn.ogg"
+				video2.stream.file = "res://videos/turnOn.ogv"
 				animationPlayer.play("turnOn")
 				
 			
@@ -53,7 +53,7 @@ func _on_timer_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		inFirstTvArea = true
 		if !canPlay: return
-		video.stream.file = "res://videos/cartoon.ogg"
+		video.stream.file = "res://videos/cartoon.ogv"
 		
 		EventsResources.addState("more", 1)
 		audio.play()
