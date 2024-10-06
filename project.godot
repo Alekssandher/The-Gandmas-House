@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bone Feast"
+config/name="TheGrandma'sHouse"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 

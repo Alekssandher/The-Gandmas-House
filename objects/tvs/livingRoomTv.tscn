@@ -178,7 +178,7 @@ resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_e4ktc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inrdw"]
-size = Vector3(1.73877, 1.15576, 0.962402)
+size = Vector3(1.73877, 1.19421, 0.98999)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aw4ps"]
 size = Vector3(7.14941, 1, 9.06665)
@@ -374,6 +374,7 @@ mesh = NodePath("..")
 counter = ExtResource("4_p314x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -2.38419e-07, 0.019228, -0.0137959)
 shape = SubResource("BoxShape3D_inrdw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

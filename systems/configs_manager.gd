@@ -4,7 +4,11 @@ extends Node3D
 @export var worldEnvironment: WorldEnvironment
 @export var directionalLight: DirectionalLight3D
 
+var typingEffect := preload("res://systems/typingEffect.tscn").instantiate()
+
 func _ready() -> void:
+	add_child(typingEffect)
+	
 	setShadowConfigs()
 	
 func _process(delta: float) -> void:
