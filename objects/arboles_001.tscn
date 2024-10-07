@@ -57,7 +57,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_o8n6m")
-
-[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
-transform = Transform3D(0.69844, 0, 0.715668, 0, 1, 0, -0.715668, 0, 0.69844, -943.07, 17.5577, -871.718)
-aabb = AABB(-322.952, -22.8814, -1417.6, 645.905, 45.3615, 2835.19)

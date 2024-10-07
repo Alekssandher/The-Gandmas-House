@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=4 uid="uid://cuy41ih03ppyq"]
+
+[ext_resource type="Texture2D" uid="uid://ddgaf2ynvp657" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera6.jpg" id="1_76u2a"]
+[ext_resource type="Script" path="res://objects/windows/window.gd" id="2_un5dy"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="3_pxkp6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t16vo"]
+resource_name = "Madera6"
+cull_mode = 2
+albedo_texture = ExtResource("1_76u2a")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ti8m"]
+resource_name = "Vidrio.001"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_po6qe"]
+_surfaces = [{
+"aabb": AABB(-0.367203, -0.382817, -0.0233538, 0.734406, 0.765635, 0.045867),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("CQAMAAgACQANAAwABQAAAAEABQAEAAAABgABAAIABgAFAAEABAADAAAABAAHAAMABwACAAMABwAGAAIACgANAAkACgAOAA0ACAAPAAsACAAMAA8ACwAOAAoACwAPAA4AAAANAAEAAAAMAA0ABAALAAcABAAIAAsABQAIAAQABQAJAAgAAgAPAAMAAgAOAA8AAQAOAAIAAQANAA4ABwAKAAYABwALAAoABgAJAAUABgAKAAkAAwAMAAAAAwAPAAwA"),
+"name": "Madera6",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAP//AAAAAAAA//8AAAAA/////wAA////////AAAf80UN//8AAN8MRQ3//wAA3wy58v//AAAf87ny//8AAB/zRQ0AAAAA3wxFDQAAAADfDLnyAAAAAB/zufIAAAAA//8AAAAAAAAAAAAAAAAAAAAA//8AAAAA/////wAAAAA=")
+}, {
+"aabb": AABB(-0.330278, -0.34312, -0.00839247, 0.660557, 0.68624, 0.0172292),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("BAAGAAcABAAFAAYAAAACAAEAAAADAAIA"),
+"name": "Vidrio.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAA//8AAAAA/////wAAAAD//wAA//8AAAAAAAD//wAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gds8g"]
+resource_name = "Abandoned_House_Plane_240"
+_surfaces = [{
+"aabb": AABB(-0.367203, -0.382817, -0.0233538, 0.734406, 0.765635, 0.045867),
+"attribute_data": PackedByteArray("qaagtKmmJoPYfKC0VVmgtFVZJoPYfKC0VVleS1VZJoPYfF5LqaZeS6mmJoPYfF5LlqErr5ahJoPYfCuvaF4rr2heJoPYfCuvaF7TUGheJoPYfNNQlqHTUJahJoPYfNNQlqErr5ah2HwmgyuvaF4rr2he2HwmgyuvaF7TUGhe2Hwmg9NQlqHTUJah2Hwmg9NQqaagtKmm2Hwmg6C0VVmgtFVZ2Hwmg6C0VVleS1VZ2Hwmg15LqaZeS6mm2Hwmg15L"),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("GwAkABgAGwAnACQADwAAAAMADwAMAAAAEgADAAYAEgAPAAMADAAJAAAADAAVAAkAFQAGAAkAFQASAAYAHgAnABsAHgAqACcAGAAtACEAGAAkAC0AIQAqAB4AIQAtACoAAQAoAAQAAQAlACgADgAjABcADgAaACMAEAAZAA0AEAAcABkABwAuAAoABwArAC4ABQAsAAgABQApACwAFgAfABMAFgAiAB8AFAAdABEAFAAgAB0ACwAmAAIACwAvACYA"),
+"material": SubResource("StandardMaterial3D_t16vo"),
+"name": "Madera6",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("//8AAP//AID//wAA////P///AAD///+/AAAAAP//AIAAAAAA////PwAAAAD//wAAAAD/////AIAAAP//////vwAA/////wAA////////AID/////////v/////////+/H/NFDf//AIAf80UN////vx/zRQ3//wAA3wxFDf//AIDfDEUN////v98MRQ3///+/3wy58v//AIDfDLny////P98MufL///+/H/O58v//AIAf87ny////Px/zufL//wAAH/NFDQAAAAAf80UNAAD/vx/zRQ0AAAAA3wxFDQAAAADfDEUNAAD/v98MRQ0AAP+/3wy58gAAAADfDLnyAAD/P98MufIAAP+/H/O58gAAAAAf87nyAAD/Px/zufIAAAAA//8AAAAAAAD//wAAAAD/P///AAAAAP+/AAAAAAAAAAAAAAAAAAD/PwAAAAAAAAAAAAD//wAAAAAAAP//AAD/vwAA//8AAAAA/////wAAAAD/////AAD/v/////8AAP+//3///wAA/3//fwAA/3///wAA/3//P/9//3///////3//P/9//3///////3//fwAA/3///////3//P/9//3///////3//fwAA/3///wAA/3//fwAA/3///wAA/3//P/9//v//f////3//P/9//v//f////3//fwAA////fwAA/3//fwAA/v//fwAA/3//P/9//v//fwAA/3//fwAA/v//fwAA/3//P/9/////f////3//P/9//v//f////3//fwAA")
+}, {
+"aabb": AABB(-0.330278, -0.34312, -0.00839247, 0.660557, 0.68624, 0.0172292),
+"attribute_data": PackedByteArray("lqErr2heK69oXtNQlqHTUJahK69oXiuvaF7TUJah01A="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("BAAGAAcABAAFAAYAAAACAAEAAAADAAIA"),
+"material": SubResource("StandardMaterial3D_2ti8m"),
+"name": "Vidrio.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAA//8AAAAA/////wAAAAD//wAA//8AgAAAAAD//wCAAAD/////AID///////8AgP///3////9/////f////3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_po6qe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nroiw"]
+size = Vector3(0.728516, 0.767914, 0.0459595)
+
+[node name="Ventana_027" type="MeshInstance3D"]
+transform = Transform3D(2.01553, 0, 0, 0, 2.01553, 0, 0, 0, 2.01553, -45.9119, -5.60358, -2.44431)
+mesh = SubResource("ArrayMesh_gds8g")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("mesh")]
+script = ExtResource("2_un5dy")
+mesh = NodePath("..")
+counter = ExtResource("3_pxkp6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -0.00195313, -0.000473499, -0.000397325)
+shape = SubResource("BoxShape3D_nroiw")

@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqgdoauboxg0" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Colchon.jpg" id="26_8dqy5"]
 [ext_resource type="Texture2D" uid="uid://mwc8lqsej2tf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Refrigerador.png" id="27_17q80"]
 [ext_resource type="Texture2D" uid="uid://cq3qp6np3t5uf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lavadora.jpg" id="28_ab2qx"]
-[ext_resource type="PackedScene" uid="uid://bqxoi52c7gq1t" path="res://objects/entrance_door.tscn" id="29_katat"]
+[ext_resource type="PackedScene" uid="uid://bqxoi52c7gq1t" path="res://objects/door/entrance_door.tscn" id="29_katat"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvgmv"]
 

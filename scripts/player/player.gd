@@ -143,7 +143,7 @@ func crouch() -> void:
 		match crouching:
 			true:
 				crouchTween.tween_property(player, "scale", Vector3(0.6, 0.6, 0.6), 0.3)
-				defaultSpeed = 1.2
+				defaultSpeed = 1
 				
 			false:
 				crouchTween.tween_property(player, "scale", Vector3(1, 1, 1), 0.3)
