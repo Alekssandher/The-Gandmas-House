@@ -59,7 +59,7 @@ mesh = SubResource("ArrayMesh_fx78r")
 skeleton = NodePath("")
 
 [node name="indoorsLight2" type="OmniLight3D" parent="."]
-transform = Transform3D(2.92082, -1.09345e-13, -2.1725e-21, 1.09345e-13, 2.92082, -1.09345e-13, 2.1725e-21, 1.09345e-13, 2.92082, 0.152111, 6.55575, 0)
+transform = Transform3D(2.92082, -1.09345e-13, -2.1725e-21, 1.09345e-13, 2.92082, -1.09345e-13, 2.1725e-21, 1.09345e-13, 2.92082, 0.152111, 8.80791, 0)
 visible = false
 light_color = Color(0.886275, 0.623529, 0.34902, 1)
 light_energy = 3.101
