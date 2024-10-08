@@ -86,6 +86,7 @@ size = Vector3(1, 0.915039, 0.940918)
 
 [node name="lampshade" type="MeshInstance3D"]
 transform = Transform3D(0, 6.97868e-08, 1.17083, -1.17083, 6.97868e-08, -4.15962e-15, -6.97868e-08, -1.17083, 6.97868e-08, 0, 0, 0)
+lod_bias = 0.001
 mesh = SubResource("ArrayMesh_kjuh4")
 skeleton = NodePath("")
 

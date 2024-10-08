@@ -53,6 +53,7 @@ var direction := Vector3(0, 0, 0)
 var crouching := false
 signal raycastout
 
+var fps: float
 func _ready() -> void:
 	
 	animationPlayer.play("transitionIn")
@@ -88,7 +89,9 @@ func _input(event: InputEvent) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	fps = Engine.get_frames_per_second()
 	
+	print("Fps:", fps)
 	interaction()
 	# Add the gravity.
 	if not is_on_floor():

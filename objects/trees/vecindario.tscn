@@ -865,6 +865,7 @@ shape = SubResource("ConvexPolygonShape3D_jtv0n")
 
 [node name="Carretera" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.30761, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, -148.018, -2.16684, 0.686584)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_d5211")
 skeleton = NodePath("")
 
@@ -875,6 +876,7 @@ shape = SubResource("ConcavePolygonShape3D_1dav6")
 
 [node name="Carretera_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.30761, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, -8.1271, -2.16679, 0.689148)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_342ph")
 skeleton = NodePath("")
 
@@ -956,6 +958,7 @@ skeleton = NodePath("")
 
 [node name="Plane_069" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.30761, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, 33.6697, -1.27455, -38.0343)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_efc4q")
 skeleton = NodePath("")
 
@@ -1018,11 +1021,16 @@ shape = SubResource("CylinderShape3D_p46wc")
 
 [node name="R_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.89257, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, 0.623833, -1.64574, 1.96375)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_rdq8a")
 skeleton = NodePath("")
 
 [node name="Telefono" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.30761, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, -31.0987, -0.284108, 7.93568)
+lod_bias = 0.001
+visibility_range_end = 50.0
+visibility_range_end_margin = 15.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_ubmf2")
 skeleton = NodePath("")
 
