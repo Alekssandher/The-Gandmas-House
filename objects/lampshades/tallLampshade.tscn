@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dc557vuoabjym"]
+[gd_scene load_steps=12 format=4 uid="uid://dc557vuoabjym"]
 
 [ext_resource type="Texture2D" uid="uid://6sxaxw5rh8r" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lampara4.png" id="1_fnmwf"]
 [ext_resource type="Texture2D" uid="uid://b3s4fkxa6fmf1" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lampara4 - emisor.png" id="2_0kawj"]
 [ext_resource type="Script" path="res://objects/lampshades/lampshadeTrue.gd" id="3_nfmex"]
 [ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="4_p10hw"]
+[ext_resource type="AudioStream" uid="uid://4au71bamiiob" path="res://audios/events/switch/switchOn.ogg" id="5_ksk8m"]
+[ext_resource type="AudioStream" uid="uid://bsvlv7fys4ln4" path="res://audios/events/switch/switchOff.ogg" id="6_q8wuh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kg2rg"]
 resource_name = "Lampara3.001"
@@ -70,9 +72,11 @@ distance_fade_shadow = 13.0
 distance_fade_length = 15.0
 omni_range = 3.0
 
-[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("light", "mesh")]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("light", "switchOn", "switchOff", "mesh")]
 script = ExtResource("3_nfmex")
 light = NodePath("../indoorsLight2")
+switchOn = NodePath("../switchOn")
+switchOff = NodePath("../switchOff")
 mesh = NodePath("..")
 counter = ExtResource("4_p10hw")
 
@@ -82,5 +86,10 @@ shape = SubResource("CapsuleShape3D_cein3")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_q3yxr")
+
+[node name="switchOn" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ksk8m")
+
+[node name="switchOff" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_q8wuh")

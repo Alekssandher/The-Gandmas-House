@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=18 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_oucsa"]
 [ext_resource type="Script" path="res://systems/flashLight/spot_light_3d.gd" id="2_8mmd1"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="2_me5s2"]
 [ext_resource type="AudioStream" uid="uid://dnjqixia8kr6g" path="res://audios/kenney_impact-sounds/Audio/footstep_concrete_004.ogg" id="3_s6vu5"]
+[ext_resource type="Shader" path="res://shaders/analog.gdshader" id="5_j8yn0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
@@ -86,6 +87,22 @@ _data = {
 "nokiaMenu": SubResource("Animation_i64kh"),
 "transitionIn": SubResource("Animation_ybxel")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbf40"]
+shader = ExtResource("5_j8yn0")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0
+shader_parameter/crease_opacity = 1.0
+shader_parameter/filter_intensity = 0.2
+shader_parameter/tape_crease_smear = 0.1
+shader_parameter/tape_crease_intensity = 1.0
+shader_parameter/tape_crease_jitter = 0.11
+shader_parameter/tape_crease_speed = 0.1
+shader_parameter/tape_crease_discoloration = 1.6
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("player", "camera", "shakeFixTimer", "progressBarControl", "stamminaTimer", "recoveryTimer", "footstepAudio", "footstepsTimer", "talkTimer", "animationPlayer", "raycast") groups=["player"]]
 script = ExtResource("1_oucsa")
@@ -198,6 +215,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_tbf40")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="timeout" from="Control/stamminaTimer" to="Control" method="_on_stammina_timer_timeout"]
 [connection signal="timeout" from="Control/recoveryTimer" to="Control" method="_on_recovery_timer_timeout"]

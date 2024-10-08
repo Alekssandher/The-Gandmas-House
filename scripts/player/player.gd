@@ -52,6 +52,7 @@ var direction := Vector3(0, 0, 0)
 
 var crouching := false
 signal raycastout
+
 func _ready() -> void:
 	
 	animationPlayer.play("transitionIn")
@@ -120,21 +121,6 @@ func _physics_process(delta: float) -> void:
 
 
 
-		
-#shake play by time configs
-	#elif ExplosionManager.activeShake == false:
-		#shakeFixTimer.stop()
-	#
-	#
-#func _on_timer_timeout():
-	#
-	#camera.rotation_degrees = initialRotation
-	#ExplosionManager.activeShake = false
-
-
-#func _on_area_3d_area_entered(area):
-	#if area.is_in_group("initialExplosionArea"):
-		#shakeFixTimer.start()
 func crouch() -> void:
 	if Input.is_action_just_pressed("ctrl"):
 		crouching = !crouching

@@ -49,5 +49,5 @@ func looking() -> bool:
 	directionToObject = (object.global_position - player.global_position).normalized()
 	dotProduct = playerDirection.dot(directionToObject)
 	
-	#Returns the result of the calcs with a error margin
+	#Returns the result of the calcs with an error margin
 	return dotProduct > lookingLimitX

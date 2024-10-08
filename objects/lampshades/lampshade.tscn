@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dgten5oy71lh4"]
+[gd_scene load_steps=15 format=4 uid="uid://dgten5oy71lh4"]
 
 [ext_resource type="Texture2D" uid="uid://gspk7070q0hn" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lampara2.png" id="1_j4c75"]
 [ext_resource type="Texture2D" uid="uid://qr0k2ietyb47" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lampara2 - emisor.png" id="2_340sy"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://3b848853gmam" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco - emisor.png" id="4_o67l7"]
 [ext_resource type="Script" path="res://objects/lampshades/lampshadeTrue.gd" id="5_ff0qa"]
 [ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="6_facmq"]
+[ext_resource type="AudioStream" uid="uid://4au71bamiiob" path="res://audios/events/switch/switchOn.ogg" id="7_silat"]
+[ext_resource type="AudioStream" uid="uid://bsvlv7fys4ln4" path="res://audios/events/switch/switchOff.ogg" id="8_77mmd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltiik"]
 resource_name = "Lampara2"
@@ -105,12 +107,20 @@ omni_range = 3.0
 transform = Transform3D(1, -1.77636e-14, 1.05879e-21, 1.77636e-14, 1, -1.77636e-14, 2.11758e-22, 1.77636e-14, 1, -0.308437, -0.514198, 3.06486e-08)
 shape = SubResource("SphereShape3D_2udjy")
 
-[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("light", "mesh")]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("light", "switchOn", "switchOff", "mesh")]
 script = ExtResource("5_ff0qa")
 light = NodePath("../indoorsLight2")
+switchOn = NodePath("../switchOn")
+switchOff = NodePath("../switchOff")
 mesh = NodePath("..")
 counter = ExtResource("6_facmq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, -3.90799e-14, 3.87518e-20, 3.90799e-14, 1, -3.90799e-14, 3.11285e-20, 3.90799e-14, 1, -0.602025, -0.59846, 0.00634769)
 shape = SubResource("BoxShape3D_onbg7")
+
+[node name="switchOn" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_silat")
+
+[node name="switchOff" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_77mmd")
