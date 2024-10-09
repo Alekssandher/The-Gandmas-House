@@ -7,6 +7,7 @@ extends Node3D
 var typingEffect := preload("res://systems/typingEffect.tscn").instantiate()
 
 func _ready() -> void:
+	
 	add_child(typingEffect)
 	
 	setShadowConfigs()
@@ -24,3 +25,14 @@ func setShadowConfigs() -> void:
 		directionalLight.shadow_enabled = true
 	else: 
 		directionalLight.shadow_enabled = false
+	#if World.fog:
+		#worldEnvironment.environment.fog_enabled = true
+	#else:
+		#worldEnvironment.environment.fog_enabled = false
+
+
+func _on_check_button_2_fog_toggle(fog: bool) -> void:
+	if fog:
+		worldEnvironment.environment.fog_enabled = true
+	else:
+		worldEnvironment.environment.fog_enabled = false

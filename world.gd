@@ -3,6 +3,7 @@ extends Node3D
 #Settings
 var shadowQuality: int
 var shadow: bool
+var fog: bool
 var fogConfig: int
 
 var label: Label

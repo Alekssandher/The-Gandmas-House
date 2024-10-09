@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0pqbhkmo18rv"]
+[gd_scene load_steps=11 format=3 uid="uid://d0pqbhkmo18rv"]
 
 [ext_resource type="Script" path="res://systems/settingsMenu/settings.gd" id="1_p0sln"]
 [ext_resource type="PackedScene" uid="uid://cbnia04cf8rfu" path="res://systems/settingsMenu/volume.tscn" id="2_8orvv"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_1w0u8"]
 [ext_resource type="Script" path="res://systems/settingsMenu/shadow_configs.gd" id="3_21h1g"]
 [ext_resource type="Script" path="res://systems/settingsMenu/shadowButton.gd" id="4_ilyap"]
+[ext_resource type="Script" path="res://systems/settingsMenu/fogButton.gd" id="5_epmys"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_688ei"]
 font = ExtResource("3_1w0u8")
@@ -109,6 +110,21 @@ text = "Shadows"
 flat = true
 script = ExtResource("4_ilyap")
 
+[node name="CheckButton2" type="CheckButton" parent="MarginContainer/HBoxContainer/graphics"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_1w0u8")
+theme_override_font_sizes/font_size = 26
+text = "Fog"
+flat = true
+script = ExtResource("5_epmys")
+
 [node name="sounds" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 13
@@ -158,3 +174,4 @@ bus = &"music"
 
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/graphics/shadowConfigs" to="MarginContainer/HBoxContainer/graphics/shadowConfigs" method="_on_item_selected"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/graphics/CheckButton" to="MarginContainer/HBoxContainer/graphics/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/graphics/CheckButton2" to="MarginContainer/HBoxContainer/graphics/CheckButton2" method="_on_toggled"]
