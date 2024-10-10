@@ -840,6 +840,7 @@ transform = Transform3D(0.764752, 0, 0, 0, 0.764752, 0, 0, 0, 0.764752, -34.0116
 
 [node name="Arbol" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.152486, 0, 0.152486, 0, 0.215648, 0, -0.152486, 0, 0.152486, 43.7001, -1.20459, -18.798)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_pxdrv")
 skeleton = NodePath("")
 
@@ -887,6 +888,7 @@ shape = SubResource("ConcavePolygonShape3D_mi16v")
 
 [node name="Arboles_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.152486, 0, 0.152486, 0, 0.215648, 0, -0.152486, 0, 0.152486, 299.646, -1.20459, -10.0068)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_sywlr")
 skeleton = NodePath("")
 
@@ -897,6 +899,7 @@ shape = SubResource("ConcavePolygonShape3D_o8n6m")
 
 [node name="Arboles_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.152486, 0, 0.152486, 0, 0.215648, 0, -0.152486, 0, 0.152486, -13.2655, 3.60645, 36.058)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_kmhrd")
 skeleton = NodePath("")
 
@@ -907,6 +910,7 @@ shape = SubResource("ConcavePolygonShape3D_ca7oe")
 
 [node name="Fondo" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.58339, 0, 0, 0, 1.41281, 0, 0, 0, 1.41281, 1.16816, 2.30555, 3.25819)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_akybp")
 skeleton = NodePath("")
 
@@ -952,7 +956,7 @@ shape = SubResource("ConcavePolygonShape3D_3akwa")
 
 [node name="Arboles" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.30761, 0, 0, 0, 1.30761, 0, 0, 0, 1.30761, -8.11637, 1.30861, -75.39)
-visible = false
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_lfibd")
 skeleton = NodePath("")
 
@@ -970,6 +974,7 @@ shape = SubResource("ConcavePolygonShape3D_5dsky")
 [node name="Poste_Luz" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.30481, 0, 0, 0, 0.30481, 0, 0, 0, -0.30481, 22.3289, -2.07737, 7.7824)
 lod_bias = 0.001
+visibility_range_end = 46.0
 mesh = SubResource("ArrayMesh_3xqq2")
 skeleton = NodePath("")
 

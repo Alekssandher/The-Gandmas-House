@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://c5regsfcftucf"]
+[gd_scene load_steps=7 format=4 uid="uid://c5regsfcftucf"]
+
+[ext_resource type="Texture2D" uid="uid://c3kqldorarrdl" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Planta (5).png" id="1_gvj4o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17ypa"]
+resource_name = "Planta5"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_gvj4o")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_inv0b"]
+_surfaces = [{
+"aabb": AABB(-0.36292, -0.362921, -0.509441, 0.725841, 0.725841, 0.514834),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABAAHAAUABAAGAAcAAAADAAIAAAABAAMABAAHAAYABAAFAAcA"),
+"lods": [0.279467, PackedByteArray("AAACAAMABAAGAAcAAAADAAIABAAHAAYA")],
+"name": "Planta5",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/f/7/AAD///9//v8AAAAA/38AAAAA////fwAAAAD/f////v8AAP9/AAD//wAA/3///wAAAAD/fwAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f8se2"]
+resource_name = "Abandoned_House_Plane_111"
+_surfaces = [{
+"aabb": AABB(-0.36292, -0.362921, -0.509441, 0.725841, 0.725841, 0.514834),
+"attribute_data": PackedByteArray("OgP+/8T8//86AwAAxPwAADoD/v/E/P//OgMAAMT8AAA6A/7/xPz//zoDAADE/AAAOgP+/8T8//86AwAAxPwAAA=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABAAHAAUABAAGAAcACAALAAoACAAJAAsADAAPAA4ADAANAA8A"),
+"lods": [0.279467, PackedByteArray("AAACAAMABAAGAAcACAALAAoADAAPAA4A")],
+"material": SubResource("StandardMaterial3D_17ypa"),
+"name": "Planta5",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAD/f/7//7////9//v//vwAA/38AAP+/////fwAA/7//f////v9U1f9/AAD//1TV/3///wAAVNX/fwAAAABU1QAA/3/+//8/////f/7//z8AAP9/AAD/P////38AAP8//3////7/qir/fwAA//+qKv9///8AAKoq/38AAAAAqir///9/////f////3////9/qqpVVaqqVFWqqlVVqqpUVQAA/38AAP9/AAD/fwAA/39UVaqqVFWqqlRVqqpUVaqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_inv0b")
+
+[sub_resource type="MultiMesh" id="MultiMesh_rhasb"]
+transform_format = 1
+instance_count = 40
+mesh = SubResource("ArrayMesh_f8se2")
+buffer = PackedFloat32Array(0, 1.001, 4.37551e-08, 4.68339, 4.37551e-08, -4.37551e-08, 1.001, 5.07046e-08, 1.001, 1.9126e-15, -4.37551e-08, 1.15999, 0, 1.001, 4.37551e-08, 1.40813, 4.37551e-08, -4.37551e-08, 1.001, 1.18033e-07, 1.001, 1.9126e-15, -4.37551e-08, 2.70029, 0, 1.001, 4.37551e-08, 0.838911, 4.37551e-08, -4.37551e-08, 1.001, 1.92838e-07, 1.001, 1.9126e-15, -4.37551e-08, 4.41162, 0, 1.001, 4.37551e-08, 4.34655, 4.37551e-08, -4.37551e-08, 1.001, -8.52898e-08, 1.001, 1.9126e-15, -4.37551e-08, -1.9512, 0, 1.001, 4.37551e-08, -3.87726, 4.37551e-08, -4.37551e-08, 1.001, 2.00206e-07, 1.001, 1.9126e-15, -4.37551e-08, 4.58018, -1.001, 0, 0, -3.98783, 0, 7.11253e-15, 1.001, 1.71117e-07, 0, 1.001, -7.11253e-15, 3.91471, 0, 1.001, 4.37551e-08, 4.36915, 4.37551e-08, -4.37551e-08, 1.001, -6.31927e-08, 1.001, 1.9126e-15, -4.37551e-08, -1.44568, 0, 1.001, 4.37551e-08, 4.47808, 4.37551e-08, -4.37551e-08, 1.001, 4.33416e-09, 1.001, 1.9126e-15, -4.37551e-08, 0.0991542, -1.001, 0, 0, -4.09881, 0, 0, 1.001, -4.40831e-08, 0, 1.001, 0, -1.0085, 0, 1.001, 4.37551e-08, 3.74221, 4.37551e-08, -4.37551e-08, 1.001, 7.20981e-08, 1.001, 1.9126e-15, -4.37551e-08, 1.64941, 0, 1.001, 4.37551e-08, 1.05856, 4.37551e-08, -4.37551e-08, 1.001, -1.88604e-08, 1.001, 1.9126e-15, -4.37551e-08, -0.431476, -1.001, 0, 0, -4.88329, 0, 7.11253e-15, 1.001, 1.09329e-07, 0, 1.001, -7.11253e-15, 2.50115, -1.001, 0, 0, -3.65217, 0, 7.11253e-15, 1.001, -1.84385e-07, 0, 1.001, -7.11253e-15, -4.21823, -1.001, 0, 0, 0.311815, 0, 0, 1.001, -1.27937e-07, 0, 1.001, 0, -2.92685, 0, 1.001, 4.37551e-08, 2.22881, 4.37551e-08, -4.37551e-08, 1.001, 1.29849e-07, 1.001, 1.9126e-15, -4.37551e-08, 2.97061, -1.001, 0, 0, 0.0627396, 0, 0, 1.001, -7.16703e-08, 0, 1.001, 0, -1.63963, -1.001, 0, 0, -2.22888, 0, 0, 1.001, 8.85299e-08, 0, 1.001, 0, 2.02533, -1.001, 0, 0, -2.84151, 0, 0, 1.001, 1.19595e-08, 0, 1.001, 0, 0.273602, -1.001, 0, 0, 1.13161, 0, 0, 1.001, -8.84968e-08, 0, 1.001, 0, -2.02457, 0, 1.001, 4.37551e-08, -1.84639, 4.37551e-08, -4.37551e-08, 1.001, 9.16933e-08, 1.001, 1.9126e-15, -4.37551e-08, 2.0977, -1.001, 0, 0, 1.76269, 0, 7.11253e-15, 1.001, -1.91322e-07, 0, 1.001, -7.11253e-15, -4.37693, 0, 1.001, 4.37551e-08, 3.27436, 4.37551e-08, -4.37551e-08, 1.001, 6.55815e-08, 1.001, 1.9126e-15, -4.37551e-08, 1.50033, -1.001, 0, 0, -3.13853, 0, 0, 1.001, -1.54551e-07, 0, 1.001, 0, -3.53572, 0, 1.001, 4.37551e-08, 4.93634, 4.37551e-08, -4.37551e-08, 1.001, -1.04816e-07, 1.001, 1.9126e-15, -4.37551e-08, -2.39791, 0, 1.001, 4.37551e-08, 4.54743, 4.37551e-08, -4.37551e-08, 1.001, -6.90335e-08, 1.001, 1.9126e-15, -4.37551e-08, -1.5793, -1.001, 0, 0, -4.47077, 0, 7.11253e-15, 1.001, 1.30538e-07, 0, 1.001, -7.11253e-15, 2.98635, -1.001, 0, 0, 0.821498, 0, 7.11253e-15, 1.001, -2.02619e-07, 0, 1.001, -7.11253e-15, -4.63538, 0, 1.001, 4.37551e-08, 1.85575, 4.37551e-08, -4.37551e-08, 1.001, 5.19583e-08, 1.001, 1.9126e-15, -4.37551e-08, 1.18867, -1.001, 0, 0, -0.912832, 0, 0, 1.001, -1.41111e-07, 0, 1.001, 0, -3.22825, 0, 1.001, 4.37551e-08, 2.36454, 4.37551e-08, -4.37551e-08, 1.001, 1.43819e-07, 1.001, 1.9126e-15, -4.37551e-08, 3.29019, 0, 1.001, 4.37551e-08, -2.80145, 4.37551e-08, -4.37551e-08, 1.001, 1.81094e-07, 1.001, 1.9126e-15, -4.37551e-08, 4.14295, -1.001, 0, 0, 2.65129, 0, -7.11253e-15, 1.001, -1.90871e-07, 0, 1.001, 7.11253e-15, -4.36662, 0, 1.001, 4.37551e-08, 1.79635, 4.37551e-08, -4.37551e-08, 1.001, 9.81729e-08, 1.001, 1.9126e-15, -4.37551e-08, 2.24593, -1.001, 0, 0, -4.60684, 0, 0, 1.001, -1.69252e-08, 0, 1.001, 0, -0.387203, -1.001, 0, 0, -1.1816, 0, 0, 1.001, -9.29668e-08, 0, 1.001, 0, -2.12683, 0, 1.001, 4.37551e-08, 2.09808, 4.37551e-08, -4.37551e-08, 1.001, 6.02219e-08, 1.001, 1.9126e-15, -4.37551e-08, 1.37772, 0, 1.001, 4.37551e-08, -3.93503, 4.37551e-08, -4.37551e-08, 1.001, 1.75519e-07, 1.001, 1.9126e-15, -4.37551e-08, 4.0154, 0, 1.001, 4.37551e-08, 4.53543, 4.37551e-08, -4.37551e-08, 1.001, -1.70158e-07, 1.001, 1.9126e-15, -4.37551e-08, -3.89277, 0, 1.001, 4.37551e-08, 2.30358, 4.37551e-08, -4.37551e-08, 1.001, -1.40196e-09, 1.001, 1.9126e-15, -4.37551e-08, -0.032073, 0, 1.001, 4.37551e-08, 0.0431465, 4.37551e-08, -4.37551e-08, 1.001, 1.78023e-07, 1.001, 1.9126e-15, -4.37551e-08, 4.0727)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pi54i"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+multimesh = SubResource("MultiMesh_rhasb")
+
+[node name="Grass_002" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.603829, 0.797114, 1.06283e-08, 0.0561074, -0.0425024, -0.99752, -0.795137, 0.602331, -0.0703882, 0, 0, 0)
+cast_shadow = 0
+lod_bias = 0.5
+visibility_range_end = 40.0
+visibility_range_end_margin = 50.0
+visibility_range_fade_mode = 1
+mesh = SubResource("ArrayMesh_f8se2")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_pi54i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.663195, 0.748447, 0, -0.472747, 0.418898, 0.775264, 0.580244, -0.514151, 0.631637, 0, 20, 0)

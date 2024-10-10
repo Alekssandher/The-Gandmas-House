@@ -87,10 +87,13 @@ size = Vector3(1, 0.915039, 0.940918)
 [node name="lampshade" type="MeshInstance3D"]
 transform = Transform3D(0, 6.97868e-08, 1.17083, -1.17083, 6.97868e-08, -4.15962e-15, -6.97868e-08, -1.17083, 6.97868e-08, 0, 0, 0)
 lod_bias = 0.001
+visibility_range_end = 10.0
+visibility_range_end_margin = 18.0
+visibility_range_fade_mode = 2
 mesh = SubResource("ArrayMesh_kjuh4")
 skeleton = NodePath("")
 
-[node name="indoorsLight2" type="OmniLight3D" parent="."]
+[node name="lampshadeLight" type="OmniLight3D" parent="."]
 transform = Transform3D(0.854095, -3.19744e-14, -6.56451e-21, 3.19744e-14, 0.854095, -3.19744e-14, 6.35275e-22, 3.19744e-14, 0.854095, -0.635267, -1.74727, 1.04145e-07)
 visible = false
 light_color = Color(0.886275, 0.623529, 0.34902, 1)
@@ -101,6 +104,7 @@ distance_fade_begin = 10.0
 distance_fade_shadow = 13.0
 distance_fade_length = 15.0
 omni_range = 3.0
+omni_shadow_mode = 0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -110,7 +114,7 @@ shape = SubResource("SphereShape3D_2udjy")
 
 [node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("light", "switchOn", "switchOff", "mesh")]
 script = ExtResource("5_ff0qa")
-light = NodePath("../indoorsLight2")
+light = NodePath("../lampshadeLight")
 switchOn = NodePath("../switchOn")
 switchOff = NodePath("../switchOff")
 mesh = NodePath("..")

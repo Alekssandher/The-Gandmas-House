@@ -75,6 +75,7 @@ size = Vector3(0.728516, 0.767914, 0.0459595)
 
 [node name="Ventana_027" type="MeshInstance3D"]
 transform = Transform3D(2.01553, 0, 0, 0, 2.01553, 0, 0, 0, 2.01553, -45.9119, -5.60358, -2.44431)
+ignore_occlusion_culling = true
 mesh = SubResource("ArrayMesh_gds8g")
 skeleton = NodePath("")
 

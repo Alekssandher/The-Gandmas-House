@@ -2,7 +2,6 @@ extends Node3D
 
 @export var animationPlayer: AnimationPlayer
 @onready var worldEnviroment: WorldEnvironment = $/root/world/WorldEnvironment
-@onready var type: CanvasLayer = $/root/world/CanvasLayer
 
 @export var audio: AudioStreamPlayer3D
 @export var lockedDoorSound: AudioStreamPlayer3D

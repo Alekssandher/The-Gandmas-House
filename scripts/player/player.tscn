@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=16 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_oucsa"]
 [ext_resource type="Script" path="res://systems/flashLight/spot_light_3d.gd" id="2_8mmd1"]
@@ -9,15 +9,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
 height = 1.68202
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uusp1"]
-albedo_color = Color(0.282353, 1, 1, 1)
-metallic = 1.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_uhf2c"]
-material = SubResource("StandardMaterial3D_uusp1")
-radius = 0.346
-height = 1.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
 size = Vector3(0.0458984, 0.0703125, 1.84351)
@@ -121,10 +112,6 @@ raycast = NodePath("head/vertical/Camera3D/RayCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1vfes")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CapsuleMesh_uhf2c")
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833464, 0)
