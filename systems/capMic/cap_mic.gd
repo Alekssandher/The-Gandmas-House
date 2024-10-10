@@ -1,7 +1,7 @@
 extends Node3D
 
 var idx := AudioServer.get_bus_index("mic")
-var spectrum := AudioServer.get_bus_effect_instance(idx, 0)
+var spectrum := AudioServer.get_bus_effect_instance(idx, 1)
 	
 func _ready() -> void:
 	
