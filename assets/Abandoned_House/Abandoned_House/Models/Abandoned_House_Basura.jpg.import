@@ -21,7 +21,7 @@ dest_files=["res://.godot/imported/Abandoned_House_Basura.jpg-6c3f583ca04f9b167d
 
 compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

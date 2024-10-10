@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3prfdk1hmj8a"
-path.s3tc="res://.godot/imported/Abandoned_House_Telefono.jpg-b9018fc54efc4a09382c7c77a3ea6011.s3tc.ctex"
+path="res://.godot/imported/Abandoned_House_Telefono.jpg-b9018fc54efc4a09382c7c77a3ea6011.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "c57e2199cd97cad8f078e1e80ab1fedb"
@@ -15,13 +14,13 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Abandoned_House/Abandoned_House/Abandoned_House_Telefono.jpg"
-dest_files=["res://.godot/imported/Abandoned_House_Telefono.jpg-b9018fc54efc4a09382c7c77a3ea6011.s3tc.ctex"]
+dest_files=["res://.godot/imported/Abandoned_House_Telefono.jpg-b9018fc54efc4a09382c7c77a3ea6011.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

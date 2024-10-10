@@ -1,4 +1,4 @@
-[gd_scene load_steps=942 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=934 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -14,11 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://sq65ur2w53b2" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal2.jpg" id="13_h77r5"]
 [ext_resource type="Texture2D" uid="uid://ddyb60rqh210k" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Mesa_T.jpg" id="14_38wo1"]
 [ext_resource type="Texture2D" uid="uid://8e7ssgm5btba" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_t (5).jpg" id="15_3wrej"]
+[ext_resource type="PackedScene" uid="uid://d0pqbhkmo18rv" path="res://systems/settingsMenu/settings.tscn" id="19_0ynjy"]
 [ext_resource type="Script" path="res://systems/nearEvent.gd" id="19_ldy4e"]
 [ext_resource type="Texture2D" uid="uid://bu0i8d6a1w50f" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco.png" id="20_jngig"]
 [ext_resource type="Texture2D" uid="uid://3b848853gmam" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco - emisor.png" id="21_qog5q"]
 [ext_resource type="Texture2D" uid="uid://dx48xkqu7b8b6" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal1.jpg" id="24_hw6ac"]
-[ext_resource type="Script" path="res://systems/settingsMenu/fogButton.gd" id="24_sgjjw"]
 [ext_resource type="Texture2D" uid="uid://dtk7pdjojbpdr" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera8.jpg" id="25_bopm5"]
 [ext_resource type="Texture2D" uid="uid://28den8v8dhpk" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera3.jpg" id="26_if38u"]
 [ext_resource type="Texture2D" uid="uid://ddd5cdk416epi" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal3.jpg" id="27_onmob"]
@@ -55,6 +55,7 @@
 [ext_resource type="AudioStream" uid="uid://b6rg3gq5wcxkg" path="res://audios/Mind's Eye Pack/Pack/2- Mental Vortex.mp3" id="64_da2ax"]
 [ext_resource type="PackedScene" uid="uid://ckg3xjeiq1w4t" path="res://objects/trees/vecindario.tscn" id="66_2k2mt"]
 [ext_resource type="Texture2D" uid="uid://cj1juq666ngwg" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_01.png" id="66_itwv4"]
+[ext_resource type="PackedScene" uid="uid://drvcm5ladra3b" path="res://systems/cap_mic.tscn" id="66_ujh76"]
 [ext_resource type="Texture2D" uid="uid://d23olumn3c8n8" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_02.png" id="67_v40tm"]
 [ext_resource type="Texture2D" uid="uid://btp8q61ta7ffu" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_03.png" id="68_c5byb"]
 [ext_resource type="Texture2D" uid="uid://dqloa851tymuh" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_04.png" id="69_abrgd"]
@@ -64,13 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6smqtea46bx" path="res://assets/halloween/halloween/Textures/Body.png" id="73_4oem0"]
 [ext_resource type="Texture2D" uid="uid://kp57ljkcyvbr" path="res://assets/halloween/halloween/Textures/Body_01.png" id="74_li4qw"]
 [ext_resource type="PackedScene" uid="uid://dfcvnjy1khitp" path="res://scripts/player/player.tscn" id="74_p5nxc"]
-[ext_resource type="Script" path="res://systems/settingsMenu/settings.gd" id="76_dmr6t"]
-[ext_resource type="FontFile" uid="uid://cxqdd65hsuari" path="res://assets/fonts/PressStart2P-Regular.ttf" id="77_b7wps"]
 [ext_resource type="PackedScene" uid="uid://c6labt8v4qyhf" path="res://objects/windows/windows.tscn" id="77_fus5k"]
-[ext_resource type="Script" path="res://systems/settingsMenu/shadow_configs.gd" id="78_70krd"]
-[ext_resource type="Script" path="res://systems/settingsMenu/shadowButton.gd" id="79_dcko8"]
-[ext_resource type="PackedScene" uid="uid://cbnia04cf8rfu" path="res://systems/settingsMenu/volume.tscn" id="80_58cap"]
-[ext_resource type="AudioStream" uid="uid://c2wrnjt7c4drb" path="res://audios/Mind's Eye Pack/Pack/1- Midnight Dreams.mp3" id="81_iyn1e"]
 
 [sub_resource type="Environment" id="Environment_qepwa"]
 background_mode = 1
@@ -402,24 +397,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8y7lr")
-
-[sub_resource type="LabelSettings" id="LabelSettings_688ei"]
-font = ExtResource("77_b7wps")
-font_size = 22
-font_color = Color(0.262745, 0.321569, 0.239216, 1)
-outline_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_1coph"]
-font = ExtResource("77_b7wps")
-font_size = 22
-font_color = Color(0.262745, 0.321569, 0.239216, 1)
-outline_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_3xnty"]
-font = ExtResource("77_b7wps")
-font_size = 22
-font_color = Color(0.262745, 0.321569, 0.239216, 1)
-outline_size = 8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0owjy"]
 resource_name = "Madera4.001"
@@ -16150,7 +16127,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight4" type="SpotLight3D" parent="poleLights"]
@@ -16164,7 +16141,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 15.6783
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight5" type="SpotLight3D" parent="poleLights"]
@@ -16178,7 +16155,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight6" type="SpotLight3D" parent="poleLights"]
@@ -16192,7 +16169,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight7" type="SpotLight3D" parent="poleLights"]
@@ -16206,7 +16183,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight8" type="SpotLight3D" parent="poleLights"]
@@ -16220,7 +16197,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight9" type="SpotLight3D" parent="poleLights"]
@@ -16234,7 +16211,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight2" type="SpotLight3D" parent="poleLights"]
@@ -16248,7 +16225,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight3" type="SpotLight3D" parent="poleLights"]
@@ -16262,7 +16239,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight10" type="SpotLight3D" parent="poleLights"]
@@ -16276,7 +16253,7 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="poleLight11" type="SpotLight3D" parent="poleLights"]
@@ -16290,59 +16267,60 @@ shadow_blur = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 50.0
 distance_fade_length = 15.0
-spot_range = 52.422
+spot_range = 15.0
 spot_angle = 21.36
 
 [node name="player" parent="." instance=ExtResource("74_p5nxc")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5336, 0.267548, 9.21632)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 37.633, 0.267548, 9.21632)
 mouseSensitivity = 0.4
 
 [node name="houseLights" type="Node3D" parent="."]
 
 [node name="entranceLight" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1734, 2.10523, -3.46485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1734, 2.10523, -2.95967)
 light_color = Color(0.886275, 0.623529, 0.34902, 1)
 light_energy = 3.101
-shadow_enabled = true
+light_volumetric_fog_energy = 0.0
 shadow_reverse_cull_face = true
 distance_fade_enabled = true
 distance_fade_begin = 30.0
-omni_range = 2.957
+omni_range = 1.507
 omni_shadow_mode = 0
 
 [node name="roofLight" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.4661, 3.01763, -7.11179)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.4661, 1.96974, -7.11179)
 light_color = Color(0.961287, 0.785345, 0.615441, 1)
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 shadow_reverse_cull_face = true
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
 distance_fade_length = 20.0
-omni_range = 3.3
-omni_attenuation = -0.212
+omni_range = 2.5
+omni_attenuation = -0.373
 omni_shadow_mode = 0
 
 [node name="roofLight2" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -33.04, 2.9328, -16.4755)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -33.04, 1.91501, -16.4755)
 light_color = Color(0.886275, 0.623529, 0.34902, 1)
 light_indirect_energy = 2.939
-light_volumetric_fog_energy = 4.394
-shadow_enabled = true
+light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_length = 20.0
-omni_range = 4.596
+omni_range = 3.286
+omni_attenuation = -0.452
 
 [node name="roofLight3" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.3878, 2.46718, -7.11179)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.569, 1.00993, -7.11179)
 light_color = Color(0.971237, 0.833083, 0.701625, 1)
-shadow_enabled = true
+light_volumetric_fog_energy = 0.0
 shadow_reverse_cull_face = true
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_length = 20.0
-omni_range = 3.0
+omni_range = 2.781
 omni_attenuation = -0.212
 omni_shadow_mode = 0
 
@@ -16357,7 +16335,7 @@ shape = SubResource("BoxShape3D_xnc0p")
 
 [node name="interactionPoints" type="Node3D" parent="."]
 
-[node name="beds" type="Node3D" parent="interactionPoints"]
+[node name="beds" type="MeshInstance3D" parent="interactionPoints"]
 
 [node name="beds" type="Area3D" parent="interactionPoints/beds" node_paths=PackedStringArray("audio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.343, 0.56505, -31.9359)
@@ -16370,6 +16348,9 @@ shape = SubResource("BoxShape3D_s0ctx")
 
 [node name="bed_01" type="MeshInstance3D" parent="interactionPoints/beds"]
 transform = Transform3D(2.52904, -94.9338, 5.65849e-06, 0, 5.6605e-06, 94.9675, -94.9338, -2.52904, 1.50742e-07, 61.2984, 0.253671, -31.55)
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_bsgjl")
 skeleton = NodePath("")
 
@@ -16380,6 +16361,9 @@ shape = SubResource("ConvexPolygonShape3D_6asgp")
 
 [node name="bed_02" type="MeshInstance3D" parent="interactionPoints/beds"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 64.917, 0.32527, -34.8148)
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_tjxqt")
 skeleton = NodePath("")
 
@@ -16390,6 +16374,9 @@ shape = SubResource("ConvexPolygonShape3D_25d6m")
 
 [node name="bed_03" type="MeshInstance3D" parent="interactionPoints/beds"]
 transform = Transform3D(-99.7985, 6.34524, 7.56412e-07, 0, -1.19209e-05, 100, 6.34524, 99.7985, 1.18969e-05, 64.7648, 0.164222, -28.9345)
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_ayqnb")
 skeleton = NodePath("")
 
@@ -16400,6 +16387,9 @@ shape = SubResource("ConvexPolygonShape3D_xe3sd")
 
 [node name="bed_04" type="MeshInstance3D" parent="interactionPoints/beds"]
 transform = Transform3D(-0.60562, 99.9982, 1.19207e-05, 0, -1.19209e-05, 100, 99.9982, 0.60562, 7.21955e-08, 67.6626, 0.254365, -31.925)
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_k3lxy")
 skeleton = NodePath("")
 
@@ -16410,6 +16400,7 @@ shape = SubResource("ConvexPolygonShape3D_cwqyr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="interactionPoints/beds"]
 stream = ExtResource("64_da2ax")
+volume_db = 5.0
 
 [node name="Area3D" type="Area3D" parent="interactionPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8274, 0, 12.4191)
@@ -16423,8 +16414,6 @@ shape = SubResource("BoxShape3D_0fxfh")
 
 [node name="Car" parent="objects" instance=ExtResource("64_85dqp")]
 visibility_range_end = 45.0
-visibility_range_end_margin = 55.0
-visibility_range_fade_mode = 1
 skeleton = NodePath("../..")
 
 [node name="ObjectInteract" type="Node" parent="objects/Car" node_paths=PackedStringArray("player", "object")]
@@ -16438,6 +16427,7 @@ disToStopText = 10.0
 [node name="Car2" type="MeshInstance3D" parent="objects"]
 transform = Transform3D(0.157383, 0, -0.987538, 0, 1, 0, 0.987538, 0, 0.157383, 31.495, -0.778581, 19.0315)
 material_override = SubResource("StandardMaterial3D_tlg6j")
+visibility_range_end = 60.0
 mesh = ExtResource("71_agxe7")
 skeleton = NodePath("../..")
 
@@ -16461,183 +16451,63 @@ disToStopText = 9.0
 
 [node name="Body" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(-28.731, -45.5359, -5.42831e-06, 0, -6.4185e-06, 53.8423, -45.5359, 28.731, 3.42501e-06, 57.2716, 0.16696, 62.1958)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_tqn73")
 skeleton = NodePath("")
 
 [node name="Body_01" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(14.9533, -63.8639, -7.61317e-06, 1.45461e-13, -7.81908e-06, 65.5912, -63.8639, -14.9533, -1.78257e-06, 56.9309, 0.161458, 60.0352)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_t8ir7")
 skeleton = NodePath("")
 
 [node name="Body2" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(45.6205, 28.5966, 3.40898e-06, -3.23552e-13, -6.4185e-06, 53.8423, 28.5966, -45.6205, -5.43838e-06, 54.4815, 0.16696, 62.9181)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_tqn73")
 skeleton = NodePath("")
 
 [node name="Body_02" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(65.4674, -4.0271, -4.80067e-07, 3.20163e-14, -7.81908e-06, 65.5912, -4.0271, -65.4674, -7.80433e-06, 59.0085, 0.161458, 60.8654)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_t8ir7")
 skeleton = NodePath("")
 
 [node name="Body3" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(-53.2773, 7.77991, 9.27437e-07, -3.23552e-13, -6.4185e-06, 53.8423, 7.77991, 53.2773, 6.35115e-06, 57.2716, 0.16696, 63.8313)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_tqn73")
 skeleton = NodePath("")
 
 [node name="Body_03" type="MeshInstance3D" parent="objects/bodies"]
 transform = Transform3D(14.9533, -63.8639, -7.61317e-06, 1.45461e-13, -7.81908e-06, 65.5912, -63.8639, -14.9533, -1.78257e-06, 55.3718, 0.161458, 60.8654)
+lod_bias = 0.001
+visibility_range_end = 25.0
+visibility_range_end_margin = 35.0
+visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_t8ir7")
 skeleton = NodePath("")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="settings" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="settings" type="Control" parent="CanvasLayer2"]
-process_mode = 3
+[node name="settings" parent="settings" instance=ExtResource("19_0ynjy")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("76_dmr6t")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.219608)
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -142.0
-offset_right = 125.0
-offset_bottom = 142.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/settings/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="graphics" type="VBoxContainer" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 13
-
-[node name="graphics" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics"]
-layout_mode = 2
-text = "Graphic settings"
-label_settings = SubResource("LabelSettings_688ei")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="shadows" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics"]
-layout_mode = 2
-text = "Shadow Quality"
-label_settings = SubResource("LabelSettings_688ei")
-horizontal_alignment = 1
-
-[node name="shadowConfigs" type="OptionButton" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("77_b7wps")
-item_count = 3
-popup/item_0/text = "Low"
-popup/item_1/text = "Medium"
-popup/item_1/id = 1
-popup/item_2/text = "High"
-popup/item_2/id = 2
-script = ExtResource("78_70krd")
-
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics"]
-layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_hover_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_focus_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("77_b7wps")
-theme_override_font_sizes/font_size = 26
-button_pressed = true
-text = "Shadows"
-flat = true
-script = ExtResource("79_dcko8")
-
-[node name="CheckButton2" type="CheckButton" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics"]
-layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_hover_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_pressed_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_focus_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("77_b7wps")
-theme_override_font_sizes/font_size = 26
-text = "Fog"
-flat = true
-script = ExtResource("24_sgjjw")
-
-[node name="sounds" type="VBoxContainer" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 13
-
-[node name="Sounds" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds"]
-layout_mode = 2
-text = "Sounds Settings
-"
-label_settings = SubResource("LabelSettings_688ei")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="master" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds"]
-layout_mode = 2
-text = "Master"
-label_settings = SubResource("LabelSettings_688ei")
-horizontal_alignment = 1
-
-[node name="HSlider" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds" instance=ExtResource("80_58cap")]
-layout_mode = 2
-
-[node name="music" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds"]
-layout_mode = 2
-text = "Music
-"
-label_settings = SubResource("LabelSettings_1coph")
-horizontal_alignment = 1
-
-[node name="HSlider2" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds" instance=ExtResource("80_58cap")]
-layout_mode = 2
-busName = "music"
-
-[node name="effects" type="Label" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds"]
-layout_mode = 2
-text = "Effects
-"
-label_settings = SubResource("LabelSettings_3xnty")
-horizontal_alignment = 1
-
-[node name="HSlider3" parent="CanvasLayer2/settings/MarginContainer/HBoxContainer/sounds" instance=ExtResource("80_58cap")]
-layout_mode = 2
-busName = "sfx"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer2/settings"]
-stream = ExtResource("81_iyn1e")
-bus = &"music"
 
 [node name="Abandoned_House" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36033, 0.512827, 113.783)
@@ -19320,9 +19190,7 @@ transform = Transform3D(0.378511, 0, 0, 0, 0.378511, 0, 0, 0, 0.378511, -26.1412
 [node name="Librero" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, 10.959, -6.76895, 17.0733)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_gnpin")
 skeleton = NodePath("")
 
@@ -19356,27 +19224,21 @@ skeleton = NodePath("")
 [node name="Librero_004" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, 11, -17.9618, 7.80353)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_d4xh8")
 skeleton = NodePath("")
 
 [node name="Librero_005" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, -48.6455, -17.9733, 2.14969)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_4rscw")
 skeleton = NodePath("")
 
 [node name="Librero_006" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, 10.959, -16.2272, 17.0733)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_4eqre")
 skeleton = NodePath("")
 
@@ -21427,6 +21289,7 @@ shape = SubResource("ConcavePolygonShape3D_ydoxj")
 
 [node name="poles" type="MeshInstance3D" parent="Abandoned_House"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.484, -1.05195, -103.509)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_peixm")
 skeleton = NodePath("")
 
@@ -21479,14 +21342,14 @@ skeleton = NodePath("")
 
 [node name="Ventanas" parent="Abandoned_House" instance=ExtResource("77_fus5k")]
 
+[node name="capMic" parent="." instance=ExtResource("66_ujh76")]
+
 [connection signal="body_entered" from="invisibleWall/Area3D" to="invisibleWall" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="interactionPoints/beds/beds" to="interactionPoints/beds/beds" method="_on_body_entered"]
 [connection signal="body_entered" from="interactionPoints/Area3D" to="interactionPoints/Area3D" method="_on_body_entered"]
-[connection signal="item_selected" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/shadowConfigs" to="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/shadowConfigs" method="_on_item_selected"]
-[connection signal="shadowQualityToggled" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/shadowConfigs" to="configsManager" method="_on_shadow_configs_shadow_quality_toggled"]
-[connection signal="shadowToggled" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton" to="configsManager" method="_on_check_button_shadow_toggled"]
-[connection signal="toggled" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton" to="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton" method="_on_toggled"]
-[connection signal="fogToggle" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton2" to="configsManager" method="_on_check_button_2_fog_toggle"]
-[connection signal="toggled" from="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton2" to="CanvasLayer2/settings/MarginContainer/HBoxContainer/graphics/CheckButton2" method="_on_toggled"]
+[connection signal="fogToggled" from="settings/settings" to="configsManager" method="_on_settings_fog_toggled"]
+[connection signal="shadowQualityToggled" from="settings/settings" to="configsManager" method="_on_settings_shadow_quality_toggled"]
+[connection signal="shadowToggled" from="settings/settings" to="configsManager" method="_on_settings_shadow_toggled"]
+[connection signal="volumFogToggled" from="settings/settings" to="configsManager" method="_on_settings_volum_fog_toggled"]
 [connection signal="lookingAt" from="Abandoned_House/sofas/livingRoomSofa/ObjectInteract" to="Abandoned_House/sofas/livingRoomSofa" method="_on_object_interact_looking_at"]
 [connection signal="notLookingAt" from="Abandoned_House/sofas/livingRoomSofa/ObjectInteract" to="Abandoned_House/sofas/livingRoomSofa" method="_on_object_interact_not_looking_at"]

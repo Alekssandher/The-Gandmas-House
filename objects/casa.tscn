@@ -1,4 +1,4 @@
-[gd_scene load_steps=293 format=4 uid="uid://dfmnga7f5breo"]
+[gd_scene load_steps=292 format=4 uid="uid://dfmnga7f5breo"]
 
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="1_t2xsv"]
 [ext_resource type="Texture2D" uid="uid://u1mnnwixovb4" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Pared.jpg" id="2_wrsri"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://mwc8lqsej2tf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Refrigerador.png" id="27_17q80"]
 [ext_resource type="Texture2D" uid="uid://cq3qp6np3t5uf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lavadora.jpg" id="28_ab2qx"]
 [ext_resource type="PackedScene" uid="uid://bqxoi52c7gq1t" path="res://objects/door/entrance_door.tscn" id="29_katat"]
-[ext_resource type="ArrayOccluder3D" uid="uid://balxyguu7d3jp" path="res://occluder/casa.occ" id="30_cqp3q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvgmv"]
 
@@ -402,6 +401,9 @@ shadow_mesh = SubResource("ArrayMesh_k8mms")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prley"]
 resource_name = "Cajadefusiles"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("13_j228j")
 texture_filter = 2
@@ -2998,6 +3000,7 @@ skeleton = NodePath("")
 
 [node name="a" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.781193, -0.965009, -3.98015)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_kmo2l")
@@ -3005,6 +3008,7 @@ skeleton = NodePath("")
 
 [node name="Bigas" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.96221, -4.09145, -0.0732422)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 9.0
 mesh = SubResource("ArrayMesh_y857n")
@@ -3012,12 +3016,14 @@ skeleton = NodePath("")
 
 [node name="Caja_fusiles" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0411979, 0, 0, 0, 0.204352, 0, 0, 0, 0.209251, -1.04203, -5.63661, -4.13405)
+cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_wjgg1")
 skeleton = NodePath("")
 
 [node name="Casa_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74514, 1.54794, 3.74746)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_t1sjh")
@@ -3025,18 +3031,21 @@ skeleton = NodePath("")
 
 [node name="Casa_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74891, 1.51941, 6.91843)
+cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_u3j7y")
 skeleton = NodePath("")
 
 [node name="Casa_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74817, 3.01661, 5.32068)
+cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_80cgx")
 skeleton = NodePath("")
 
 [node name="Columnas" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0866, -5.53535, 1.20643)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 12.0
 mesh = SubResource("ArrayMesh_4mxfi")
@@ -3044,6 +3053,7 @@ skeleton = NodePath("")
 
 [node name="Barandal" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.10513, -6.73094, -1.1094)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_qtmjn")
@@ -3051,6 +3061,7 @@ skeleton = NodePath("")
 
 [node name="Barandal_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66451, 1.12936, 0.385498)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_l04ah")
@@ -3058,6 +3069,7 @@ skeleton = NodePath("")
 
 [node name="Cama" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84259, -3.01418, -1.92635)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 12.0
 mesh = SubResource("ArrayMesh_mvi0q")
@@ -3065,6 +3077,7 @@ skeleton = NodePath("")
 
 [node name="Cama_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 4.29174, 0.55515, -3.13364)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_e30vc")
@@ -3072,6 +3085,7 @@ skeleton = NodePath("")
 
 [node name="Closet" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.15017, 0.866685, -2.92619)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_7ri23")
@@ -3079,6 +3093,7 @@ skeleton = NodePath("")
 
 [node name="Closet_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -0.501199, 0.865332, 0, -0.865332, -0.501199, 0, 4.51567, 1.36107, -8.21133)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_5dpa6")
@@ -3086,6 +3101,7 @@ skeleton = NodePath("")
 
 [node name="Closet_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -1.01302, 1.41195, 3.27013)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_iv5di")
@@ -3099,6 +3115,7 @@ shape = SubResource("BoxShape3D_rf6r5")
 
 [node name="Closet_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86502, -2.2459, -0.378281)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_js0xk")
@@ -3106,6 +3123,7 @@ skeleton = NodePath("")
 
 [node name="Anaquel" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.03525, 0, 0, 0, 1.03525, 0, 0, 0, 1.03525, 13.4242, 2.08015, -1.48634)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_73yol")
@@ -3113,6 +3131,7 @@ skeleton = NodePath("")
 
 [node name="Anaquel_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.03525, 0, 0, 0, 1.03525, 0, 0, 0, 1.03525, 10.8803, 2.08015, -1.48634)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_ix57l")
@@ -3120,6 +3139,7 @@ skeleton = NodePath("")
 
 [node name="Cofre" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.45167, -2.96536, -1.89357)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 12.0
 mesh = SubResource("ArrayMesh_tafmq")
@@ -3127,6 +3147,7 @@ skeleton = NodePath("")
 
 [node name="Cofre_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29174, 0.614877, -4.70049)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_ydqb0")
@@ -3134,6 +3155,7 @@ skeleton = NodePath("")
 
 [node name="Cables_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04203, -4.4384, -4.13405)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_h6etk")
@@ -3141,6 +3163,7 @@ skeleton = NodePath("")
 
 [node name="Cesta" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0567894, -1.09661, 0.351797, -1.13044, -0.0142124, -0.226785, 0.220019, -0.356068, -1.0744, 13.1784, 0.567485, -2.89877)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_nvu1j")
@@ -3148,6 +3171,7 @@ skeleton = NodePath("")
 
 [node name="Cesta_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.47483, 0, 0, 0, -1.47483, 4.8056e-07, 0, -4.8056e-07, -1.47483, 10.1172, 0.522443, -1.90727)
+cast_shadow = 0
 lod_bias = 0.001
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_brdw8")
@@ -3155,6 +3179,7 @@ skeleton = NodePath("")
 
 [node name="E" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32263, -4.06915, 14.9699)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_f4rnk")
 skeleton = NodePath("")
 
@@ -3165,41 +3190,48 @@ shape = SubResource("ConcavePolygonShape3D_0hiae")
 
 [node name="E_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.935955, 0, 0, 0, 0.935955, 0, 0, 0, 0.935955, 5.51574, -3.48187, -13.3065)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_ni4ix")
 skeleton = NodePath("")
 
 [node name="Escalera" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.232031, 0, 1.08383, 0, 1.10839, 0, -1.08383, 0, 0.232031, 11.5434, -6.0048, 0.24662)
+cast_shadow = 0
 visibility_range_end = 12.0
 mesh = SubResource("ArrayMesh_td18a")
 skeleton = NodePath("")
 
 [node name="Fusil" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.877407, -5.55343, -4.13405)
+cast_shadow = 0
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_k8nnf")
 skeleton = NodePath("")
 
 [node name="Lavabo" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 12.1649, 0.481354, -1.73829)
+cast_shadow = 0
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_rfg65")
 skeleton = NodePath("")
 
 [node name="Lavabo_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3.27882, 1.21775, -11.4934)
+cast_shadow = 0
 visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_mrjf4")
 skeleton = NodePath("")
 
 [node name="Lavadero" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7657, -2.36651, -1.49728)
+cast_shadow = 0
 visibility_range_end = 8.0
 mesh = SubResource("ArrayMesh_n032b")
 skeleton = NodePath("")
 
 [node name="m" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49756, 2.99157, -0.0905838)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_8icf8")
 skeleton = NodePath("")
 
@@ -3317,28 +3349,33 @@ skeleton = NodePath("")
 
 [node name="Palanca" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00357148, 0.0149116, 0, -0.0630674, -0.000844437, 0, 0, 0, -0.00548603, -1.0512, -5.63602, -4.23299)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_o0uq1")
 skeleton = NodePath("")
 
 [node name="Papel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 1.57869, 0, 3.999e-08, -1.40216e-15, -1.34184, -1.34184, 0, -3.999e-08, 4.80311, 0.35579, -11.6685)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_y3ly1")
 skeleton = NodePath("")
 
 [node name="Pared_Baño_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8462, -3.2758, -3.68088)
+cast_shadow = 0
 visibility_range_end = 12.0
 mesh = SubResource("ArrayMesh_ih2ot")
 skeleton = NodePath("")
 
 [node name="Pared_Cocina" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235077, -3.27515, -5.40216)
+cast_shadow = 0
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_vc2to")
 skeleton = NodePath("")
 
 [node name="Patio" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51919, -3.7073, -1.27165)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_4w7aj")
 skeleton = NodePath("")
 
@@ -3350,6 +3387,7 @@ shape = SubResource("ConcavePolygonShape3D_aj4lp")
 [node name="Pisina" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29886, -4.54412, -18.3903)
 material_override = SubResource("StandardMaterial3D_2xi7s")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_cwsc0")
 skeleton = NodePath("")
 
@@ -3372,6 +3410,7 @@ shape = SubResource("ConcavePolygonShape3D_v0xrn")
 
 [node name="Piso_Baño_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8462, -3.2758, -3.68088)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_v16m6")
 skeleton = NodePath("")
 
@@ -3382,6 +3421,7 @@ shape = SubResource("ConcavePolygonShape3D_fbuqn")
 
 [node name="Piso_Baño_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 5.45346, 0.300251, -10.9534)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_yeb7l")
 skeleton = NodePath("")
 
@@ -3392,6 +3432,7 @@ shape = SubResource("ConcavePolygonShape3D_hk2lo")
 
 [node name="Piso_Cocina" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235077, -3.27515, -5.40216)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_w6uak")
 skeleton = NodePath("")
 
@@ -3402,6 +3443,7 @@ shape = SubResource("ConcavePolygonShape3D_pha12")
 
 [node name="Piso_Sotano" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46997, -6.87118, 0.625885)
+cast_shadow = 0
 visibility_range_end = 8.0
 mesh = SubResource("ArrayMesh_eylyf")
 skeleton = NodePath("")
@@ -4211,6 +4253,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41623, -6.05634, -3.77527)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basemant/pillars/StaticBody3D3"]
 shape = SubResource("CylinderShape3D_76ifj")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("30_cqp3q")

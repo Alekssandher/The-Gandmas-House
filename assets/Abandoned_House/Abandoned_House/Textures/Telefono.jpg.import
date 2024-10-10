@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpsjn3ilbkfyr"
-path.s3tc="res://.godot/imported/Telefono.jpg-e360ad8c772b59d7ce94bd70085f6cc3.s3tc.ctex"
+path="res://.godot/imported/Telefono.jpg-fcff24ae2f0d955f700aae5728a9a326.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Abandoned_House/Abandoned_House/textures/Telefono.jpg"
-dest_files=["res://.godot/imported/Telefono.jpg-e360ad8c772b59d7ce94bd70085f6cc3.s3tc.ctex"]
+source_file="res://assets/Abandoned_House/Abandoned_House/Textures/Telefono.jpg"
+dest_files=["res://.godot/imported/Telefono.jpg-fcff24ae2f0d955f700aae5728a9a326.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

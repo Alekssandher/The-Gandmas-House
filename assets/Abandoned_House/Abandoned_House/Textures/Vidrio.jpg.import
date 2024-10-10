@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1gqwnvvln7q5"
-path.s3tc="res://.godot/imported/Vidrio.jpg-2ea057bab9d7c4054d33d9dd51e5fc9e.s3tc.ctex"
+path="res://.godot/imported/Vidrio.jpg-881ec477fa6c00226f2deabb6bd0c320.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Abandoned_House/Abandoned_House/textures/Vidrio.jpg"
-dest_files=["res://.godot/imported/Vidrio.jpg-2ea057bab9d7c4054d33d9dd51e5fc9e.s3tc.ctex"]
+source_file="res://assets/Abandoned_House/Abandoned_House/Textures/Vidrio.jpg"
+dest_files=["res://.godot/imported/Vidrio.jpg-881ec477fa6c00226f2deabb6bd0c320.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

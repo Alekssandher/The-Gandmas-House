@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyb1mlgaq26uk"
-path.s3tc="res://.godot/imported/Techo.jpg-2f2cc7245054fa1ef2e7c501051ba16b.s3tc.ctex"
+path="res://.godot/imported/Techo.jpg-684807b5482c2174071c82b6a9140915.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Abandoned_House/Abandoned_House/textures/Techo.jpg"
-dest_files=["res://.godot/imported/Techo.jpg-2f2cc7245054fa1ef2e7c501051ba16b.s3tc.ctex"]
+source_file="res://assets/Abandoned_House/Abandoned_House/Textures/Techo.jpg"
+dest_files=["res://.godot/imported/Techo.jpg-684807b5482c2174071c82b6a9140915.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

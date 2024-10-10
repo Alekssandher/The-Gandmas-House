@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7q01udwalwsj"
-path.s3tc="res://.godot/imported/Tela4.jpg-e0768c7486c4d986f3ed48374b7faff7.s3tc.ctex"
+path="res://.godot/imported/Tela4.jpg-07e020896dd8bac93c8192986c67abb1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Abandoned_House/Abandoned_House/textures/Tela4.jpg"
-dest_files=["res://.godot/imported/Tela4.jpg-e0768c7486c4d986f3ed48374b7faff7.s3tc.ctex"]
+source_file="res://assets/Abandoned_House/Abandoned_House/Textures/Tela4.jpg"
+dest_files=["res://.godot/imported/Tela4.jpg-07e020896dd8bac93c8192986c67abb1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

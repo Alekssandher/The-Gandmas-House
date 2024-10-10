@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bubsd3wpjl082"
-path.s3tc="res://.godot/imported/trees_Pasto1.jpg-b094763e5d239e0738f18acb72c9b4cc.s3tc.ctex"
+path="res://.godot/imported/trees_Pasto1.jpg-b094763e5d239e0738f18acb72c9b4cc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "ff3c1d7f67eb848596db6955628296bb"
@@ -15,13 +14,13 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Abandoned_House/Abandoned_House/trees_Pasto1.jpg"
-dest_files=["res://.godot/imported/trees_Pasto1.jpg-b094763e5d239e0738f18acb72c9b4cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/trees_Pasto1.jpg-b094763e5d239e0738f18acb72c9b4cc.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

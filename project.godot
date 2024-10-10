@@ -14,6 +14,10 @@ config/name="TheGrandma'sHouse"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[audio]
+
+driver/enable_input=true
+
 [autoload]
 
 World="*res://world.gd"
@@ -116,5 +120,9 @@ ctrl={
 
 [rendering]
 
+global_illumination/gi/use_half_resolution=true
+shading/overrides/force_vertex_shading=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+scaling_3d/scale=0.75
+scaling_3d/fsr_sharpness=0.2
 occlusion_culling/use_occlusion_culling=true

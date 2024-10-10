@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://durfahrkhemqv"
-path.s3tc="res://.godot/imported/Abandoned_House_Colchon.jpg-debab6f51e9d6f5648bad3b10471907f.s3tc.ctex"
+path="res://.godot/imported/Abandoned_House_Colchon.jpg-debab6f51e9d6f5648bad3b10471907f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "317bea339185d881b8c7cb75f6b3b4a5"
@@ -15,13 +14,13 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Abandoned_House/Abandoned_House/Abandoned_House_Colchon.jpg"
-dest_files=["res://.godot/imported/Abandoned_House_Colchon.jpg-debab6f51e9d6f5648bad3b10471907f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Abandoned_House_Colchon.jpg-debab6f51e9d6f5648bad3b10471907f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

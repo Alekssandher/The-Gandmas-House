@@ -128,6 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.760019)
 shape = SubResource("BoxShape3D_vj8qa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head/vertical/Camera3D"]
+light_volumetric_fog_energy = 0.0
 spot_range = 6.844
 spot_angle = 43.0
 script = ExtResource("2_8mmd1")

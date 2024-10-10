@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxqlljkaa5gfv"
-path.s3tc="res://.godot/imported/Abandoned_House_Madera2.jpg-c1c4020d91cbb16015ee3f93e5195c9b.s3tc.ctex"
+path="res://.godot/imported/Abandoned_House_Madera2.jpg-c1c4020d91cbb16015ee3f93e5195c9b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "706071237edd33955105ef1b086dab62"
@@ -15,13 +14,13 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera2.jpg"
-dest_files=["res://.godot/imported/Abandoned_House_Madera2.jpg-c1c4020d91cbb16015ee3f93e5195c9b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Abandoned_House_Madera2.jpg-c1c4020d91cbb16015ee3f93e5195c9b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
