@@ -46,7 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_wtk3f")
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_7ive1"]
 file = "res://videos/ace of base.ogg"
 
-[sub_resource type="Shader" id="Shader_201ws"]
+[sub_resource type="Shader" id="Shader_rl8gx"]
 code = "/*
 	CRT shader for Godot Engine by Yui Kinomoto @arlez80
 */
@@ -137,7 +137,7 @@ void fragment( )
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqgqf"]
-shader = SubResource("Shader_201ws")
+shader = SubResource("Shader_rl8gx")
 shader_parameter/crt_curve = 0.032
 shader_parameter/crt_scan_line_color = 0.111
 shader_parameter/aperture_grille_rate = 0.13
@@ -147,36 +147,36 @@ shader_parameter/white_noise_rate = 0.011
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_8behb"]
 resource_local_to_scene = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m404c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pd4x"]
 resource_local_to_scene = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8rmqp"]
-material = SubResource("ShaderMaterial_m404c")
+material = SubResource("ShaderMaterial_7pd4x")
 size = Vector2(1.3, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uhwau"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qgg4k"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ts1fc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_notpm"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15gb5"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_uhwau")
+albedo_texture = SubResource("ViewportTexture_qgg4k")
 emission_enabled = true
 emission_energy_multiplier = 4.0
-emission_texture = SubResource("ViewportTexture_ts1fc")
+emission_texture = SubResource("ViewportTexture_notpm")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mtila"]
-material = SubResource("ShaderMaterial_m404c")
+material = SubResource("ShaderMaterial_7pd4x")
 size = Vector2(1.3, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e4ktc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_w33rq"]
 viewport_path = NodePath("tvTurn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dd52"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_e4ktc")
+albedo_texture = SubResource("ViewportTexture_w33rq")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inrdw"]
 size = Vector3(1.73877, 1.19421, 0.98999)
@@ -389,7 +389,5 @@ libraries = {
 [connection signal="body_entered" from="timerArea" to="Area3D" method="_on_timer_area_body_entered"]
 [connection signal="body_exited" from="timerArea" to="." method="_on_timer_area_body_exited"]
 [connection signal="body_exited" from="timerArea" to="Area3D" method="_on_timer_area_body_exited"]
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Area3D" method="_on_animation_player_animation_finished"]

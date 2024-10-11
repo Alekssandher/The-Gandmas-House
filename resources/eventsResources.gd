@@ -1,7 +1,7 @@
 extends Node
 
 var tvsStates: Dictionary = {
-	"tvsOn": 0
+	"tvsOn": 3
 }
 
 func addState(operation: String, number: int) -> void:

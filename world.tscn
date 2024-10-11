@@ -1,4 +1,4 @@
-[gd_scene load_steps=934 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=931 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dtk7pdjojbpdr" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera8.jpg" id="25_bopm5"]
 [ext_resource type="Texture2D" uid="uid://28den8v8dhpk" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera3.jpg" id="26_if38u"]
 [ext_resource type="Texture2D" uid="uid://ddd5cdk416epi" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal3.jpg" id="27_onmob"]
-[ext_resource type="Texture2D" uid="uid://bkye1ech24ulm" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele2.jpg" id="28_cf713"]
 [ext_resource type="PackedScene" uid="uid://15xf4lj7c2qf" path="res://objects/tvs/livingRoomTv.tscn" id="28_ri843"]
 [ext_resource type="Texture2D" uid="uid://bfsd2uff6srhu" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele1.jpg" id="29_kl0bd"]
 [ext_resource type="Texture2D" uid="uid://g53fuoof8bbx" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Cuadros.png" id="30_5ff34"]
@@ -33,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://b1218ikxi4klm" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Barril.jpg" id="34_kag8s"]
 [ext_resource type="Texture2D" uid="uid://dbdl3axfyhgm1" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela2.jpg" id="35_br5ec"]
 [ext_resource type="Texture2D" uid="uid://bpaevuxepdpd3" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela3.jpg" id="36_lux75"]
+[ext_resource type="PackedScene" uid="uid://q4dchcx8rnbv" path="res://objects/tvs/upstairsTv.tscn" id="37_e5w0q"]
 [ext_resource type="Texture2D" uid="uid://bjiv00mgi85o5" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela4.jpg" id="37_vhdnb"]
 [ext_resource type="Texture2D" uid="uid://cq3qp6np3t5uf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lavadora.jpg" id="38_g8egt"]
 [ext_resource type="Texture2D" uid="uid://crauu5cxceyay" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_P1.jpg" id="39_02tka"]
@@ -9521,44 +9521,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0grkx")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn6kv"]
-resource_name = "Tele2"
-cull_mode = 2
-albedo_texture = ExtResource("28_cf713")
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_863mp"]
-_surfaces = [{
-"aabb": AABB(-0.619084, -0.568824, -0.446301, 1.23816, 1.13532, 0.965654),
-"format": 34896613377,
-"index_count": 210,
-"index_data": PackedByteArray("AAAFAAYABQAQAA4AEAAAAAMABQAAABAAHQARAB4AHQAPABEAAwAPABAADwATABEAEwADAAIADwADABMAHwAHABoAHwASAAcABAAbAAgABAAYABsAAgASABMAEgAJAAcACQACAAEAEgACAAkAAwABAAIAAwAAAAEAAQAIAAkACAAGAAQABgABAAAACAABAAYAIAALAAoACwAkACEACwAgACQABAAGAAUABwAJAAgADgAQAA8AEQATABIAGQAEAAUAGQAYAAQABwAbABoABwAIABsADgAdABwADgAPAB0AHwARABIAHwAeABEAGQAOABwAGQAFAA4ACwAZAAoACwAYABkADQAbAAwADQAaABsAFQAdABQAFQAcAB0AFwAfABYAFwAeAB8AGQAgAAoAIAAcABUAIAAZABwAGwAhAAwAIQAYAAsAIQAbABgAHwAiABYAIgAaAA0AIgAfABoAHQAjABQAIwAeABcAIwAdAB4AFQAkACAAJAAUACMAJAAVABQAIgAhACQAIQANAAwAIQAiAA0AFwAkACMAJAAWACIAJAAXABYA"),
-"name": "Tele2",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 37,
-"vertex_data": PackedByteArray("wxtQHP//AADDG8nk//8AADvkyeT//wAAO+RQHP//AAAAAKANAsIAAH8MAAACwgAAdAV1CHLMAAB/DP//AsIAAAAAXvICwgAAyAbx/PvOAACRO25ADhUAAA8qo1IOFQAAqCY+zg4VAAAqOHPgDhUAAH/zAAACwgAA//+gDQLCAACK+nUIcswAAP//XvICwgAAf/P//wLCAAA2+fH8+84AAB/dEFUOFQAAKMpkQg4VAAAoyofiDhUAAB/d288OFQAAAACgDQAAAAB/DAAAAAAAAH8M//8AAAAAAABe8gAAAAB/8wAAAAAAAP//oA0AAAAA//9e8gAAAAB/8///AAAAAP9/2jIOFQAA5h7njg4VAAD/f/PqDhUAAIfl544OFQAA/3/njg4VAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_mrvfq"]
-resource_name = "Abandoned_House_Cube_196"
-_surfaces = [{
-"aabb": AABB(-0.619084, -0.568824, -0.446301, 1.23816, 1.13532, 0.965654),
-"attribute_data": PackedByteArray("RgNgr0YDya19BGCvRgM5pEYDhK5+BDmk0Q05pNENhK5+BDmk0Q1gr9ENya19BGCv7AYxsOwGMbDsBjGw7AYxsHgCaKt4AmirvAa/sOwG87AZAuerfgZ7sH4Ge7B4AmireAJoq54GtqLsBrai7AZ4o+wGeKPsBnij7AZ4oysCBaxjBuGiYwbhogE9EbWMPZC0gD0StOwtcKNML++i6C6Box8wmzLJMGozpjCtMkBBDyPrQP0kxUDeI58OaKufDmirngbzsOwG87DsBjGw7AYxsOwGMbDsBjGw/g7nq34Ge7B+Bnuw7AZ4o+wGeKPsBnij7AZ4o58OaKufDmirogbOouwGtqLsDgWsYwbhomMG4aII0d6rAM9Gq+DPxqt0vsG7vb3CusG9Kbuoydcp18nBK7HJnyoA2vs7QNnDPDDZ4ztdBdHfXQXR3+EOMbDhDjGweAI6on0P+ux9D/rs4Q7zsHgCOqIQGbgDEBm4A+EOtqKmDWUPpg1lD+EOeKPhDnijnw46ouEO87Bf37T6X9+0+uEOMbDhDjGwyOoI78jqCO/hDnij4Q54oyb9nB4m/Zwenw46ogfzchHhDraiB/NyETd6gcVfeoHFQXqCxB4m3WttJt1rLyfua9KEwh35hMIdy4ShH9Xcqnco3ap32duSd5h/onGYf6JxmH+icQ=="),
-"format": 34896613399,
-"index_count": 210,
-"index_data": PackedByteArray("AQAQABQAEAA2AC4ANgABAAoAEAABADYAZQA8AGkAZQA1ADwACwA0ADgANABDADsAQwALAAgANAALAEMAbAAYAFgAbAA+ABgADwBfAB4ADwBTAF8ABwA9AEEAPQAfABcAHwAHAAQAPQAHAB8ACQADAAYACQAAAAMABQAdACEAHQAWAA4AFgAFAAIAHQAFABYAcQAlACIAJQB9AHQAJQBxAH0ADAAVABIAGQAgABsAMAA3ADIAOQBCAD8AVwANABMAVwBSAA0AGgBeAFsAGgAcAF4AMQBkAGEAMQAzAGQAbgA6AEAAbgBoADoAVAAvAGAAVAARAC8AJgBVACMAJgBQAFUALQBcACkALQBaAFwASQBmAEUASQBjAGYATgBvAEwATgBqAG8AVgByACQAcgBiAEgAcgBWAGIAXQB1ACoAdQBRACcAdQBdAFEAbQB4AEsAeABZACwAeABtAFkAZwB7AEYAewBrAE8AewBnAGsARwB9AHAAfQBEAHkAfQBHAEQAdgBzAHwAcwArACgAcwB2ACsATQB+AHoAfgBKAHcAfgBNAEoA"),
-"material": SubResource("StandardMaterial3D_jn6kv"),
-"name": "Tele2",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 127,
-"vertex_data": PackedByteArray("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")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_863mp")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpnqs"]
 resource_name = "Tele1"
 cull_mode = 2
@@ -16288,7 +16250,7 @@ omni_range = 1.507
 omni_shadow_mode = 0
 
 [node name="roofLight" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.4661, 1.96974, -7.11179)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.4661, 1.88357, -7.11179)
 light_color = Color(0.961287, 0.785345, 0.615441, 1)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
@@ -16302,25 +16264,25 @@ omni_attenuation = -0.373
 omni_shadow_mode = 0
 
 [node name="roofLight2" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -33.04, 1.91501, -16.4755)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -33.04, 1.81046, -16.4755)
 light_color = Color(0.886275, 0.623529, 0.34902, 1)
-light_indirect_energy = 2.939
 light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_length = 20.0
-omni_range = 3.286
+omni_range = 2.5
 omni_attenuation = -0.452
+omni_shadow_mode = 0
 
 [node name="roofLight3" type="OmniLight3D" parent="houseLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.569, 1.00993, -7.11179)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.569, 1.68762, -7.11179)
 light_color = Color(0.971237, 0.833083, 0.701625, 1)
 light_volumetric_fog_energy = 0.0
 shadow_reverse_cull_face = true
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_length = 20.0
-omni_range = 2.781
+omni_range = 2.4
 omni_attenuation = -0.212
 omni_shadow_mode = 0
 
@@ -19782,10 +19744,7 @@ skeleton = NodePath("")
 [node name="tvs" type="MeshInstance3D" parent="Abandoned_House"]
 transform = Transform3D(0.255265, 0, 0, 0, 0.255265, 0, 0, 0, 0.255265, -25.784, 8.0291, -122.663)
 
-[node name="Tele" type="MeshInstance3D" parent="Abandoned_House/tvs"]
-transform = Transform3D(0, 0, 2.042, 0, 2.042, 0, -2.042, 0, 0, 14.5364, -14.1276, 7.04877)
-mesh = SubResource("ArrayMesh_mrvfq")
-skeleton = NodePath("")
+[node name="Tele" parent="Abandoned_House/tvs" instance=ExtResource("37_e5w0q")]
 
 [node name="Tele_003" type="MeshInstance3D" parent="Abandoned_House/tvs"]
 transform = Transform3D(1.49701, 0, -0.260159, 0, 1.51945, 0, 0.260159, 0, 1.49701, -12.1121, -42.1948, 0.420624)
@@ -20267,7 +20226,6 @@ skeleton = NodePath("")
 
 [node name="Caja_027" type="MeshInstance3D" parent="Abandoned_House/boxes"]
 transform = Transform3D(-2.64641e-07, 0, -0.493326, 0, 0.493326, 0, -0.493326, 0, 2.64641e-07, 13.7639, -21.6114, 8.19989)
-lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_g68gq")
 skeleton = NodePath("")
