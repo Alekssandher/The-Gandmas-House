@@ -44,6 +44,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wtk3f")
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_7ive1"]
+file = "res://videos/ace of base.ogg"
 
 [sub_resource type="Shader" id="Shader_201ws"]
 code = "/*

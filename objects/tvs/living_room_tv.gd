@@ -73,3 +73,11 @@ func _on_timer_area_body_exited(body: Node3D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	canTurnOff = !canTurnOff
 	
+
+
+func _on_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_exited(area: Area3D) -> void:
+	pass # Replace with function body.

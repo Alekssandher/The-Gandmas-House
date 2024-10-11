@@ -6,8 +6,6 @@ extends Outline
 @export var audio: AudioStreamPlayer3D
 @export var animationPlayer: AnimationPlayer
 
-var canPlay: bool = true
-
 var canTurnOff: bool = true
 var audioPosition: float
 
@@ -34,17 +32,7 @@ func interact() -> void:
 		
 		
 func pauseTv() -> void:
-	if audio.playing:
-		print("stop")
-		audioPosition = audio.get_playback_position()
-		audio.stop() 
-		EventsResources.addState("less", 1)
-	else:
-		print("play")
-		audio.play()
-		audio.seek(audioPosition)  
-		EventsResources.addState("more", 1)
-		
+
 	video.paused = !video.paused
 	
 	
