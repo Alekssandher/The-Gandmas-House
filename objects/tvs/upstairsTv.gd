@@ -19,6 +19,7 @@ func _ready() -> void:
 	player.connect("raycastout", raycastout)
 	video.play()
 	
+	
 func interact() -> void:
 	
 	if animationPlayer.is_playing(): return
@@ -27,12 +28,12 @@ func interact() -> void:
 		true: 
 			video2.stream.file = "res://videos/turnOff.ogv"
 			animationPlayer.play("turnOff")
-			EventsResources.addState("less", 1)
+			
 			
 		false: 
 			video2.stream.file = "res://videos/turnOn.ogv"
 			animationPlayer.play("turnOn")
-			EventsResources.addState("more", 1)
+			
 			
 			
 		
@@ -47,7 +48,7 @@ func pauseTv() -> void:
 		audioPosition = audio.get_playback_position()
 		audio.stop() 
 		EventsResources.addState("less", 1)
-	else:
+	else: 
 		print("play")
 		audio.play()
 		audio.seek(audioPosition)  
@@ -60,9 +61,9 @@ func _on_timer_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		inFirstTvArea = true
 		if !canPlay: return
-		video.stream.file = "res://videos/picapauVideo.ogv"
+		video.stream.file = "res://videos/mickey/mickeyVideoBlack.ogv"
 		
-		EventsResources.addState("more", 1)
+		
 		audio.play()
 		video.play()
 

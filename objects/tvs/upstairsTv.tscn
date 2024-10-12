@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://q4dchcx8rnbv"]
+[gd_scene load_steps=28 format=4 uid="uid://q4dchcx8rnbv"]
 
 [ext_resource type="Texture2D" uid="uid://bkye1ech24ulm" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele2.jpg" id="1_ry6u4"]
-[ext_resource type="AudioStream" uid="uid://bbn2enumhb76t" path="res://videos/picapauAudio.ogg" id="2_1l78u"]
+[ext_resource type="AudioStream" uid="uid://dggcor77l8prx" path="res://videos/mickey/mickeyAudioBlack.ogg" id="2_pmmqu"]
 [ext_resource type="Script" path="res://objects/tvs/upstairsTv.gd" id="3_ewsev"]
 [ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="4_6e0jd"]
 
@@ -151,7 +151,7 @@ resource_local_to_scene = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qcp6j"]
 material = SubResource("ShaderMaterial_m404c")
-size = Vector2(1, 0.8)
+size = Vector2(1.2, 0.8)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uhwau"]
 viewport_path = NodePath("SubViewport")
@@ -173,9 +173,15 @@ size = Vector2(1.05, 0.8)
 [sub_resource type="ViewportTexture" id="ViewportTexture_e4ktc"]
 viewport_path = NodePath("tvTurn")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_6iodc"]
+viewport_path = NodePath("tvTurn")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mo3r"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_e4ktc")
+emission_enabled = true
+emission_energy_multiplier = 4.0
+emission_texture = SubResource("ViewportTexture_6iodc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ridgv"]
 size = Vector3(1.19723, 1.14215, 0.943054)
@@ -203,6 +209,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_uv68e"]
 resource_name = "turnOff"
+length = 3.4
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -353,8 +360,8 @@ mesh = SubResource("PlaneMesh_65gx6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7mo3r")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.539709, 0, 0, 0, 0.539709, 0, 0, 0, 0.539709, 0.286759, 0, -0.392174)
-stream = ExtResource("2_1l78u")
+transform = Transform3D(0.489716, 0, 0, 0, 0.489716, 0, 0, 0, 0.489716, -0.0123317, 0, -0.338834)
+stream = ExtResource("2_pmmqu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

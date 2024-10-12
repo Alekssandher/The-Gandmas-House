@@ -89,9 +89,6 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	var fps := Engine.get_frames_per_second()
-	
-	print("Fps:", fps)
 	interaction()
 	# Add the gravity.
 	if not is_on_floor():

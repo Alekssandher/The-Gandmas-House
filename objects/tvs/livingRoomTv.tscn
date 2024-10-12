@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://15xf4lj7c2qf"]
+[gd_scene load_steps=27 format=4 uid="uid://15xf4lj7c2qf"]
 
 [ext_resource type="Texture2D" uid="uid://bfsd2uff6srhu" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele1.jpg" id="1_w12gt"]
 [ext_resource type="Script" path="res://objects/tvs/living_room_tv.gd" id="2_qmbta"]
@@ -181,8 +181,11 @@ albedo_texture = SubResource("ViewportTexture_w33rq")
 [sub_resource type="BoxShape3D" id="BoxShape3D_inrdw"]
 size = Vector3(1.73877, 1.19421, 0.98999)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aw4ps"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qlnf"]
 size = Vector3(7.14941, 1, 9.06665)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xc3g"]
+size = Vector3(1.73877, 1.19421, 0.98999)
 
 [sub_resource type="Animation" id="Animation_3t3nl"]
 length = 0.001
@@ -201,6 +204,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_uv68e"]
 resource_name = "turnOff"
+length = 3.4
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -365,7 +369,7 @@ shape = SubResource("BoxShape3D_inrdw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="timerArea"]
 transform = Transform3D(0.997215, 0, 0.0745784, 0, 1, 0, -0.0745784, 0, 0.997215, 0.177896, 0, -4.01205)
-shape = SubResource("BoxShape3D_aw4ps")
+shape = SubResource("BoxShape3D_2qlnf")
 
 [node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("video", "video2", "audio", "animationPlayer", "mesh")]
 script = ExtResource("2_qmbta")
@@ -378,7 +382,7 @@ counter = ExtResource("4_p314x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -2.38419e-07, 0.019228, -0.0137959)
-shape = SubResource("BoxShape3D_inrdw")
+shape = SubResource("BoxShape3D_3xc3g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
