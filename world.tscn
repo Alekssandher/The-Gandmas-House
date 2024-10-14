@@ -1,4 +1,4 @@
-[gd_scene load_steps=931 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=930 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -55,7 +55,6 @@
 [ext_resource type="AudioStream" uid="uid://b6rg3gq5wcxkg" path="res://audios/Mind's Eye Pack/Pack/2- Mental Vortex.mp3" id="64_da2ax"]
 [ext_resource type="PackedScene" uid="uid://ckg3xjeiq1w4t" path="res://objects/trees/vecindario.tscn" id="66_2k2mt"]
 [ext_resource type="Texture2D" uid="uid://cj1juq666ngwg" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_01.png" id="66_itwv4"]
-[ext_resource type="PackedScene" uid="uid://drvcm5ladra3b" path="res://systems/cap_mic.tscn" id="66_ujh76"]
 [ext_resource type="Texture2D" uid="uid://d23olumn3c8n8" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_02.png" id="67_v40tm"]
 [ext_resource type="Texture2D" uid="uid://btp8q61ta7ffu" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_03.png" id="68_c5byb"]
 [ext_resource type="Texture2D" uid="uid://dqloa851tymuh" path="res://assets/Objects_Interior(Village)_Demo/Objects_Interior(Village)_Demo/Textures/bed_04.png" id="69_abrgd"]
@@ -21299,8 +21298,6 @@ skeleton = NodePath("")
 [node name="lights" parent="Abandoned_House" instance=ExtResource("40_kg0nu")]
 
 [node name="Ventanas" parent="Abandoned_House" instance=ExtResource("77_fus5k")]
-
-[node name="capMic" parent="." instance=ExtResource("66_ujh76")]
 
 [connection signal="body_entered" from="invisibleWall/Area3D" to="invisibleWall" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="interactionPoints/beds/beds" to="interactionPoints/beds/beds" method="_on_body_entered"]
