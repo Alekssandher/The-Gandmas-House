@@ -4,6 +4,10 @@ var children: Array[MeshInstance3D]
 
 @export var lightsMesh: MeshInstance3D
 
+enum states {IDLE, PISCA}
+var state := states.IDLE
+var i: int = 0
+
 func _ready() -> void:
 	EventsResources.connect("allTvsOff", allTvsOff)
 	
@@ -14,6 +18,22 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
+	match state:
+		states.IDLE: return
+		states.PISCA: pisca()
+		
+
+func allTvsOff() -> void:
+	
+	#Check the children of the array
+	for child in children:
+		#Check the granchildren of each child of the array
+		for granchild in child.get_children():
+			#Set the visibility of the light to false
+			if granchild is OmniLight3D:
+				granchild.visible = false
+
+func pisca() -> void:
 	#Check the children of the array
 	for child in children:
 		#Check the granchildren of each child of the array
@@ -24,19 +44,7 @@ func _process(delta: float) -> void:
 					granchild.visible = true
 				else: 
 					granchild.visible = false
-			
-func allTvsOff() -> void:
 	
-	#Check the children of the array
-	for child in children:
-		#Check the granchildren of each child of the array
-		for granchild in child.get_children():
-			#Set the visibility of the light to false
-			if granchild is OmniLight3D:
-				granchild.visible = false
-		
-		
-			
-
-	
+func changeState(newState: states) -> void:
+	state = newState
 	

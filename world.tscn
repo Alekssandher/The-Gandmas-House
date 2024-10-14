@@ -1,10 +1,11 @@
-[gd_scene load_steps=930 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=934 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
 [ext_resource type="Texture2D" uid="uid://mi7vqrnbs3ux" path="res://assets/miscelaneous/Maquinas/M (9).png" id="5_8iuj0"]
 [ext_resource type="Texture2D" uid="uid://ddymvm7s1uivj" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_telaraña.png" id="5_tpbeu"]
 [ext_resource type="Texture2D" uid="uid://bnaij0wd1wbf2" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela1.jpg" id="6_w3h4h"]
+[ext_resource type="Script" path="res://systems/interactionPoints/interactionPointsManager.gd" id="7_gxl3f"]
 [ext_resource type="Texture2D" uid="uid://b0pyb0me70m4p" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera1.jpg" id="7_tr7ta"]
 [ext_resource type="Texture2D" uid="uid://bl3l385gqnlh4" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_t (28).jpg" id="8_lmrs4"]
 [ext_resource type="Texture2D" uid="uid://bxqlljkaa5gfv" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera2.jpg" id="9_80lra"]
@@ -14,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://sq65ur2w53b2" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal2.jpg" id="13_h77r5"]
 [ext_resource type="Texture2D" uid="uid://ddyb60rqh210k" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Mesa_T.jpg" id="14_38wo1"]
 [ext_resource type="Texture2D" uid="uid://8e7ssgm5btba" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_t (5).jpg" id="15_3wrej"]
+[ext_resource type="Script" path="res://systems/interactionPoints/tv_room.gd" id="15_dklj1"]
+[ext_resource type="AudioStream" uid="uid://dnshx4uaeq7pe" path="res://audios/creepyScreaming.ogg" id="16_qv7vt"]
 [ext_resource type="PackedScene" uid="uid://d0pqbhkmo18rv" path="res://systems/settingsMenu/settings.tscn" id="19_0ynjy"]
 [ext_resource type="Script" path="res://systems/nearEvent.gd" id="19_ldy4e"]
 [ext_resource type="Texture2D" uid="uid://bu0i8d6a1w50f" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco.png" id="20_jngig"]
@@ -310,6 +313,9 @@ points = PackedVector3Array(-0.00835492, -0.0127328, -0.000701861, -0.00807686, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0fxfh"]
 size = Vector3(1, 1, 15.787)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1jhp"]
+size = Vector3(0.41748, 1, 1.60852)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlg6j"]
 albedo_texture = ExtResource("70_ng2gx")
@@ -16295,6 +16301,7 @@ transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -2.15782
 shape = SubResource("BoxShape3D_xnc0p")
 
 [node name="interactionPoints" type="Node3D" parent="."]
+script = ExtResource("7_gxl3f")
 
 [node name="beds" type="MeshInstance3D" parent="interactionPoints"]
 
@@ -16370,6 +16377,22 @@ script = ExtResource("63_npkwv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="interactionPoints/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.93346)
 shape = SubResource("BoxShape3D_0fxfh")
+
+[node name="tvRoom" type="Node3D" parent="interactionPoints" node_paths=PackedStringArray("screamingAudio")]
+script = ExtResource("15_dklj1")
+screamingAudio = NodePath("screaming")
+
+[node name="screaming" type="AudioStreamPlayer3D" parent="interactionPoints/tvRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6999, 0.897261, -9.93852)
+stream = ExtResource("16_qv7vt")
+volume_db = -4.923
+
+[node name="roomTv" type="Area3D" parent="interactionPoints/tvRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0982, 0.897261, -10.3754)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interactionPoints/tvRoom/roomTv"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29126, 0, 0.30426)
+shape = SubResource("BoxShape3D_k1jhp")
 
 [node name="objects" type="Node3D" parent="."]
 
@@ -17198,35 +17221,35 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_olccn")
 skeleton = NodePath("")
 
-[node name="Sillon_006" type="MeshInstance3D" parent="Abandoned_House/sofas"]
+[node name="Sillon_006" type="MeshInstance3D" parent="Abandoned_House/sofas" groups=["tvRoomForniture"]]
 transform = Transform3D(-1.58528, 0, 2.95663, 0, 3.35481, 0, -2.95663, 0, -1.58528, -92.9613, -26.5049, -14.7448)
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_3iwlw")
 skeleton = NodePath("")
 
-[node name="Sillon_007" type="MeshInstance3D" parent="Abandoned_House/sofas"]
+[node name="Sillon_007" type="MeshInstance3D" parent="Abandoned_House/sofas" groups=["tvRoomForniture"]]
 transform = Transform3D(0.397357, -0.747438, -0.00360068, 0.00767016, -1.01597e-07, 0.846469, 0.747408, 0.397373, -0.00677247, -75.3491, -27.2424, -0.372803)
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_sd4wg")
 skeleton = NodePath("")
 
-[node name="Sillon_008" type="MeshInstance3D" parent="Abandoned_House/sofas"]
+[node name="Sillon_008" type="MeshInstance3D" parent="Abandoned_House/sofas" groups=["tvRoomForniture"]]
 transform = Transform3D(2.91595, -1.65892, -0.00532084, -0.00612165, 0, -3.35481, 1.65891, 2.91595, -0.00302709, -90.2393, -27.6899, -5.70602)
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_mcb7o")
 skeleton = NodePath("")
 
-[node name="Sillon_009" type="MeshInstance3D" parent="Abandoned_House/sofas"]
+[node name="Sillon_009" type="MeshInstance3D" parent="Abandoned_House/sofas" groups=["tvRoomForniture"]]
 transform = Transform3D(0, 0, 0.846504, 0, 0.846504, 0, -0.846504, 0, 0, -82.686, -26.8313, -8.41693)
 lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_xgql0")
 skeleton = NodePath("")
 
-[node name="Sillon_010" type="MeshInstance3D" parent="Abandoned_House/sofas"]
+[node name="Sillon_010" type="MeshInstance3D" parent="Abandoned_House/sofas" groups=["tvRoomForniture"]]
 transform = Transform3D(0.846469, 0, 0.0076701, 0, 0.846504, 0, -0.0076701, 0, 0.846469, -75.9295, -26.8355, -15.2414)
 lod_bias = 0.001
 visibility_range_end = 15.0
@@ -17386,37 +17409,37 @@ lod_bias = 0.001
 mesh = SubResource("ArrayMesh_jput2")
 skeleton = NodePath("")
 
-[node name="Silla_014" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_014" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(-4.00153, 0, 0.535598, 0, 4.03722, 0, -0.535598, 0, -4.00153, -101.147, -31.6743, 20.1835)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_j1bku")
 skeleton = NodePath("")
 
-[node name="Silla_015" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_015" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(-1.48321, 0, 3.75489, 0, 4.03722, 0, 3.75489, 0, 1.48321, -96.7836, -31.6743, 24.1295)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_w6p64")
 skeleton = NodePath("")
 
-[node name="Silla_016" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_016" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(-0.0906445, 0, 4.0362, 0, 4.03722, 0, 4.0362, 0, 0.0906445, -91.7631, -31.6909, 24.1205)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_b3cnx")
 skeleton = NodePath("")
 
-[node name="Silla_017" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_017" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(-2.30051, 0, 3.31764, 0, 4.03722, 0, -3.31764, 0, -2.30051, -96.7836, -31.6743, 16.0733)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_vncpy")
 skeleton = NodePath("")
 
-[node name="Silla_018" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_018" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(1.45336, 0, 3.76654, 0, 4.03722, 0, -3.76654, 0, 1.45336, -91.7631, -31.6909, 16.0823)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_o1o5m")
 skeleton = NodePath("")
 
-[node name="Silla_019" type="MeshInstance3D" parent="Abandoned_House/chairs"]
+[node name="Silla_019" type="MeshInstance3D" parent="Abandoned_House/chairs" groups=["tvRoomForniture"]]
 transform = Transform3D(3.98816, 0, 0.62745, 0, 4.03722, 0, -0.62745, 0, 3.98816, -86.0035, -31.6743, 20.1835)
 lod_bias = 0.001
 mesh = SubResource("ArrayMesh_6cy5g")
@@ -19089,7 +19112,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_2wwvd")
 skeleton = NodePath("")
 
-[node name="Mesa_009" type="MeshInstance3D" parent="Abandoned_House/tables"]
+[node name="Mesa_009" type="MeshInstance3D" parent="Abandoned_House/tables" groups=["tvRoomForniture"]]
 transform = Transform3D(1.41482e-06, 0, -2.63741, 0, 2.63741, 0, 2.63741, 0, 1.41482e-06, -64.4498, -18.7945, 16.9538)
 lod_bias = 0.001
 visibility_range_end = 15.0
@@ -19131,7 +19154,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_1vf22")
 skeleton = NodePath("")
 
-[node name="Mesa_015" type="MeshInstance3D" parent="Abandoned_House/tables"]
+[node name="Mesa_015" type="MeshInstance3D" parent="Abandoned_House/tables" groups=["tvRoomForniture"]]
 transform = Transform3D(2.63734, 0, 0.0199661, 0, 2.63741, 0, -0.0199661, 0, 2.63734, -51.4315, -19.5158, 18.5096)
 lod_bias = 0.001
 visibility_range_end = 15.0
@@ -19158,9 +19181,7 @@ skeleton = NodePath("")
 [node name="Librero_001" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(-2.64193, 0, -8.6085e-07, 0, 2.64193, 0, 8.6085e-07, 0, -2.64193, -81.1392, -16.2272, -2.57648)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_n3enp")
 skeleton = NodePath("")
 
@@ -19176,9 +19197,7 @@ skeleton = NodePath("")
 [node name="Librero_003" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, -9.31523, -8.51643, -12.6055)
 lod_bias = 0.001
-visibility_range_end = 5.0
-visibility_range_end_margin = 9.0
-visibility_range_fade_mode = 1
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_x275e")
 skeleton = NodePath("")
 
@@ -19199,7 +19218,7 @@ skeleton = NodePath("")
 [node name="Librero_006" type="MeshInstance3D" parent="Abandoned_House/bookcases"]
 transform = Transform3D(2.64193, 0, 0, 0, 2.64193, 0, 0, 0, 2.64193, 10.959, -16.2272, 17.0733)
 lod_bias = 0.001
-visibility_range_end = 20.0
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_4eqre")
 skeleton = NodePath("")
 
@@ -19619,7 +19638,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_43ene")
 skeleton = NodePath("")
 
-[node name="p_058" type="MeshInstance3D" parent="Abandoned_House/drawers"]
+[node name="p_058" type="MeshInstance3D" parent="Abandoned_House/drawers" groups=["tvRoomForniture"]]
 transform = Transform3D(2.73311, 0, 0.0206912, 0, 2.73319, 0, -0.0206912, 0, 2.73311, -59.3582, -21.87, 9.70859)
 lod_bias = 0.001
 visibility_range_end = 15.0
@@ -20739,7 +20758,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_lhir1")
 skeleton = NodePath("")
 
-[node name="Almohada_008" type="MeshInstance3D" parent="Abandoned_House/pillows"]
+[node name="Almohada_008" type="MeshInstance3D" parent="Abandoned_House/pillows" groups=["tvRoomForniture"]]
 transform = Transform3D(1.18258, -2.22447, -0.0107159, 0.0228273, -1.52203e-07, 2.5192, 2.22438, 1.18263, -0.0201558, -52.2087, -23.2846, -10.4584)
 cast_shadow = 0
 lod_bias = 0.05
@@ -20747,7 +20766,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_s4g6g")
 skeleton = NodePath("")
 
-[node name="Almohada_009" type="MeshInstance3D" parent="Abandoned_House/pillows"]
+[node name="Almohada_009" type="MeshInstance3D" parent="Abandoned_House/pillows" groups=["tvRoomForniture"]]
 transform = Transform3D(0, 0, 2.51931, 0, 2.51931, 0, -2.51931, 0, 0, -58.5735, -23.5039, -18.1334)
 cast_shadow = 0
 lod_bias = 0.05
@@ -20763,7 +20782,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_muyf1")
 skeleton = NodePath("")
 
-[node name="Almohada" type="MeshInstance3D" parent="Abandoned_House/pillows"]
+[node name="Almohada" type="MeshInstance3D" parent="Abandoned_House/pillows" groups=["tvRoomForniture"]]
 transform = Transform3D(2.5192, 0, 0.0228272, 0, 2.51931, 0, -0.0228272, 0, 2.5192, -52.8274, -23.5039, -24.0677)
 cast_shadow = 0
 lod_bias = 0.05
@@ -21302,6 +21321,7 @@ skeleton = NodePath("")
 [connection signal="body_entered" from="invisibleWall/Area3D" to="invisibleWall" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="interactionPoints/beds/beds" to="interactionPoints/beds/beds" method="_on_body_entered"]
 [connection signal="body_entered" from="interactionPoints/Area3D" to="interactionPoints/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="interactionPoints/tvRoom/roomTv" to="interactionPoints/tvRoom" method="_on_room_tv_body_entered"]
 [connection signal="fogToggled" from="settings/settings" to="configsManager" method="_on_settings_fog_toggled"]
 [connection signal="shadowQualityToggled" from="settings/settings" to="configsManager" method="_on_settings_shadow_quality_toggled"]
 [connection signal="shadowToggled" from="settings/settings" to="configsManager" method="_on_settings_shadow_toggled"]

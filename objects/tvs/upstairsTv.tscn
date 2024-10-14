@@ -187,7 +187,7 @@ emission_texture = SubResource("ViewportTexture_6iodc")
 size = Vector3(1.19723, 1.14215, 0.943054)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eg53"]
-size = Vector3(7.14941, 1, 9.06665)
+size = Vector3(4.1377, 1, 4.05823)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7jau"]
 size = Vector3(1.31445, 1.21265, 1.0332)
@@ -372,7 +372,7 @@ shape = SubResource("BoxShape3D_ridgv")
 [node name="timerArea" type="Area3D" parent="." groups=["interactable"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="timerArea"]
-transform = Transform3D(0.997215, 0, 0.0745784, 0, 1, 0, -0.0745784, 0, 0.997215, 0.177896, 0, -4.01205)
+transform = Transform3D(0.997216, 0, 0.0745786, 0, 1, 0, -0.0745786, 0, 0.997216, -0.0219593, 0, -1.4859)
 shape = SubResource("BoxShape3D_7eg53")
 
 [node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("video", "video2", "audio", "animationPlayer", "mesh")]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=17 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_ykcjk"]
 [ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="2_rnj41"]
 [ext_resource type="Script" path="res://objects/door/entrance_doors.gd" id="3_ryu33"]
 [ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="4_8suun"]
 [ext_resource type="AudioStream" uid="uid://du0c51s4yvg17" path="res://audios/events/door/Forcibly_Opening cut (mp3cut.net).mp3" id="5_80fxc"]
+[ext_resource type="AudioStream" uid="uid://ch018r0r3j3xy" path="res://audios/whisper.ogg" id="6_2g4lw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05suq"]
 resource_name = "Puerta"
@@ -211,5 +212,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 [node name="lockedDoorSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 stream = ExtResource("5_80fxc")
+
+[node name="whisper" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2g4lw")
 
 [connection signal="body_entered" from="box" to="door" method="_on_box_body_entered"]
