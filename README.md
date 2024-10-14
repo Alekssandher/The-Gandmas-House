@@ -18,5 +18,3 @@ Ten years ago, the main character's grandma suddenly vanished, and no one could 
 
 He doesn't believe the story, but the familiar voice makes him curious enough to go there and find out what's happening.
 
-
-#Analiticys
