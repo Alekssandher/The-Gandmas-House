@@ -29,7 +29,7 @@ func raycastout() -> void:
 	mesh.material_overlay = null
 	
 func fogOff() -> void:
-	if forceClose: $"../whisper".play()
+	if forceClose: animationPlayer.play("whispers")
 	return
 	if playerInsideHouse && !doorOpened:
 		worldEnviroment.environment.fog_enabled = false

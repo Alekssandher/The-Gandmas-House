@@ -3308,6 +3308,7 @@ mesh = SubResource("ArrayMesh_rx0fu")
 skeleton = NodePath("")
 
 [node name="Marco_P_010" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0, 0, 1.4123, 0, 1, 0, -1.04679, 0, 0, -12.2976, -2.05717, 2.47929)
 cast_shadow = 0
 lod_bias = 0.001

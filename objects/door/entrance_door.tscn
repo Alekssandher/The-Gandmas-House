@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bqxoi52c7gq1t"]
+[gd_scene load_steps=18 format=4 uid="uid://bqxoi52c7gq1t"]
 
 [ext_resource type="Texture2D" uid="uid://ccbbbn4krjhfc" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Puerta.jpg" id="1_ykcjk"]
 [ext_resource type="AudioStream" uid="uid://1b6meg8diegx" path="res://audios/events/door/door.ogg" id="2_rnj41"]
@@ -61,6 +61,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-3.14159, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../whisper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(11.4675, -2.43102, 5.0457)]
 }
 
 [sub_resource type="Animation" id="Animation_qmwb8"]
@@ -151,11 +163,42 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_c7ovh"]
+resource_name = "whispers"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../whisper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(16.1945, -2.431, 5.046), Vector3(-7.02248, -2.431, 5.046)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../whisper")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qb1ua"]
 _data = {
 "RESET": SubResource("Animation_83ww6"),
 "close": SubResource("Animation_qmwb8"),
-"open": SubResource("Animation_5yads")
+"open": SubResource("Animation_5yads"),
+"whispers": SubResource("Animation_c7ovh")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvp8k"]
@@ -208,12 +251,18 @@ shape = SubResource("BoxShape3D_21ai7")
 
 [node name="doorSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
+bus = &"sfx"
 
 [node name="lockedDoorSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07178, -2.10008, 8.31819)
 stream = ExtResource("5_80fxc")
+bus = &"sfx"
 
-[node name="whisper" type="AudioStreamPlayer" parent="."]
+[node name="whisper" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4675, -2.43102, 5.0457)
 stream = ExtResource("6_2g4lw")
+volume_db = 60.0
+max_distance = 30.0
+bus = &"sfx"
 
 [connection signal="body_entered" from="box" to="door" method="_on_box_body_entered"]
