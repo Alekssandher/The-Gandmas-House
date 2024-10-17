@@ -1,4 +1,4 @@
-[gd_scene load_steps=938 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=943 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://u1mnnwixovb4" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Pared.jpg" id="17_m2rck"]
 [ext_resource type="PackedScene" uid="uid://d0pqbhkmo18rv" path="res://systems/settingsMenu/settings.tscn" id="19_0ynjy"]
 [ext_resource type="Script" path="res://systems/nearEvent.gd" id="19_ldy4e"]
+[ext_resource type="Script" path="res://objects/cars/grandma_car_manager.gd" id="19_v8yor"]
+[ext_resource type="AudioStream" uid="uid://dpes7c4yn5kq7" path="res://audios/oldCarEngineStart.ogg" id="20_dk03j"]
 [ext_resource type="Texture2D" uid="uid://bu0i8d6a1w50f" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco.png" id="20_jngig"]
 [ext_resource type="Texture2D" uid="uid://3b848853gmam" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco - emisor.png" id="21_qog5q"]
 [ext_resource type="Texture2D" uid="uid://dx48xkqu7b8b6" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal1.jpg" id="24_hw6ac"]
@@ -330,6 +332,95 @@ size = Vector2(1, 3.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3h62c"]
 size = Vector3(1, 1.93359, 0.184692)
+
+[sub_resource type="Animation" id="Animation_slqd5"]
+resource_name = "goCar"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7, 11.3333, 13.5667, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-39.9685, -0.0359078, -3.06626), Vector3(-39.9685, -0.0359078, -3.06626), Vector3(-39.9685, -0.580328, 7.53588), Vector3(-39.968, -0.75, 11.699), Vector3(-77.557, -0.75, 13.126)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7, 11.3333, 14.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0907571, 0, 0), Vector3(0.0659606, 0, 0), Vector3(0.0439898, 0, 0), Vector3(-0.010472, -1.54636, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(29.9667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"kys"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("grandmaCarAudio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o314d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-39.9685, -0.0359078, -3.06626)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0907571, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrew1"]
+_data = {
+"RESET": SubResource("Animation_o314d"),
+"goCar": SubResource("Animation_slqd5")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlg6j"]
 albedo_texture = ExtResource("70_ng2gx")
@@ -16426,6 +16517,7 @@ shape = SubResource("BoxShape3D_3h62c")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="interactionPoints/tvRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9676, 1.63444, -11.5021)
+visible = false
 light_volumetric_fog_energy = 0.0
 omni_range = 10.0
 omni_shadow_mode = 0
@@ -16433,6 +16525,7 @@ omni_shadow_mode = 0
 [node name="objects" type="Node3D" parent="."]
 
 [node name="Car" parent="objects" instance=ExtResource("64_85dqp")]
+transform = Transform3D(1, 0, 0, 0, 0.995884, -0.0906326, 0, 0.0906326, 0.995884, -39.9685, -0.0359078, -3.06626)
 visibility_range_end = 45.0
 skeleton = NodePath("../..")
 
@@ -16443,6 +16536,23 @@ object = NodePath("..")
 texts = Array[String](["That's my grandma's car.", "What would it be doing here?", "It disappeared with her when she suddenly vanished.", "The front light is on though...", "Could she be inside... waiting for me?"])
 interactDistance = 5.0
 disToStopText = 10.0
+
+[node name="grandmaCarManager" type="Node3D" parent="objects/Car" node_paths=PackedStringArray("animationPlayer", "car")]
+script = ExtResource("19_v8yor")
+animationPlayer = NodePath("../carAnim")
+car = NodePath("..")
+
+[node name="carAnim" type="AnimationPlayer" parent="objects/Car"]
+libraries = {
+"": SubResource("AnimationLibrary_hrew1")
+}
+
+[node name="grandmaCarAudio" type="AudioStreamPlayer3D" parent="objects/Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980729, -0.063266)
+stream = ExtResource("20_dk03j")
+volume_db = 80.0
+max_distance = 100.0
+bus = &"sfx"
 
 [node name="Car2" type="MeshInstance3D" parent="objects"]
 transform = Transform3D(0.157383, 0, -0.987538, 0, 1, 0, 0.987538, 0, 0.157383, 31.495, -0.778581, 19.0315)

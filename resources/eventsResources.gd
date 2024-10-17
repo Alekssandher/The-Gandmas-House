@@ -11,12 +11,14 @@ var tvsStates: Dictionary = {
 # 0 = anyPlace; 1 = livingRoom; 2 = tvRoom; 3 = upstairsNearTv
 var interactions: Dictionary = {
 	"roomsIndex": 0
+	
 }
 
 signal allTvsOff
 
 
 func addState(operation: String, number: int) -> void:
+	
 	match operation:
 		"more": 
 			tvsStates["tvsOn"] += number

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://bm8a848nb6fwq"]
+[gd_scene load_steps=10 format=4 uid="uid://bm8a848nb6fwq"]
 
 [ext_resource type="Texture2D" uid="uid://dcfgw0o5kejdh" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/car_snow.png" id="1_ki1xj"]
 [ext_resource type="Texture2D" uid="uid://o5o70lq5mm58" path="res://assets/PSX_Style_Cars_by_GGBot_(August2023)/Car 01/car.png" id="3_27ul0"]
+[ext_resource type="Script" path="res://objects/cars/grandmaCar.gd" id="3_u4xy1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3rmp"]
 albedo_texture = ExtResource("1_ki1xj")
@@ -36,10 +37,12 @@ size = Vector3(2.02777, 0.614807, 3.24405)
 [sub_resource type="BoxShape3D" id="BoxShape3D_crj5x"]
 size = Vector3(1.99911, 1.14258, 0.195801)
 
-[node name="grandmaCar" type="MeshInstance3D"]
+[node name="grandmaCar" type="MeshInstance3D" node_paths=PackedStringArray("lights")]
 transform = Transform3D(1, 0, 0, 0, 0.997926, -0.0643756, 0, 0.0643756, 0.997926, -39.9685, -0.0359078, -3.06626)
 material_override = SubResource("StandardMaterial3D_f3rmp")
 mesh = SubResource("ArrayMesh_ww7rn")
+script = ExtResource("3_u4xy1")
+lights = NodePath("lights")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -86,8 +89,10 @@ omni_range = 0.657
 transform = Transform3D(-1, 4.88498e-15, -8.74228e-08, 4.88498e-15, 1, 0, 8.74228e-08, 0, -1, -0.838795, 0.816506, 2.99754)
 shadow_enabled = true
 omni_range = 0.544
+omni_attenuation = 0.516
 
 [node name="SpotLight3D2" type="OmniLight3D" parent="lights"]
 transform = Transform3D(-1, 4.44089e-15, -8.74228e-08, 4.44089e-15, 1, 0, 8.74228e-08, 0, -1, 0.825554, 0.859732, 2.99476)
 shadow_enabled = true
 omni_range = 0.544
+omni_attenuation = 0.516
