@@ -69,7 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://5461ovptl23m" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Radio.jpg" id="72_s4wnb"]
 [ext_resource type="Texture2D" uid="uid://bw6smqtea46bx" path="res://assets/halloween/halloween/Textures/Body.png" id="73_4oem0"]
 [ext_resource type="Texture2D" uid="uid://kp57ljkcyvbr" path="res://assets/halloween/halloween/Textures/Body_01.png" id="74_li4qw"]
-[ext_resource type="PackedScene" uid="uid://dfcvnjy1khitp" path="res://scripts/player/player.tscn" id="74_p5nxc"]
+[ext_resource type="PackedScene" uid="uid://dfcvnjy1khitp" path="res://player/player/player.tscn" id="74_p5nxc"]
 [ext_resource type="PackedScene" uid="uid://c6labt8v4qyhf" path="res://objects/windows/windows.tscn" id="77_fus5k"]
 
 [sub_resource type="Environment" id="Environment_qepwa"]
@@ -333,6 +333,33 @@ size = Vector2(1, 3.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3h62c"]
 size = Vector3(1, 1.93359, 0.184692)
 
+[sub_resource type="Animation" id="Animation_o314d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-39.9685, -0.0359078, -3.06626)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0907571, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_slqd5"]
 resource_name = "goCar"
 length = 30.0
@@ -387,33 +414,6 @@ tracks/3/keys = {
 "args": [0.0],
 "method": &"play"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_o314d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-39.9685, -0.0359078, -3.06626)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0907571, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hrew1"]
@@ -16525,7 +16525,7 @@ omni_shadow_mode = 0
 [node name="objects" type="Node3D" parent="."]
 
 [node name="Car" parent="objects" instance=ExtResource("64_85dqp")]
-transform = Transform3D(1, 0, 0, 0, 0.995884, -0.0906326, 0, 0.0906326, 0.995884, -39.9685, -0.0359078, -3.06626)
+transform = Transform3D(1, 0, 0, 0, 0.995884, -0.0906325, 0, 0.0906325, 0.995884, -39.9685, -0.0359078, -3.06626)
 visibility_range_end = 45.0
 skeleton = NodePath("../..")
 

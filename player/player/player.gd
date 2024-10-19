@@ -58,7 +58,6 @@ func _ready() -> void:
 	animationPlayer.play("transitionIn")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#GameManager.gameOver = false
 	
 	initialRotation = camera.rotation_degrees
 	

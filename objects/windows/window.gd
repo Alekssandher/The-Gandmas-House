@@ -3,9 +3,6 @@ extends Outline
 var tween: Tween
 var windowOpened: bool = false
 
-func _ready() -> void:
-	player = get_tree().get_first_node_in_group("player")
-	player.connect("raycastout", raycastout)	
 	
 func interact() -> void:
 	tween = get_tree().create_tween()
