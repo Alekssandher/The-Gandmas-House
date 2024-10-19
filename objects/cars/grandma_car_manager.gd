@@ -21,3 +21,7 @@ func eventTwo() -> void:
 	car.lights.visible = true
 	animationPlayer.play("goCar")
 	if animationPlayer.is_playing(): print("Car anim playing")
+
+func callText() -> void:
+	await World.typingEffect("This noise.", 0.1, 1.5)
+	await World.typingEffect("That must be the car.", 0.1, 1.5)

@@ -150,7 +150,7 @@ func crouch() -> void:
 	
 	
 func footsteps(running: bool) -> void:
-	if !is_on_floor() or input_dir == Vector2(0, 0): return
+	if !is_on_floor() or input_dir == Vector2(0, 0) or is_on_wall(): return
 	
 	if footstepsTimer.time_left <= 0 && running:
 		footstepAudio.pitch_scale = randf_range(0.8, 1.2)
@@ -165,3 +165,7 @@ func footsteps(running: bool) -> void:
 			footstepAudio.pitch_scale = randf_range(0.8, 1.2)
 			footstepAudio.play()
 			footstepsTimer.start(0.75)
+
+
+func _on_timer_timeout() -> void:
+	await World.typingEffect("Here I am, following what an unknown voice says.", 0.1, 1.5)

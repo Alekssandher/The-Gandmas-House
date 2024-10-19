@@ -5,6 +5,8 @@ extends Node3D
 @export var falseWall: MeshInstance3D
 @export var falseWallCollisor: StaticBody3D
 @export var player: CharacterBody3D
+@export var drawer: MeshInstance3D
+
 @onready var formaDaPorta: MeshInstance3D = $"../../Abandoned_House/Casa/%Marco_P_010"
 
 var forniture: Array[MeshInstance3D]
@@ -12,6 +14,8 @@ var fornitureTween: Tween
 var falseWallTween: Tween
 var targetPosition: Vector3
 var playerCamera: Camera3D
+
+
 
 func _ready() -> void:
 	playerCamera = player.camera
@@ -21,13 +25,17 @@ func _ready() -> void:
 	EventsResources.connect("allTvsOff", allTvsOff)
 
 func allTvsOff() -> void:
+	
 	if !EventsResources.interactions["roomsIndex"] == 2: return
 	fornitureTween = get_tree().create_tween()
 	falseWallTween = get_tree().create_tween()
-
-	
 	print("worked")
 	screamingAudio.play()
+	
+	#Adding the note to the scene and puting it inside the drawer
+	var note: PackedScene = load("res://objects/notes/roomNote.tscn")
+	var noteInstance: MeshInstance3D = note.instantiate()
+	drawer.add_child(noteInstance)
 	
 	#for item in forniture:
 		#targetPosition = item.global_position + Vector3(0, 1.4, 0)

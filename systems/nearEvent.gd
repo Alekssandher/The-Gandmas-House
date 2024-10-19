@@ -36,7 +36,7 @@ func showText() -> void:
 	canShowText = false
 	while i < texts.size():
 		#If the player be too far away it will not show the text anymore once it's showing
-		if distanceToPlayer > disToStopText: return;
+		if distanceToPlayer > disToStopText: set_process(false); return;
 		await World.typingEffect(texts[i], 0.1, 1.5)
 		i += 1
 	
