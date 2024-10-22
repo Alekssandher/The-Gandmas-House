@@ -15,7 +15,7 @@ var falseWallTween: Tween
 var targetPosition: Vector3
 var playerCamera: Camera3D
 
-
+signal noteAdded
 
 func _ready() -> void:
 	playerCamera = player.camera
@@ -36,7 +36,7 @@ func allTvsOff() -> void:
 	var note: PackedScene = load("res://objects/notes/roomNote.tscn")
 	var noteInstance: MeshInstance3D = note.instantiate()
 	drawer.add_child(noteInstance)
-	
+	emit_signal("noteAdded")
 	#for item in forniture:
 		#targetPosition = item.global_position + Vector3(0, 1.4, 0)
 		#

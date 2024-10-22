@@ -23,10 +23,10 @@ grow = true
 grow_amount = 0.003
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lemxv"]
-size = Vector3(0.202148, 0.268921, 0.352539)
+size = Vector3(0.202148, 0.401917, 0.352539)
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D(-4.37722e-08, 0, -1, 0, 1, 0, 1, 0, -4.37722e-08, -0.0426025, 0.00248837, -0.000322819)
+transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, -0.0426025, 0.00248837, -0.000322819)
 material_override = SubResource("StandardMaterial3D_nn2jf")
 mesh = SubResource("BoxMesh_vsfgx")
 
@@ -48,5 +48,5 @@ mesh = NodePath("..")
 counter = SubResource("StandardMaterial3D_3dbyw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127625, 0)
+transform = Transform3D(1, 0, 2.91323e-13, 0, 1, 0, -2.91323e-13, 0, 1, 0, 0.194123, 0)
 shape = SubResource("BoxShape3D_lemxv")

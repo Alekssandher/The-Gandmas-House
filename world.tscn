@@ -1,4 +1,4 @@
-[gd_scene load_steps=943 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=953 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -38,10 +38,14 @@
 [ext_resource type="Texture2D" uid="uid://b1218ikxi4klm" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Barril.jpg" id="34_kag8s"]
 [ext_resource type="Texture2D" uid="uid://dbdl3axfyhgm1" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela2.jpg" id="35_br5ec"]
 [ext_resource type="Texture2D" uid="uid://bpaevuxepdpd3" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela3.jpg" id="36_lux75"]
+[ext_resource type="Script" path="res://objects/roomDesk/room_desk.gd" id="36_sgums"]
 [ext_resource type="PackedScene" uid="uid://q4dchcx8rnbv" path="res://objects/tvs/upstairsTv.tscn" id="37_e5w0q"]
+[ext_resource type="Material" uid="uid://dglyys8aa175s" path="res://material/contorno.tres" id="37_rx44d"]
 [ext_resource type="Texture2D" uid="uid://bjiv00mgi85o5" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela4.jpg" id="37_vhdnb"]
 [ext_resource type="Texture2D" uid="uid://cq3qp6np3t5uf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Lavadora.jpg" id="38_g8egt"]
+[ext_resource type="AudioStream" uid="uid://cmqu2u3la3lmg" path="res://audios/events/drawer/drawerOpening.ogg" id="38_ss5u0"]
 [ext_resource type="Texture2D" uid="uid://crauu5cxceyay" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_P1.jpg" id="39_02tka"]
+[ext_resource type="AudioStream" uid="uid://cm3w31sdiqggi" path="res://audios/events/drawer/drawerClosing.ogg" id="39_km2fs"]
 [ext_resource type="PackedScene" uid="uid://ueq534hpx70e" path="res://objects/lampshades/lampshades.tscn" id="40_kg0nu"]
 [ext_resource type="Texture2D" uid="uid://bk0cdnmai8cyx" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_P2.jpg" id="40_urp4p"]
 [ext_resource type="Texture2D" uid="uid://d27qwtq1devno" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tela5.jpg" id="41_jf16t"]
@@ -4871,6 +4875,72 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jkx3t")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbtk4"]
+size = Vector3(1.03467, 1.1896, 0.852295)
+
+[sub_resource type="Animation" id="Animation_432iv"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../drawers/roomDrawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-58.9042, -21.87, 9.70859), Vector3(-60.1057, -21.87, 9.70859)]
+}
+
+[sub_resource type="Animation" id="Animation_3dg7s"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../drawers/roomDrawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-60.1057, -21.87, 9.70859), Vector3(-58.9042, -21.87, 9.70859)]
+}
+
+[sub_resource type="Animation" id="Animation_cok1e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../drawers/roomDrawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-58.9042, -21.87, 9.70859)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bvfif"]
+_data = {
+"RESET": SubResource("Animation_cok1e"),
+"close": SubResource("Animation_3dg7s"),
+"open": SubResource("Animation_432iv")
+}
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_wueik"]
+clip_count = 2
+clip_0/name = &"Drawer Opening"
+clip_0/stream = ExtResource("38_ss5u0")
+clip_0/auto_advance = 0
+clip_1/name = &"Drawer Closing"
+clip_1/stream = ExtResource("39_km2fs")
+clip_1/auto_advance = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwo6j"]
 resource_name = "Metal2"
@@ -16503,7 +16573,7 @@ screamingAudio = NodePath("screaming")
 falseWall = NodePath("falseWall")
 falseWallCollisor = NodePath("falseWall/StaticBody3D")
 player = NodePath("../../player")
-drawer = NodePath("../../Abandoned_House/drawers/p_058")
+drawer = NodePath("../../Abandoned_House/drawers/roomDrawer")
 
 [node name="screaming" type="AudioStreamPlayer3D" parent="interactionPoints/tvRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6999, 0.897261, -9.93852)
@@ -19322,6 +19392,28 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_lyvwd")
 skeleton = NodePath("")
 
+[node name="roomDeskArea" type="Area3D" parent="Abandoned_House/tables/roomDesk" node_paths=PackedStringArray("animationPlayer", "drawerAudio", "meshs", "tvRoom")]
+script = ExtResource("36_sgums")
+animationPlayer = NodePath("../AnimationPlayer")
+drawerAudio = NodePath("../drawerAudio")
+meshs = [NodePath(".."), NodePath("../../../drawers/roomDrawer")]
+tvRoom = NodePath("../../../../interactionPoints/tvRoom")
+counter = ExtResource("37_rx44d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/tables/roomDesk/roomDeskArea"]
+transform = Transform3D(0.999998, 0, -6.37956e-08, 0, 1, 0, 6.37956e-08, 0, 0.999998, -0.017334, 0.0742015, 0.0262427)
+shape = SubResource("BoxShape3D_kbtk4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Abandoned_House/tables/roomDesk"]
+libraries = {
+"": SubResource("AnimationLibrary_bvfif")
+}
+
+[node name="drawerAudio" type="AudioStreamPlayer3D" parent="Abandoned_House/tables/roomDesk"]
+transform = Transform3D(0.999997, 0, -1.39698e-09, 0, 1, 0, 1.39698e-09, 0, 0.999997, -0.261002, 0.115441, -0.00197601)
+stream = SubResource("AudioStreamInteractive_wueik")
+bus = &"sfx"
+
 [node name="Mesa_Trabajo" type="MeshInstance3D" parent="Abandoned_House/tables"]
 transform = Transform3D(0, 0, 2.83937, 0, 2.83937, 0, -2.83937, 0, 0, 13.1041, -28.2194, 7.86847)
 lod_bias = 0.001
@@ -19797,7 +19889,7 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_43ene")
 skeleton = NodePath("")
 
-[node name="p_058" type="MeshInstance3D" parent="Abandoned_House/drawers" groups=["tvRoomForniture"]]
+[node name="roomDrawer" type="MeshInstance3D" parent="Abandoned_House/drawers" groups=["tvRoomForniture"]]
 transform = Transform3D(2.73311, 0, 0.0206912, 0, 2.73319, 0, -0.0206912, 0, 2.73311, -58.9042, -21.87, 9.70859)
 lod_bias = 0.001
 visibility_range_end = 15.0
