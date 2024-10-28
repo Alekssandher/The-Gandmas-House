@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xls5xq8als80"
-path.s3tc="res://.godot/imported/cellphoneShape_color06.png-39978559b89b40e88698d09c0893861b.s3tc.ctex"
+uid="uid://c5cs6koelfhh5"
+path.s3tc="res://.godot/imported/Sem título.png-bccc50698ed5f7704c0e746778f949f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/cartoony-cell-phone/textures/cellphoneShape_color06.png"
-dest_files=["res://.godot/imported/cellphoneShape_color06.png-39978559b89b40e88698d09c0893861b.s3tc.ctex"]
+source_file="res://assets/analogicTexture/Sem título.png"
+dest_files=["res://.godot/imported/Sem título.png-bccc50698ed5f7704c0e746778f949f2.s3tc.ctex"]
 
 [params]
 

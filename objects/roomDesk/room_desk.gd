@@ -27,7 +27,7 @@ func interact() -> void:
 		drawerAudio.play()
 		
 func outline() -> void:
-	if meshs[1].get_child_count() > 0 and drawerOpened: return
+	if meshs[1].get_child_count() > 0 and drawerOpened: raycastout(); return
 
 	meshs[0].material_overlay = counter
 	meshs[1].material_overlay = counter

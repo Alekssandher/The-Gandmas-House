@@ -1,4 +1,4 @@
-[gd_scene load_steps=953 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=958 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://ddd5cdk416epi" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal3.jpg" id="27_onmob"]
 [ext_resource type="PackedScene" uid="uid://15xf4lj7c2qf" path="res://objects/tvs/livingRoomTv.tscn" id="28_ri843"]
 [ext_resource type="Texture2D" uid="uid://bfsd2uff6srhu" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Tele1.jpg" id="29_kl0bd"]
-[ext_resource type="Texture2D" uid="uid://g53fuoof8bbx" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Cuadros.png" id="30_5ff34"]
 [ext_resource type="Texture2D" uid="uid://cl4scijr8jo75" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Carton.jpg" id="31_n6b5a"]
 [ext_resource type="Texture2D" uid="uid://mwc8lqsej2tf" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Refrigerador.png" id="32_2grjn"]
 [ext_resource type="Script" path="res://objects/sofas/Armchair1.gd" id="33_5w7hk"]
@@ -57,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8kavigdjqrp" path="res://objects/tvs/roomTv.tscn" id="46_5g13o"]
 [ext_resource type="Texture2D" uid="uid://ja5026nljlw0" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera5.jpg" id="49_6a76d"]
 [ext_resource type="Texture2D" uid="uid://dk7o7i5i1hjb0" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Piso.png" id="51_dxk2q"]
+[ext_resource type="Texture2D" uid="uid://c5cs6koelfhh5" path="res://assets/analogicTexture/Sem título.png" id="53_gmjiq"]
 [ext_resource type="Script" path="res://systems/invisible_wall.gd" id="57_hgguf"]
 [ext_resource type="Script" path="res://systems/configs_manager.gd" id="63_6ojhe"]
 [ext_resource type="Script" path="res://systems/interactionPoints/beds.gd" id="63_53wwk"]
@@ -4877,11 +4877,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jkx3t")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kbtk4"]
-size = Vector3(1.03467, 1.1896, 0.852295)
+size = Vector3(1.14917, 1.1896, 0.852295)
 
-[sub_resource type="Animation" id="Animation_432iv"]
-resource_name = "open"
-length = 0.4
+[sub_resource type="Animation" id="Animation_cok1e"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -4889,10 +4888,10 @@ tracks/0/path = NodePath("../../drawers/roomDrawer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-58.9042, -21.87, 9.70859), Vector3(-60.1057, -21.87, 9.70859)]
+"values": [Vector3(-58.9042, -21.87, 9.70859)]
 }
 
 [sub_resource type="Animation" id="Animation_3dg7s"]
@@ -4911,8 +4910,9 @@ tracks/0/keys = {
 "values": [Vector3(-60.1057, -21.87, 9.70859), Vector3(-58.9042, -21.87, 9.70859)]
 }
 
-[sub_resource type="Animation" id="Animation_cok1e"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_432iv"]
+resource_name = "open"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -4920,10 +4920,10 @@ tracks/0/path = NodePath("../../drawers/roomDrawer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-58.9042, -21.87, 9.70859)]
+"values": [Vector3(-58.9042, -21.87, 9.70859), Vector3(-60.1057, -21.87, 9.70859)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bvfif"]
@@ -4941,6 +4941,9 @@ clip_0/auto_advance = 0
 clip_1/name = &"Drawer Closing"
 clip_1/stream = ExtResource("39_km2fs")
 clip_1/auto_advance = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4e5rc"]
+size = Vector3(0.795898, 0.699585, 0.86438)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwo6j"]
 resource_name = "Metal2"
@@ -8837,6 +8840,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y6wbk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tav2"]
+size = Vector3(0.565308, 0.166504, 0.830566)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_u3i16"]
 _surfaces = [{
 "aabb": AABB(-0.533371, -0.137412, 0.333097, 0.070623, 0.274825, 0.0706277),
@@ -10668,13 +10674,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bu0cr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2okg7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2agtn"]
+viewport_path = NodePath("Abandoned_House/Cuadros/Cuadro_007/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhdbv"]
+resource_local_to_scene = true
 resource_name = "Cuadros"
+transparency = 1
 cull_mode = 2
-albedo_texture = ExtResource("30_5ff34")
+albedo_texture = SubResource("ViewportTexture_2agtn")
+heightmap_scale = 4.812
+uv1_scale = Vector3(1.5, 4, 0)
 texture_filter = 2
+point_size = 82.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_86s5u"]
+resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-1.77398, -1.03928, 0.0083042, 3.54795, 2.07856, 1e-05),
 "format": 34896613377,
@@ -10699,6 +10714,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jilc0"]
+resource_local_to_scene = true
 resource_name = "Abandoned_House_Cube_308"
 _surfaces = [{
 "aabb": AABB(-1.77398, -1.03928, 0.0083042, 3.54795, 2.07856, 1e-05),
@@ -10706,7 +10722,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AwABAAIAAwAAAAEA"),
-"material": SubResource("StandardMaterial3D_2okg7"),
+"material": SubResource("StandardMaterial3D_xhdbv"),
 "name": "Cuadros",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -10727,6 +10743,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_86s5u")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w5grw"]
+load_path = "res://.godot/imported/Abandoned_House_Cuadros.png-101e108173d744cae4a1d751f122031d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2okg7"]
+resource_name = "Cuadros"
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_w5grw")
+texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_56p4i"]
 _surfaces = [{
@@ -19401,7 +19427,7 @@ tvRoom = NodePath("../../../../interactionPoints/tvRoom")
 counter = ExtResource("37_rx44d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/tables/roomDesk/roomDeskArea"]
-transform = Transform3D(0.999998, 0, -6.37956e-08, 0, 1, 0, 6.37956e-08, 0, 0.999998, -0.017334, 0.0742015, 0.0262427)
+transform = Transform3D(0.999997, 0, -7.07805e-08, 0, 1, 0, 7.07805e-08, 0, 0.999997, -0.0745773, 0.0742014, 0.0262427)
 shape = SubResource("BoxShape3D_kbtk4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Abandoned_House/tables/roomDesk"]
@@ -19413,6 +19439,12 @@ libraries = {
 transform = Transform3D(0.999997, 0, -1.39698e-09, 0, 1, 0, 1.39698e-09, 0, 0.999997, -0.261002, 0.115441, -0.00197601)
 stream = SubResource("AudioStreamInteractive_wueik")
 bus = &"sfx"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/tables/roomDesk"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/tables/roomDesk/StaticBody3D"]
+transform = Transform3D(1, 0, -5.16889e-08, 0, 1, 0, 5.16889e-08, 0, 1, 0.102074, -0.150208, 0.000546455)
+shape = SubResource("BoxShape3D_4e5rc")
 
 [node name="Mesa_Trabajo" type="MeshInstance3D" parent="Abandoned_House/tables"]
 transform = Transform3D(0, 0, 2.83937, 0, 2.83937, 0, -2.83937, 0, 0, 13.1041, -28.2194, 7.86847)
@@ -19896,6 +19928,12 @@ visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_myp4d")
 skeleton = NodePath("")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/drawers/roomDrawer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/drawers/roomDrawer/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0342445, 0.0700684, -0.0187922)
+shape = SubResource("BoxShape3D_6tav2")
+
 [node name="p_059" type="MeshInstance3D" parent="Abandoned_House/drawers"]
 transform = Transform3D(-1.93266, 0, -1.93266, 0, 2.73319, 0, 1.93266, 0, -1.93266, -80.9726, -22.0945, -15.5664)
 lod_bias = 0.001
@@ -20244,6 +20282,15 @@ lod_bias = 0.001
 visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_jilc0")
 skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Abandoned_House/Cuadros/Cuadro_007"]
+size = Vector2i(1024, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Abandoned_House/Cuadros/Cuadro_007/SubViewport"]
+position = Vector2(574, 327)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("53_gmjiq")
+region_rect = Rect2(-5, -5, 1026, 720)
 
 [node name="Cuadro_008" type="MeshInstance3D" parent="Abandoned_House/Cuadros"]
 transform = Transform3D(0, 0, 2.60062, 0, 2.60062, 0, -2.60062, 0, 0, -110.296, -24.0054, -22.772)
@@ -21568,6 +21615,8 @@ skeleton = NodePath("")
 [node name="lights" parent="Abandoned_House" instance=ExtResource("40_kg0nu")]
 
 [node name="Ventanas" parent="Abandoned_House" instance=ExtResource("77_fus5k")]
+
+[node name="inventoryLayer" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="invisibleWall/Area3D" to="invisibleWall" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="interactionPoints/beds/beds" to="interactionPoints/beds/beds" method="_on_body_entered"]

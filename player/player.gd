@@ -140,7 +140,7 @@ func crouch() -> void:
 		true:
 			crouchTween = get_tree().create_tween()
 			crouchTween.tween_property(player, "scale", Vector3(0.6, 0.6, 0.6), 0.3)
-			speed = 1
+			speed = 1.3
 			
 		false:
 			crouchTween = get_tree().create_tween()

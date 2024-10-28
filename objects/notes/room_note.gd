@@ -5,3 +5,7 @@ func _ready() -> void:
 	raycast = player.raycast
 	raycast.connect("raycastout", raycastout)
 	
+func interact() -> void:
+	PlayerInventory.addIten("roomNote", "roomNote")
+	PlayerInventory.showItem("roomNote")
+	queue_free()

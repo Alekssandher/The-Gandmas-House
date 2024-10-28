@@ -34,7 +34,16 @@ mesh = SubResource("BoxMesh_vsfgx")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.22822e-09, 0.00105497, -0.142333)
 pixel_size = 0.0005
 modulate = Color(0, 0, 0, 1)
-text = "Aasd asdasd asda dsda dsad sad asd asdadadsa ddwwdwasd asd asd as "
+text = "One day, you were there, watching your favorite TV show all day long.
+You were such a cute boy, unaware of the harsh and cruel face of the world.
+A little kid, full of dreams, who just wanted to keep playing, like all the other children.
+But, unfortunately, children grow up. Innocence fades, and all that remains of those days are memories.
+Who would have thought you would become such a horrible person?
+I know why you're here and what you've done all these years, Jimmy.
+
+\"The love of money is the root of all evils\"
+
+01.07.1994"
 font = ExtResource("2_0kt2t")
 font_size = 21
 outline_size = 0
