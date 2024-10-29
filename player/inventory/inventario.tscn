@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://dehnsvtst67v6"]
+
+[ext_resource type="Script" path="res://player/inventory.gd" id="1_mlgm8"]
+[ext_resource type="Texture2D" uid="uid://d1ltals207wsv" path="res://player/inventory/inventoryBackground.jpg" id="1_ntk8k"]
+[ext_resource type="FontFile" uid="uid://dymql0jdjskwf" path="res://assets/fonts/times new roman bold italic.ttf" id="2_foxvo"]
+[ext_resource type="Texture2D" uid="uid://btip3hgb6v71c" path="res://textures/notes/noteTexture.png" id="3_ls652"]
+[ext_resource type="Texture2D" uid="uid://grd7s7a1wk1g" path="res://assets/Christmas/Textures/Christmas_star.png" id="4_k3gp5"]
+[ext_resource type="Script" path="res://player/inventory/item_list_manager.gd" id="6_u423u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_umb0f"]
+font = ExtResource("2_foxvo")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="inventario" type="Control" node_paths=PackedStringArray("itemList")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mlgm8")
+itemList = NodePath("ItemList")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579.5, 325)
+scale = Vector2(0.905469, 0.5125)
+texture = ExtResource("1_ntk8k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_top = 43.0
+offset_right = 41.0
+offset_bottom = 83.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="notes" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Notes"
+label_settings = SubResource("LabelSettings_umb0f")
+
+[node name="itens" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Itens"
+label_settings = SubResource("LabelSettings_umb0f")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -204.5
+offset_right = 500.0
+offset_bottom = 284.5
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+item_count = 2
+icon_mode = 0
+fixed_icon_size = Vector2i(100, 100)
+item_0/text = "teste teste"
+item_0/icon = ExtResource("3_ls652")
+item_0/selectable = false
+item_1/text = "cast"
+item_1/icon = ExtResource("4_k3gp5")
+item_1/selectable = false
+
+[node name="itemListManager" type="Node" parent="."]
+script = ExtResource("6_u423u")

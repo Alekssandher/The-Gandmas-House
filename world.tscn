@@ -1,4 +1,4 @@
-[gd_scene load_steps=958 format=4 uid="uid://b88edtufj3u6p"]
+[gd_scene load_steps=959 format=4 uid="uid://b88edtufj3u6p"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jb8xp"]
 [ext_resource type="Texture2D" uid="uid://dfk6s6vfhmr6l" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera4.jpg" id="4_0e5e7"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://3b848853gmam" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Foco - emisor.png" id="21_qog5q"]
 [ext_resource type="Texture2D" uid="uid://dx48xkqu7b8b6" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal1.jpg" id="24_hw6ac"]
 [ext_resource type="Texture2D" uid="uid://dtk7pdjojbpdr" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera8.jpg" id="25_bopm5"]
+[ext_resource type="PackedScene" uid="uid://dehnsvtst67v6" path="res://player/inventory/inventario.tscn" id="26_gewk6"]
 [ext_resource type="Texture2D" uid="uid://28den8v8dhpk" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Madera3.jpg" id="26_if38u"]
 [ext_resource type="Texture2D" uid="uid://ddd5cdk416epi" path="res://assets/Abandoned_House/Abandoned_House/Models/Abandoned_House_Metal3.jpg" id="27_onmob"]
 [ext_resource type="PackedScene" uid="uid://15xf4lj7c2qf" path="res://objects/tvs/livingRoomTv.tscn" id="28_ri843"]
@@ -16748,6 +16749,9 @@ skeleton = NodePath("")
 process_mode = 3
 
 [node name="settings" parent="settings" instance=ExtResource("19_0ynjy")]
+visible = false
+
+[node name="inventario" parent="settings" instance=ExtResource("26_gewk6")]
 visible = false
 
 [node name="Abandoned_House" type="Node3D" parent="."]

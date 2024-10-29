@@ -1,13 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://dfcvnjy1khitp"]
+[gd_scene load_steps=17 format=3 uid="uid://dfcvnjy1khitp"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_yb761"]
 [ext_resource type="Script" path="res://systems/flashLight/spot_light_3d.gd" id="2_8mmd1"]
 [ext_resource type="Script" path="res://systems/progressBar/control.gd" id="2_me5s2"]
 [ext_resource type="Script" path="res://player/ray_cast_3d.gd" id="3_rlph1"]
 [ext_resource type="AudioStream" uid="uid://dnjqixia8kr6g" path="res://audios/kenney_impact-sounds/Audio/footstep_concrete_004.ogg" id="3_s6vu5"]
-[ext_resource type="PackedScene" uid="uid://b33eesn07egin" path="res://objects/notes/roomNote.tscn" id="4_dv100"]
 [ext_resource type="Shader" path="res://shaders/analog.gdshader" id="5_j8yn0"]
-[ext_resource type="Texture2D" uid="uid://c45arwkpdep50" path="res://assets/paperTexture.jpg" id="8_svmpx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vfes"]
 radius = 0.345909
@@ -15,13 +13,6 @@ height = 1.68202
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8qa"]
 size = Vector3(0.0458984, 0.0703125, 1.84351)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0pne"]
-albedo_texture = ExtResource("8_svmpx")
-
-[sub_resource type="BoxMesh" id="BoxMesh_5je8j"]
-material = SubResource("StandardMaterial3D_g0pne")
-size = Vector3(0.2, 0.001, 0.35)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ik1aw"]
 radius = 0.86841
@@ -146,12 +137,6 @@ transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, -0.8, 0, 0.8, -3.49691e-08, 
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_rlph1")
-
-[node name="MeshInstance3D" parent="head/vertical/Camera3D" instance=ExtResource("4_dv100")]
-transform = Transform3D(1.2, 0, 0, 0, -5.24537e-08, -1.2, 0, 1.2, -5.24537e-08, -0.00979158, 0.00248837, -0.27211)
-cast_shadow = 0
-gi_mode = 0
-mesh = SubResource("BoxMesh_5je8j")
 
 [node name="playerArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19606, 0)
