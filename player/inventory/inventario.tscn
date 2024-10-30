@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dehnsvtst67v6"]
+[gd_scene load_steps=12 format=3 uid="uid://dehnsvtst67v6"]
 
 [ext_resource type="Script" path="res://player/inventory.gd" id="1_mlgm8"]
 [ext_resource type="Texture2D" uid="uid://d1ltals207wsv" path="res://player/inventory/inventoryBackground.jpg" id="1_ntk8k"]
@@ -6,13 +6,52 @@
 [ext_resource type="Texture2D" uid="uid://btip3hgb6v71c" path="res://textures/notes/noteTexture.png" id="3_ls652"]
 [ext_resource type="Texture2D" uid="uid://grd7s7a1wk1g" path="res://assets/Christmas/Textures/Christmas_star.png" id="4_k3gp5"]
 [ext_resource type="Script" path="res://player/inventory/item_list_manager.gd" id="6_u423u"]
+[ext_resource type="PackedScene" uid="uid://b33eesn07egin" path="res://objects/notes/roomNote.tscn" id="7_v2wt8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_umb0f"]
 font = ExtResource("2_foxvo")
 font_size = 35
 font_color = Color(0, 0, 0, 1)
 
-[node name="inventario" type="Control" node_paths=PackedStringArray("itemList")]
+[sub_resource type="Animation" id="Animation_7j71m"]
+resource_name = "loop"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.43466, 0, 0), Vector3(1.43466, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h22kn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.43466, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qpc6"]
+_data = {
+"RESET": SubResource("Animation_h22kn"),
+"loop": SubResource("Animation_7j71m")
+}
+
+[node name="inventario" type="Control" node_paths=PackedStringArray("itemList", "light")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mlgm8")
 itemList = NodePath("ItemList")
+light = NodePath("SubViewportContainer/SubViewport/DirectionalLight3D")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -63,6 +103,7 @@ text = "Itens"
 label_settings = SubResource("LabelSettings_umb0f")
 
 [node name="ItemList" type="ItemList" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,3 +129,47 @@ item_1/selectable = false
 
 [node name="itemListManager" type="Node" parent="."]
 script = ExtResource("6_u423u")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45218)
+cull_mask = 1048574
+
+[node name="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("7_v2wt8")]
+transform = Transform3D(1.2, 2.07873e-07, 2.84751e-08, 0, 0.162859, -1.1889, -2.09815e-07, 1.1889, 0.162859, -0.00196066, 0.00248837, -0.433049)
+layers = 2
+skeleton = NodePath("../../../..")
+
+[node name="Label3D" parent="SubViewportContainer/SubViewport/Camera3D/MeshInstance3D" index="0"]
+layers = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport"]
+libraries = {
+"": SubResource("AnimationLibrary_1qpc6")
+}
+autoplay = "loop"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+visible = false
+light_color = Color(0.74978, 0.74978, 0.74978, 1)
+
+[editable path="SubViewportContainer/SubViewport/Camera3D/MeshInstance3D"]
