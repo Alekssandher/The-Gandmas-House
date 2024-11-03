@@ -27,11 +27,13 @@ size = Vector3(0.202148, 0.401917, 0.352539)
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
 transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, -0.0426025, 0.00248837, -0.000322819)
+layers = 2
 material_override = SubResource("StandardMaterial3D_nn2jf")
 mesh = SubResource("BoxMesh_vsfgx")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.22822e-09, 0.00105497, -0.142333)
+layers = 2
 pixel_size = 0.0005
 modulate = Color(0, 0, 0, 1)
 text = "One day, you were there, watching your favorite TV show all day long.
